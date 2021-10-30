@@ -1,0 +1,106 @@
+.ess-eco {
+    background-image: url("../../../assets/eco-tourism.png");
+    height: 160px;
+}
+
+.ess-eco-text {
+    color: white;
+    font-size: 50px;
+    padding-top: 70px;
+    padding-left: 135px;
+    font-size: calc(2em + 2vw)
+}
+
+.mat-tab-group {
+    margin-bottom: 48px;
+}
+
+::ng-deep .mat-tab-label {
+    font-family: Montserrat-Light;
+    font-size: 14px;
+}
+
+.ess-card {
+    max-width: 250px;
+    padding: 15px;
+}
+
+footer {
+    background-color: #BC955C !important;
+    color: white !important;
+}
+
+.ess-card {
+    cursor: pointer;
+}
+
+::ng-deep .mat-focused .mat-form-field-label {
+    /*change color of label*/
+    color: white !important;
+}
+
+::ng-deep .mat-form-field-underline {
+    /*change color of underline*/
+    background-color: white !important;
+}
+
+
+/* Border */
+
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+    color: white !important;
+}
+
+::ng-deep .mat-form-field-ripple {
+    /*change color of underline when focused*/
+    background-color: white !important;
+}
+
+a {
+    color: white;
+}
+
+::ng-deep .breadcrumb a {
+    color: #BC955C !important;
+}
+
+::ng-deep .breadcrumb {
+    background-color: white !important;
+    color: #BC955C !important;
+}
+
+.redirect {
+    color: #000000;
+}
+
+::ng-deep .mat-card {
+    border: rgb(255, 255, 255) !important;
+    transition: none !important;
+    box-shadow: none !important;
+}
+
+a {
+    font-family: Montserrat-Bold;
+    color: #000000;
+    font-size: 18px;
+}
+
+::ng-deep .mat-typography h2 {
+    font-family: Montserrat;
+    font-size: 18px;
+}
+
+::ng-deep .mat-typography p {
+    font-family: Montserrat-Light;
+    font-size: 12px;
+}
+
+.mat-card-image {
+    object-fit: cover;
+    height: 300px;
+}
+
+.disabled-field {
+  pointer-events: none;
+  display: none;
+}

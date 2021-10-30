@@ -1,0 +1,50 @@
+<div class="container mt-2">
+  <div class="row text-left  pb-5">
+    <div class="col">
+      <img src="../../../assets/logo_desarrolla.svg" width="130vw" height="100vh" alt="" srcset="" />
+    </div>
+  </div>
+  <div class="row ">
+    <div class="col-md">
+      <div class="progress">
+        <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: {{progress}}%;"></div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="row pt-4">
+    <div class="col-md text-center">
+      <p class="ess-text-title  mt-4 mb-4">{{title}}</p>
+      <p class="ess-text-Subtitle pt-4 pb-4">{{subtitle}}</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md text-center">
+      <form [formGroup]="postForm">
+        <div class="row">
+          <div class="col-md">
+            <mat-form-field
+              appearance="outline"
+              style="width: 50vw"
+            >
+              <mat-label>Frase clave</mat-label>
+              <input matInput formControlName="pclave1" />
+              <small
+                class="form-text text-muted"
+                *ngIf="
+                  postForm.get('pclave1').touched &&
+                  postForm.get('pclave1').hasError('required')
+                "
+                >Este campo es requerido.</small
+              >
+            </mat-form-field>
+          </div>
+        </div>
+        <button class="button_direccion" (click)="submit()" [disabled]="!postForm.valid">
+          SIGUIENTE
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,186 @@
+.ess-logo {
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+    margin-left: -135px;
+    margin-right: 30px;
+}
+
+.ess-container-logo-name-empresa {
+    display: flex;
+    align-items: center;
+    text-align: left;
+    p {
+        font-style: normal;
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 24px;
+        color: #000000;
+        margin: 0;
+    }
+}
+
+.ess-mat-form-field-flex {
+    width: 30vw !important;
+}
+
+.ess-buttonModall {
+    position: absolute;
+    width: 184px;
+    height: 82px;
+    left: 195px;
+    top: 218px;
+}
+
+.ess-buttonModal {
+    width: 400px;
+    height: 400px;
+    left: 195px;
+    top: 218px;
+}
+
+.ess-camposI {
+    width: calc(50% - 2.5%);
+    &:nth-child(odd) {
+        margin-right: 5%;
+    }
+}
+
+.ess-title {
+    @media (max-width: 600px) {
+        display: none !important;
+        margin-left: 19px !important;
+    }
+}
+
+::ng-deep .mat-checkbox-frame {
+    border-color: gray;
+}
+
+::ng-deep .mat-checkbox-checked.mat-accent .mat-checkbox-ripple .mat-ripple-element {
+    opacity: 0.03 !important;
+    background-color: #235b4e !important;
+}
+
+::ng-deep .mat-checkbox-checked.mat-accent .mat-checkbox-background,
+.mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
+    background-color: #235b4e;
+}
+
+.cb-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    flex-flow: row;
+}
+
+.mat-checkbox {
+    margin-left: 20px;
+}
+
+.cb-vertival {
+    flex-flow: column;
+}
+
+mat-checkbox.text-wrap {
+    label.mat-checkbox-layout {
+        white-space: normal;
+    }
+}
+
+.ess-text-hightlight {
+    font-family: 'Montserrat-Bold';
+    color: #10312B;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 29px;
+    text-align: center;
+    margin-bottom: 3vh;
+}
+
+.ess-text-subtitle {
+    font-style: normal;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+    color: #000000;
+    strong {
+        font-family: 'Montserrat-Bold';
+        color: #10312B;
+        font-size: 19px;
+        line-height: 29px;
+    }
+}
+
+.button_direccion {
+    //Tamaño del btn
+    min-width: 184px;
+    min-height: 38px;
+    width: auto;
+    height: auto;
+    border-radius: 5px;
+    //Aspecto visual del btn
+    border: 1px solid black;
+    color: black;
+    background-color: white;
+    //Texto en el btn
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #000000;
+    //Espacio del btn
+    margin: 10px 15px;
+    margin-top: 50px;
+    //Btn Deshabilitado
+    &:disabled {
+        background-color: #E5E5E5;
+        border: 1px solid #98989A;
+        color: #98989A;
+        cursor: not-allowed;
+    }
+    &:hover:enabled {
+        background-color: #98989A;
+        border: 1px solid #98989A;
+        color: white;
+    }
+}
+
+.ess-text-hightlight {
+    font-family: 'Montserrat-Bold';
+    color: #10312B;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 29px;
+    text-align: center;
+    margin-bottom: 3vh;
+}
+
+.ess-text-subtitle {
+    font-style: normal;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+    color: #000000;
+}
+
+mat-form-field {
+    font-family: Montserrat-Light;
+    font-size: 16px;
+}
+
+mat-label {
+    font-family: Lato-Light;
+    font-size: 16px;
+}
+input {
+  font-family: Lato-Light;
+  font-size: 16px;
+}
+

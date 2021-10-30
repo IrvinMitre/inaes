@@ -1,0 +1,51 @@
+{
+    "productId": "",
+    "socialEnterpriseKey": "",
+    "whatIsIt": "",
+    "whereItIs": "",
+    "description": "",
+    "homeDelivery": "",
+    "aprovedItem": "",
+    "categories": [
+        {
+            "catProduct": "",
+            "catSubproduct": "",
+            "catSubSubproduct": ""
+        }
+    ],
+    "features": [
+        {
+            "type": "",
+            "pictureRoute": ""
+        }
+    ],
+    "tags": [
+        {
+            "tag": ""
+        }
+    ],
+    "pictures": [
+        {
+            "route": "",
+            "description": ""
+        }
+    ],
+    "comercializations": [
+        {
+            "catCommercializationType": "",
+            "catCommercializationSubType": "",
+            "description": ""
+        }
+    ],
+    "paymentMethods": [
+        {
+            "catPayment": ""
+        }
+    ],
+    "socialNetworks": [
+        {
+            "catSocialNetwork": "",
+            "data": ""
+        }
+    ]
+}

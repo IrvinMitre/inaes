@@ -1,0 +1,149 @@
+<div class="container mt-5">
+  <div class="row text-left">
+      <div class="col">
+          <img src="../../../assets/logo_desarrolla.svg" width="130vw" height="100vh" alt="" srcset="" />
+      </div>
+  </div>
+
+  <div class="row mb-4 justify-content-center">
+      <div class="col-md-6 ess-container-logo-name-empresa">
+          <img src="{{img}}" class="ess-logo" alt="">
+          <p>
+              {{enterpriseName}}
+          </p>
+      </div>
+  </div>
+
+  <div class="row justify-content-center">
+      <div class="col-md-6">
+          <p class="ess-text-hightlight text-left">
+              <strong>Completa tu perfil</strong>
+          </p>
+      </div>
+  </div>
+
+  <div class="row justify-content-center mt-1">
+      <div class="col-md-6 text-left">
+          <p class="ess-text-subtitle text-left">
+              Ingresa los datos de contacto y crea tu perfil:
+          </p>
+      </div>
+  </div>
+
+  <div class="row justify-content-center mt-3">
+      <div class="col-md">
+          <form class="text-center" [formGroup]="postForm" (submit)="submit()">
+              <div class="row justify-content-center">
+                  <div class="col-md-6 text-left">
+                      <mat-form-field class="ess-camposI" appearance="outline">
+                          <mat-label>Nombre (s)</mat-label>
+                          <input matInput placeholder="Nombre(s)" formControlName="nombre" />
+                          <small class="form-text text-muted" *ngIf="
+                postForm.get('nombre').touched &&
+                postForm.get('nombre').hasError('required')
+              " style="width: 40vw; color: red !important;">Este campo es requerido.</small>
+                          <mat-hint></mat-hint>
+                      </mat-form-field>
+                      <mat-form-field appearance="outline" class="ess-camposI">
+                          <mat-label>Apellidos</mat-label>
+                          <input matInput placeholder="Apellidos" formControlName="apellido" />
+                          <small class="form-text text-muted" *ngIf="
+                postForm.get('apellido').touched &&
+                postForm.get('apellido').hasError('required')
+                " style="width: 40vw; color: red !important;">Este campo es requerido.</small>
+                          <mat-hint></mat-hint>
+                      </mat-form-field>
+                  </div>
+              </div>
+              <div class="row justify-content-center mb-3">
+                  <div class="col-md-6 text-left">
+                      <mat-form-field class="ess-input-full ess-camposI">
+                          <mat-label>Correo electronico</mat-label>
+                          <input matInput placeholder="Correo electronico" formControlName="correo" />
+                          <small class="form-text text-muted" *ngIf="
+                postForm.get('correo').touched &&
+                postForm.get('correo').hasError('required')
+                " style="width: 40vw; color: red !important;">Este campo es requerido.</small>
+                          <small class="form-text text-muted" *ngIf="
+                postForm.get('correo').touched &&
+                postForm.get('correo').errors
+                " style="width: 40vw; color: red !important;">Ingesa un email valido</small>
+                      </mat-form-field>
+                      <mat-form-field class="ess-input-full ess-camposI">
+                          <mat-label>Teléfono móvil</mat-label>
+                          <input matInput type="tel" placeholder="Teléfono móvil" formControlName="telefono" />
+                          <small class="form-text text-muted" *ngIf="
+                postForm.get('telefono').touched &&
+                postForm.get('telefono').hasError('required')
+                " style="width: 40vw; color: red !important;">Este campo es requerido.</small>
+                          <small class="form-text text-muted" *ngIf="
+                postForm.get('telefono').touched &&
+                postForm.get('telefono').errors
+                " style="width: 40vw; color: red !important;">Ingresa 10 digitos.</small>
+                      </mat-form-field>
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="col-12 content-align-center mr-5">
+                  </div>
+              </div>
+
+              <div class="row justify-content-center">
+                  <div class="col-md-6 text-left">
+                      <mat-form-field class="ess-camposI">
+                          <mat-label>Contraseña</mat-label>
+                          <input matInput [type]="hide ? 'password' : 'text'" formControlName="contrasena" />
+                          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+              <mat-icon>{{
+                hide ? "visibility_off" : "visibility"
+              }}</mat-icon>
+            </button>
+                          <small class="form-text text-muted" *ngIf="
+                postForm.get('contrasena').touched &&
+                postForm.get('contrasena').hasError('required')
+              " style="width: 40vw; color: red !important;">Este campo es requerido.</small>
+                          <small class="form-text text-muted" *ngIf="
+                postForm.get('contrasena').touched &&
+                postForm.get('contrasena').hasError('invalidPassword')
+              " style="width: 40vw; color: red !important;">Revisa tu contraseña
+            </small>
+                          <mat-hint style="font-size: 9px;">Ingresa al menos 8 carácteres, una mayuscúla y número.</mat-hint>
+                      </mat-form-field>
+
+                      <mat-form-field appearance="outline" class="ess-camposI">
+                          <mat-label>Contraseña</mat-label>
+                          <input matInput [type]="hide ? 'password' : 'text'" formControlName="confcontrasena" />
+                          <small style="color: red !important;" class="form-text text-muted" *ngIf="
+                postForm.get('confcontrasena').touched &&
+                postForm.get('confcontrasena').hasError('required')
+              ">Este campo es requerido.</small>
+                          <small style="color: red !important;" class="form-text text-muted" *ngIf="
+                postForm.get('confcontrasena').value !==
+                postForm.get('contrasena').value
+              ">Contraseñas no coinciden.</small>
+                      </mat-form-field>
+                  </div>
+              </div>
+
+              <div class="row justify-content-center">
+                  <div class="col-md-6 text-left mt-3 pl-5">
+                      <mat-checkbox class="mat-checkbox-inner-container" formControlName="term">
+                          <small>
+              He leído el aviso de privacidad y acepto los
+              <a role="button" (click)="openDialog()"><u>terminos y condiciones</u></a>
+            </small>
+                      </mat-checkbox>
+                  </div>
+              </div>
+
+
+
+              <div class="m-4">
+                  <button (click)="openDialog2()" class="button_direccion" [disabled]="!postForm.valid ">
+          CREAR MI PERFIL
+        </button>
+              </div>
+          </form>
+      </div>
+  </div>
+</div>

@@ -1,0 +1,125 @@
+<div class="container mt-2">
+  <div class="row text-left pb-4">
+    <div class="col">
+      <img src="../../../assets/logo_desarrolla.svg" width="130vw" height="100vh" alt="" srcset="" />
+    </div>
+  </div>
+  <div class="row ">
+    <div class="col-md">
+      <div class="progress">
+        <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row pt-4">
+    <div class="col-md text-center">
+      <p class="ess-text-title">
+        Agrega tu producto
+      </p>
+      <p class=" ess-text-Subtitle pt-3 pb-3">
+        ¿Tu producto pertenece a algún sector económico?
+      </p>
+      <form class="text-center" [formGroup]="postForm">
+        <div class="row justify-content-center">
+          <div class="col-md-8">
+            <div class="row">
+              <div class="col-md-4">
+
+                <mat-form-field class="ess-input-full">
+                  <mat-label>Categoria</mat-label>
+                  <mat-select style="font-family: Montserrat-Light;
+                  font-size: 16px;" formControlName="categoria" (selectionChange)="check($event.value)" required>
+
+                    <mat-option class="ess-text-paragraph" value="{{ item }}" *ngFor="let item of categories"
+                      (click)="setSubcategorie('sub1', item)" style="font-family: Montserrat-Light;
+                      font-size: 16px;"> <i class="fa fa-check-circle-o mr-1" id="icon" *ngIf="item === tem"
+                        aria-hidden="true"></i>{{ item }}</mat-option>
+                  </mat-select>
+                  <small class="text-muted form-text" style="color: red !important; font-size: 9px;"
+                  *ngIf="postForm.get('categoria').hasError('required') && postForm.get('categoria').touched">
+                  Campo Requerido
+                </small>
+                </mat-form-field>
+
+              </div>
+              <div class="col-md-4">
+                <mat-form-field class="ess-input-full">
+                  <mat-label class="ess-text-paragraph">Sub-categoria</mat-label>
+                  <mat-select style="font-family: Montserrat-Light;
+                  font-size: 16px;" formControlName="subCategoria" (selectionChange)="check2($event.value)">
+                    <mat-option class="ess-text-paragraph" value="{{item.subproduct}}" *ngFor="let item of sub1"
+                      (click)="setSubcategorie('sub2', item.subproduct)" style="color: #10312b;"><i
+                        class="fa fa-check-circle-o mr-1" id="icon" *ngIf="item.subproduct === tem2" aria-hidden="true"
+                        style="color: #10312b;"></i>{{ item.subproduct }}</mat-option>
+                  </mat-select>
+                  <small class="text-muted form-text" style="color: red !important; font-size: 9px;"
+                  *ngIf="postForm.get('subCategoria').hasError('required') && postForm.get('subCategoria').touched">
+                  Campo Requerido
+                </small>
+                </mat-form-field>
+              </div>
+              <div class="col-md-4">
+                <mat-form-field class="ess-input-full" *ngIf="third">
+                  <mat-label>Sub-categoria</mat-label>
+                  <mat-select style="font-family: Montserrat-Light;
+                  font-size: 16px;" formControlName="subCategoria2" (selectionChange)="check3($event.value)">
+                    <mat-option class="ess-text-paragraph" value="{{item.subsubproduct}}" *ngFor="let item of sub2"
+                      (click)="setSubcategorie('otherSub', item.subsubproduct)" style="color: #10312b;"><i
+                        class="fa fa-check-circle-o mr-1" id="icon" *ngIf="item.subsubproduct === tem3"
+                        aria-hidden="true" style="color: #10312b;"></i>{{ item.subsubproduct }}</mat-option>
+                  </mat-select>
+                  <small class="text-muted form-text" style="color: red !important; font-size: 9px;"
+                  *ngIf="postForm.get('subCategoria2').hasError('required') && postForm.get('subCategoria2').touched">
+                  Campo Requerido
+                </small>
+                </mat-form-field>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4">
+                <mat-form-field class="ess-input-full">
+                  <mat-label>Categoria</mat-label>
+                  <mat-select style="font-family: Montserrat-Light;
+                  font-size: 16px;" formControlName="oCategoria" (selectionChange)="check4($event.value)">
+                    <mat-option value="{{item}}" *ngFor="let item of categories"
+                      (click)="setSubcategorie('lastSub', item)" style="color: #10312b;"><i
+                        class="fa fa-check-circle-o mr-1" id="icon" *ngIf="item === tem4" aria-hidden="true"
+                        style="color: #10312b;"></i>{{ item }}</mat-option>
+                  </mat-select>
+                  <small class="text-muted form-text" style="color: red !important; font-size: 9px;"
+                  *ngIf="postForm.get('oCategoria').hasError('required') && postForm.get('oCategoria').touched">
+                  Campo Requerido
+                  </small>
+                </mat-form-field>
+              </div>
+              <div class="col-md-4">
+                <mat-form-field class="ess-input-full">
+                  <mat-label>Sub-categoria</mat-label>
+                  <mat-select style="font-family: Montserrat-Light;
+                  font-size: 16px;" formControlName="oCategoria2" (selectionChange)="check5($event.value)">
+                    <mat-option value="{{item.subproduct }}" *ngFor="let item of lastSub" class="ess-text-paragraph"
+                      style="color: #10312b;"><i class="fa fa-check-circle-o mr-1" id="icon"
+                        *ngIf="item.subproduct === tem5" aria-hidden="true" style="color: #10312b;"></i>{{
+                      item.subproduct }}</mat-option>
+                  </mat-select>
+                  <small class="text-muted form-text" style="color: red !important; font-size: 9px;"
+                    *ngIf="postForm.get('oCategoria2').hasError('required') && postForm.get('oCategoria2').touched">
+                    Campo Requerido
+                  </small>
+                </mat-form-field>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row mb-4 text-center mt-4">
+          <div class="col-md">
+            <button (click)="submit()" class="button_direccion" [disabled]="!postForm.valid">
+              SIGUIENTE
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

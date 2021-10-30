@@ -1,0 +1,171 @@
+
+
+.ess-text-hightlight {
+    font-family: 'Montserrat-Bold';
+    color: #10312B;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 29px;
+    text-align: center;
+    margin-bottom: 3vh;
+    margin-top: 10vh;
+  }
+
+  .button_direccion {
+    //Tamaño del btn
+    min-width: 184px;
+    min-height: 38px;
+    width: auto;
+    height: auto;
+    border-radius: 5px;
+    //Aspecto visual del btn
+    border: 1px solid black;
+    color: black;
+    background-color: white;
+    //Texto en el btn
+    font-family: "Montserrat-bold";
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #000000;
+    //Espacio del btn
+    margin: 10px 15px;
+
+    //Btn Deshabilitado
+    &:disabled {
+      background-color: #E5E5E5;
+      border: 1px solid #98989A;
+      color: #98989A;
+      cursor: not-allowed;
+    }
+    &:hover:enabled{
+      background-color: #98989A;
+      border: 1px solid #98989A;
+      color: white;
+    }
+  }
+
+  .progress {
+    height: 10px;
+    width: 100%;
+    border: 1px solid #B9B9B9;
+    border-radius: 4px;
+    background-color: white;
+
+    .progress-bar {
+      width: 20%;
+      height: 8px;
+      background: #C4C4C4;
+      border-radius: 4px;
+    }
+  }
+
+  .ess-text-subtitle {
+    font-style: normal;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+    color: black;
+  }
+
+  .image-upload {
+    max-width: 285px;
+    margin: 0 auto;
+    position: relative;
+    margin-top: 35px;
+
+    div {
+      background-color: white;
+      border-radius: 50%;
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      width: 20px;
+      height: 20px;
+      font-weight: 800;
+      font-size: 18px;
+      cursor: pointer;
+    }
+
+    img {
+      max-width: 100%;
+      background-size: cover;
+    }
+  }
+
+  .ess-tooltip-productos{
+    position: relative;
+    p{
+      display: inline;
+    }
+    button{
+      width: 24px;
+      height: 24px;
+      position: absolute;
+      display: inline;
+      background-color: white;
+      border: none;
+      top: -5px;
+      right: -2vw;
+      color: #C6CACC;
+    }
+  }
+
+  ::ng-deep .mat-tooltip {
+    width: 200px !important;
+    padding: 20px !important;
+    color: black !important;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 8px !important;
+
+    //Texto en el tooltip
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+    align-items: center;
+  }
+
+  .ess-input-description {
+    width: 100%;
+    max-width: 285px;
+    margin-top: 20px;
+  }
+
+  .ess-text-info {
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.3);
+    margin: 20px 0;
+  }
+
+  .ess-text-title{
+    font-family: Montserrat-Bold;
+    font-size: 24px;
+
+  }
+
+  mat-form-field {
+    font-family: Montserrat-Light;
+    font-size: 16px;
+  }
+
+  .ess-text-Subtitle{
+    font-family:  Montserrat-Light;
+    font-size: 18px;
+
+  }
+
+  mat-option{
+    font-family: Montserrat-Light;
+    font-size: 16px;
+  }

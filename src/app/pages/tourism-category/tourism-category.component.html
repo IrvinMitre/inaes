@@ -1,0 +1,131 @@
+<app-nav></app-nav>
+<div class="container mt-5">
+  <div class="row">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="#">{{category}}</a></li>
+        <li class="breadcrumb-item active" aria-current="page">{{category}}</li>
+      </ol>
+    </nav>
+  </div>
+</div>
+<div class="container-fluid ess-eco">
+  <div class="row pb-3">
+    <div class="col-12 pb-5">
+      <p class="ess-eco-text">
+        {{category}}
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row" style="overflow: hidden;">
+    <div class="col">
+      <mat-tab-group mat-align-tabs="center" [selectedIndex]="tabSelect"
+        (selectedTabChange)="getTabCategories($event)">
+        <mat-tab label="Ecoturismo">
+          <div class="row">
+            <div class="col-md-3" *ngFor="let card of tourismCards">
+              <mat-card class="ess-card mt-2" *ngIf="card.categories[0].catService == 'Ecoturismo'">
+                <a routerLink="/servicio/{{card._id}}"></a>
+                <img mat-card-image src="{{card.pictures[0].route}}">
+                <mat-card-content>
+                  <a class="redirect" [routerLink]="['/servicio/'+card._id+'/'+card.socialEnterpriseKey]">
+                    <h2 class="text-left">{{card.whatIsIt}}</h2>
+                  </a>
+                  <p class="text-left">
+                    {{card.whereItIs}}
+                  </p>
+                </mat-card-content>
+                <mat-card-actions>
+                </mat-card-actions>
+              </mat-card>
+            </div>
+          </div>
+        </mat-tab>
+        <mat-tab label="Turismo de naturaleza">
+          <div class="row" style="overflow: hidden;">
+            <div class="col-md-3" *ngFor="let card of tourismCards">
+              <mat-card class="ess-card mt-2" *ngIf="card.categories[0].catService == 'Turismo de naturaleza'">
+                <a routerLink="/servicio/{{card._id}}">
+                  <img mat-card-image src="{{card.pictures[0].route}}">
+                </a>
+                <mat-card-content>
+                  <a class="redirect" [routerLink]="['/servicio/'+card._id+'/'+card.socialEnterpriseKey]">
+                    <h2 class="text-left">{{card.whatIsIt}}</h2>
+                  </a>
+                  <p class="text-left">
+                    {{card.whereItIs}}
+                  </p>
+                </mat-card-content>
+                <mat-card-actions>
+                </mat-card-actions>
+              </mat-card>
+            </div>
+          </div>
+        </mat-tab>
+        <mat-tab label="Turismo de aventura">
+          <div class="row">
+            <div class="col-md-3" *ngFor="let card of tourismCards">
+              <mat-card class="ess-card mt-2" *ngIf="card.categories[0].catService == 'Turismo de aventura'">
+                <img mat-card-image src="{{card.pictures[0].route}}">
+                <mat-card-content>
+                  <a class="redirect" [routerLink]="['/servicio/'+card._id+'/'+card.socialEnterpriseKey]">
+                    <h2 class="text-left">{{card.whatIsIt}}</h2>
+                  </a>
+                  <p class="text-left">
+                    {{card.whereItIs}}
+                  </p>
+                </mat-card-content>
+                <mat-card-actions>
+                </mat-card-actions>
+              </mat-card>
+            </div>
+          </div>
+        </mat-tab>
+        <mat-tab label="Turismo sostenible">
+          <div class="row">
+            <div class="col-md-3" *ngFor="let card of tourismCards">
+              <mat-card class="ess-card mt-2" *ngIf="card.categories[0].catService == 'Turismo sostenible'">
+                <img mat-card-image src="{{card.pictures[0].route}}">
+                <mat-card-content>
+                  <a class="redirect" [routerLink]="['/servicio/'+card._id+'/'+card.socialEnterpriseKey]">
+                    <h2 class="text-left">{{card.whatIsIt}}</h2>
+                  </a>
+                  <p class="text-left">
+                    {{card.whereItIs}}
+                  </p>
+                </mat-card-content>
+                <mat-card-actions>
+                </mat-card-actions>
+              </mat-card>
+            </div>
+          </div>
+        </mat-tab>
+        <mat-tab label="Turismo rural">
+          <div class="row">
+            <div class="col-md-3" *ngFor="let card of tourismCards">
+              <mat-card class="ess-card mt-2" *ngIf="card.categories[0].catService == 'Turismo rural'">
+                <img mat-card-image src="{{card.pictures[0].route}}">
+                <mat-card-content>
+                  <a class="redirect" [routerLink]="['/servicio/'+card._id+'/'+card.socialEnterpriseKey]">
+                    <h2 class="text-left">{{card.whatIsIt}}</h2>
+                  </a>
+                  <p class="text-left">
+                    {{card.whereItIs}}
+                  </p>
+                </mat-card-content>
+                <mat-card-actions>
+                </mat-card-actions>
+              </mat-card>
+            </div>
+          </div>
+        </mat-tab>
+      </mat-tab-group>
+    </div>
+  </div>
+</div>
+
+
+<app-newsletter-form></app-newsletter-form>

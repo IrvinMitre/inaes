@@ -1,0 +1,224 @@
+
+<div class="container-fixed">
+  <div class="row pt-3">
+    <div class="col">
+      <form [formGroup]="postForm">
+        <div class="row justify-content-center">
+          <div class="col-md-4">
+            <mat-form-field class="ess-input-full ess-campos">
+              <mat-label>Establecimiento propio</mat-label>
+              <input
+                matInput
+                placeholder="Establecimiento propio"
+                formControlName="establecimiento"
+              />
+              <small
+                class="form-text text-muted"
+                *ngIf="
+                  postForm.get('establecimiento').touched &&
+                  postForm.get('establecimiento').hasError('required')
+                "
+                style="width: 40vw"
+                >Este campo es requerido.</small
+              >
+            </mat-form-field>
+          </div>
+          <div class="col-md-4">
+            <mat-form-field class="ess-input-full ess-campos">
+              <mat-label>Dirección</mat-label>
+              <input
+                matInput
+                placeholder="Dirección"
+                formControlName="direccion1"
+              />
+              <small
+                class="form-text text-muted"
+                *ngIf="
+                  postForm.get('direccion1').touched &&
+                  postForm.get('direccion1').hasError('required')
+                "
+                style="width: 40vw"
+                >Este campo es requerido.</small
+              >
+            </mat-form-field>
+          </div>
+        </div>
+
+        <div class="row justify-content-center">
+          <div class="col-md-4">
+            <mat-form-field class="ess-input-full ess-campos">
+              <mat-label>Mercados locales</mat-label>
+              <input
+                matInput
+                placeholder="Mercados locales"
+                formControlName="mercado"
+              />
+              <small
+                class="form-text text-muted"
+                *ngIf="
+                  postForm.get('mercado').touched &&
+                  postForm.get('mercado').hasError('required')
+                "
+                style="width: 40vw"
+                >Este campo es requerido.</small
+              >
+            </mat-form-field>
+          </div>
+          <div class="col-md-4">
+            <mat-form-field class="ess-input-full ess-campos">
+              <mat-label>Dirección</mat-label>
+              <input
+                matInput
+                placeholder="Dirección"
+                formControlName="direccion2"
+              />
+              <small
+                class="form-text text-muted"
+                *ngIf="
+                  postForm.get('direccion2').touched &&
+                  postForm.get('direccion2').hasError('required')
+                "
+                style="width: 40vw"
+                >Este campo es requerido.</small
+              >
+            </mat-form-field>
+          </div>
+        </div>
+
+        <div class="row justify-content-center">
+          <div class="col-md-4">
+            <mat-form-field class="ess-input-full ess-campos">
+              <mat-label>Super Mercado</mat-label>
+              <input
+                matInput
+                placeholder="Super Mercado"
+                formControlName="sMercado"
+              />
+              <small
+                class="form-text text-muted"
+                *ngIf="
+                  postForm.get('sMercado').touched &&
+                  postForm.get('sMercado').hasError('required')
+                "
+                style="width: 40vw"
+                >Este campo es requerido.</small
+              >
+            </mat-form-field>
+          </div>
+          <div class="col-md-4">
+            <mat-form-field class="ess-input-full ess-campos">
+              <mat-chip-list formControlName="sMercados">
+                <mat-chip>Soriana</mat-chip>
+                <mat-chip>Chedaui</mat-chip>
+                <mat-chip>Wallmart</mat-chip>
+              </mat-chip-list>
+            </mat-form-field>
+          </div>
+        </div>
+
+        <div class="row justify-content-center">
+          <div class="col-md-4">
+            <mat-form-field class="ess-input-full ess-campos">
+              <mat-label>Tienda en Linea</mat-label>
+              <input
+                matInput
+                placeholder="Tienda en Linea"
+                formControlName="tienda"
+              />
+              <small
+                class="form-text text-muted"
+                *ngIf="
+                  postForm.get('tienda').touched &&
+                  postForm.get('tienda').hasError('required')
+                "
+                style="width: 40vw"
+                >Este campo es requerido.</small
+              >
+            </mat-form-field>
+          </div>
+          <div class="col-md-4">
+            <mat-form-field class="ess-input-full ess-campos">
+              <mat-label>Dirección de Tienda en Linea</mat-label>
+              <input
+                matInput
+                placeholder="Dirección de Tienda en Linea"
+                formControlName="eTienda"
+              />
+              <small
+                class="form-text text-muted"
+                *ngIf="
+                  postForm.get('eTienda').touched &&
+                  postForm.get('eTienda').hasError('required')
+                "
+                style="width: 40vw"
+                >Este campo es requerido.</small
+              >
+            </mat-form-field>
+          </div>
+        </div>
+
+        <div class="row justify-content-center">
+          <div class="col-md-4">
+            <mat-form-field class="ess-input-full ess-campos">
+              <mat-label>Agregar nuevo punto de venta</mat-label>
+              <mat-select formControlName="selectVen">
+                <mat-option value="establecimientoArrendado"
+                  >Establecimiento arrendado</mat-option
+                >
+                <mat-option value="establecimientoDado"
+                  >Establecimiento dado en comodado</mat-option
+                >
+                <mat-option value="mercadosL">Mercados locales</mat-option>
+                <mat-option value="superM"
+                  >Súper mercado(Wallmart, Soriana, Chedraui, otra.)</mat-option
+                >
+                <mat-option value="tiendaCon"
+                  >Tiendas de conveniencia(oxxo, 7-eleven, otra.)</mat-option
+                >
+                <mat-option value="almacenes"
+                  >Almácenes(Zorro, Puma Abarrotero, otros.)</mat-option
+                >
+                <mat-option value="tiendaDepa"
+                  >Tiendas departamentales(Liverpool, Palacio de Hierro,
+                  otra)</mat-option
+                >
+                <mat-option value="tiendaL">Tienda en linea propia</mat-option>
+                <mat-option value="tiendaLE"
+                  >Tienda en linea externa(Amazon, Mercado libre, Lineo,
+                  otra)</mat-option
+                >
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="col-md-4">
+            <mat-form-field class="ess-input-full ess-campos">
+              <mat-label>Ingresa URL</mat-label>
+              <input matInput placeholder="Ingresa URL" formControlName="url" />
+              <small
+                class="form-text text-muted"
+                *ngIf="
+                  postForm.get('url').touched &&
+                  postForm.get('url').hasError('required')
+                "
+                style="width: 40vw"
+                >Este campo es requerido.</small
+              >
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-md-8">
+            <button
+              class="button_direccion m-3"
+              mat-stroked-button
+              color="primary"
+              [disabled]="!postForm.valid"
+            >
+              SIGUIENTE
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

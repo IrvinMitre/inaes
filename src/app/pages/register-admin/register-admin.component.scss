@@ -1,0 +1,542 @@
+//general
+.navbar-nav li:hover>ul.dropdown-menu,
+.navbar-nav li:active>ul.dropdown-menu {
+    display: block;
+    font-size: 10px;
+}
+
+.dropdown-submenu {
+    position: relative;
+}
+
+.dropdown-submenu>.dropdown-menu {
+    top: 0;
+    left: 80%;
+    //margin-top:-6px;
+}
+
+.dropdown-menu>li>a:hover:after,
+.dropdown-menu>li>a:active:after {
+    text-decoration: underline;
+    transform: rotate(-90deg);
+    margin-left: 10px;
+}
+
+.dropdown-menu>a:hover {
+    //  margin-left: 10px ;
+    text-decoration: underline;
+}
+
+.dropdown-menu>.dropdown-item {
+    margin-right: 0px;
+    // text-decoration: underline ;
+    min-width: 5px;
+    text-align: start;
+}
+
+.dropdown-toggle::after {
+    margin-left: 10px;
+    vertical-align: 0.3em;
+}
+
+.dropdown-menu {
+    min-width: 12rem;
+    padding: 10px 20px 20px 20px;
+    li {
+        margin: 5px 0 0 0;
+        padding: 0px 10px 10px 10px;
+        white-space: pre-wrap !important;
+        a {
+            &:hover,
+            &:active {
+                text-decoration: underline;
+            }
+            text-align: left;
+        }
+    }
+}
+
+.containerHalfMenu {
+    min-width: 21rem;
+    .halfMenu {
+        width: 50%;
+        display: inline-block;
+    }
+}
+
+.containerHalfMenu1 {
+    min-width: 6rem;
+}
+
+.dropdown-item {
+    text-align: left !important;
+}
+
+ul:empty {
+    display: none !important;
+}
+
+.gobHeaderInitial {
+    background-color: #10312B !important;
+    a {
+        color: white;
+    }
+}
+
+.dropdown-toggle::after {
+    display: none;
+}
+
+.ess-texImpulsar {
+    font-size: 12px;
+}
+
+::placeholder {
+    font-weight: lighter;
+    text-align: left;
+    color: #B9B9B9;
+    font-size: 13px;
+    font-family: Montserrat-Light;
+}
+
+/*input {
+    border-top: none;
+    border-right: none;
+    border-bottom: 1px solid black;
+    border-left: none;
+    border-radius: 0px;
+    &:focus {
+        outline: none;
+        box-shadow: none;
+    }
+}*/
+
+a {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    color: #000000;
+    cursor: pointer;
+}
+
+.input-group-text {
+    background-color: white;
+    border-top: none;
+    border-right: none;
+    border-bottom: 1px solid black;
+    border-left: none;
+    cursor: pointer;
+    border-radius: 0px;
+    font-size: 1px;
+}
+
+li {
+    font-size: 8px !important;
+    white-space: pre-wrap;
+}
+
+.dropdown-menu>li>a:hover {
+    background-image: none;
+    background-color: transparent;
+    white-space: pre-wrap;
+    width: 100%;
+    // text-align: left;
+}
+
+.dropdown-menu>a:hover {
+    background-image: none;
+    background-color: transparent;
+    // white-space: pre-wrap;
+    width: 20%;
+    // text-align: left;
+}
+
+@media (max-width: 767.98px) {
+    .firstRowMenu,
+    .productoServicio,
+    .empresa {
+        display: none;
+    }
+    .menuPrincipal {
+        margin: 15px 5vw 0 5vw;
+        .w-100 {
+            width: 90vw !important;
+        }
+        .col-md-9 {
+            margin: 20px 0 0 0;
+        }
+        .navbar-toggler {
+            position: absolute;
+            right: 10px;
+            top: 30%;
+        }
+    }
+    .secondRowMenu {
+        input {
+            border-top: none;
+            border-right: none;
+            border-bottom: 1px solid black;
+            border-left: none;
+            border-radius: 0px;
+            font-size: 14px;
+            &:focus {
+                outline: none;
+                box-shadow: none;
+            }
+        }
+        .input-group-text {
+            background-color: white;
+            border-top: none;
+            border-right: none;
+            border-bottom: 1px solid black;
+            border-left: none;
+            border-radius: 0;
+        }
+    }
+    .firstRowMenuCopy {
+        padding: 0 10vw 10px 10vw;
+        a {
+            font-style: normal;
+            font-weight: normal;
+            font-size: 1em;
+            line-height: 15px;
+            color: #000000;
+        }
+        img {
+            width: 18px;
+            height: 14px;
+        }
+    }
+    .thirdhRowMenu {
+        a {
+            font-size: 14px;
+            color: black;
+            text-align: left;
+        }
+        .nav-link {
+            padding: 10px 0;
+            word-break: break-all;
+        }
+        .nav-fill {
+            padding-right: 28vw;
+        }
+    }
+    .dropdown-submenu>.dropdown-menu {
+        top: 0;
+        left: 50vw;
+    }
+    .dropdown-menu {
+        padding: 10px;
+        width: 82vw;
+    }
+    .containerHalfMenu {
+        min-width: 10vw;
+        .halfMenu {
+            width: 100%;
+            display: block;
+        }
+    }
+    .singUpSingIn {
+        width: 82vw;
+        margin: 20px 0;
+        .mainMenuUnete,
+        .mainMenuIngresa {
+            display: inline-block;
+            width: 50%;
+            text-align: center;
+        }
+        .mainMenuUnete {
+            border-right: 1px solid black;
+        }
+    }
+    .custom-toggler.navbar-toggler {
+        border-color: rgb(255, 102, 203);
+    }
+}
+
+// Medium devices (tablets, 577px and up)
+@media (min-width: 768px) {
+    .firstRowMenu {
+        font-size: 13px;
+        padding: 10px 11.5vw 0;
+        max-width: 100vw;
+        a {
+            font-style: normal;
+            font-weight: normal;
+            font-size: 1em;
+            line-height: 15px;
+            color: #000000;
+        }
+        img {
+            padding-left: 35px;
+        }
+    }
+    .mr-3em {
+        margin-right: 3em;
+    }
+    .firstRowMenuCopy {
+        display: none;
+    }
+    .menuPrincipal {
+        margin: 0 5vw 0 5vw;
+        .col-md-1,
+        .col-md-3,
+        .col-md-4,
+        .col-md-5,
+        .col-md-6,
+        .col-md-12 {
+            padding-left: 0px !important;
+            padding-right: 0px !important;
+            width: auto !important;
+            text-align: center;
+        }
+        input {
+            border-top: none;
+            border-right: none;
+            border-bottom: 1px solid black;
+            border-left: none;
+            border-radius: 0px;
+            &:focus {
+                outline: none;
+                box-shadow: none;
+            }
+        }
+        a {
+            font-style: normal;
+            font-weight: normal;
+            font-size: 14px;
+            line-height: 17px;
+            color: #000000;
+            cursor: pointer;
+        }
+        .input-group-text {
+            background-color: white;
+            border-top: none;
+            border-right: none;
+            border-bottom: 1px solid black;
+            border-left: none;
+            cursor: pointer;
+            border-radius: 0px;
+            font-size: 1px;
+        }
+        .secondRowMenu {
+            margin-left: 4.7vw;
+        }
+        .thirdhRowMenu {
+            margin-top: 10px;
+            a,
+            button,
+            li {
+                font-size: 12px;
+                padding: 5px 0;
+                height: 30px;
+                text-align: center;
+                white-space: normal !important;
+            }
+            .menuLvl1 {
+                width: 25%;
+                font-size: 1px;
+            }
+            .unete {
+                border-right: 1px solid black;
+                border-radius: 0;
+                padding-right: 24px;
+                margin-right: 0px;
+            }
+            .singUpSingIn {
+                a {
+                    display: inline;
+                    margin: 0 15px;
+                }
+                .mainMenuUnete {
+                    margin-left: 30px;
+                    padding-right: 25px;
+                    border-right: 1px solid black;
+                    border-radius: 0px;
+                }
+                .mainMenuIngresa {
+                    margin-right: 5px;
+                }
+            }
+        }
+    }
+}
+
+.ess-campos {
+    width: 240px !important;
+}
+
+
+ ::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+    color: #98989A;
+}
+
+ ::ng-deep .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
+    color: green;
+}
+
+
+
+ ::ng-deep .mat-form-field-appearance-outline.mat-focused .mat-form-field-label {
+    color: green;
+}
+
+a {
+    cursor: pointer;
+}
+
+.mat-focused .mat-form-field-label {
+    color: #10312b !important;
+}
+
+.mat-form-field-underline {
+    background-color: #10312b !important;
+}
+
+.mat-form-field-ripple {
+    background-color: #10312b !important;
+}
+
+
+
+.mat-form-field-appearance-outline .mat-form-field-outline {
+    color: #10312b !important;
+}
+
+#dropdownMenuButton {
+    width: 30px !important;
+    text-align: center;
+    white-space: nowrap !important;
+}
+
+
+
+//CSS Para el Formulario de Registro
+.ess-container-register{
+    width: 100%;
+    padding: 5vh 15%;
+    overflow-x: hidden;
+    h1{
+        font-family: "Montserrat-Regular";
+        font-style: normal;
+        font-weight: bold;
+        font-size: 24px;
+        line-height: 29px;
+        text-align: center;
+        color: #000000;
+    }
+
+    mat-form-field{
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    mat-label{
+        font-family: "Montserrat-Regular";
+        font-style: normal;
+        font-weight: normal;
+        color: rgba(0, 0, 0, 0.56);
+    }
+
+    ::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+        color: #98989A !important;
+    }
+    mat-checkbox{
+        font-family: "Montserrat-Regular";
+        text-align: left;
+        width: 100%;
+        margin: 10px 0;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 15px;
+        color: #000000;
+        p{
+            margin-bottom: 0;
+        }
+        a{
+            text-decoration: underline;
+        }
+    }
+    .button_direccion {
+        display: block;
+        width: 100%;
+        height: 45px;
+        border-radius: 5px;
+        //Aspecto visual del btn
+        border: 1px solid black;
+        color: black;
+        background-color: white;
+        //Texto en el btn
+        font-style: normal;
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 18px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: #000000;
+        //Espacio del btn
+        margin: 20px auto 0 auto;
+        text-align: center;
+        //Btn Deshabilitado
+        &:disabled {
+          background-color: #E5E5E5;
+          border: 1px solid #98989A;
+          color: #98989A;
+          cursor: not-allowed;
+        }
+
+        &:hover:enabled {
+          background-color: #98989A;
+          border: 1px solid #98989A;
+          color: white;
+        }
+    }
+    .text-muted{
+        color: #F44336 !important;
+    }
+    .ess-link-no-account{
+        display: block;
+        font-family: "Montserrat-Regular";
+        text-align: center;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 20px;
+        color: #98989A;
+        margin: 5vh auto 0 auto;
+    }
+
+    .ess-text-welcome{
+        font-family: "Montserrat-Regular";
+        font-style: normal;
+        font-weight: normal;
+        font-size: 18px;
+        line-height: 20px;
+        text-align: center;
+        color: #98989A;
+        margin: 5vh 0;
+    }
+    .ess-title-welcome{
+        font-family: "Montserrat-Bold";
+        font-style: normal;
+        font-weight: bold;
+        font-size: 24px;
+        line-height: 29px;
+        text-align: center;
+        letter-spacing: 1px;
+        color: #000000;
+    }
+    .error{
+        font-family: "Montserrat-Regular";
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 20px;
+        display: flex;
+        align-items: center;
+        color: #9F2241;
+        margin-bottom: 0;
+    }
+}

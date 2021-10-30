@@ -1,0 +1,42 @@
+h1, h2, h3, h4, h5, h6, p, small, strong{
+    font-family: "Montserrat-Regular";
+}
+h1 {
+    font-style: normal;
+    font-weight: 300;
+    font-size: 36px;
+    line-height: 44px;
+    color: #000000;
+}
+
+.ess-container-tag{
+    padding: 5px;
+    background-color: rgba(221, 201, 163, 0.65);
+    display: inline-block;
+    margin: 5vh 10px 0 0;
+    cursor: pointer;
+    a{
+        padding: 5px;
+        text-decoration: none;
+        color: #BC955C;
+    }
+}
+.ess-text-author, .ess-text-date{
+    font-style: normal;
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 14px;
+    text-align: justify;
+    color: #000000;
+}
+
+//Css para tablets y celulares
+@media (max-width: 768px) {
+    .container{
+        max-width: 90vw;
+        margin: 0 5vw;
+    }
+    .ess-container-tag{
+        margin: 5vh 10px 5vh 0;
+    }
+}

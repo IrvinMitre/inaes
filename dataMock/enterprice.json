@@ -1,0 +1,34 @@
+{
+    "socialEnterpriseKey": "",
+    "locationCoordinates": "",
+    "reference": "",
+    "shortDescription": "",
+    "website": "",
+    "phone": "",
+    "whatsapp": "",
+    "admin": {
+        "firstname": "",
+        "lastname": "",
+        "email": "",
+        "movil": "",
+        "password": ""
+    },
+    "createdAccount": "",
+    "approvedEnterprise": "",
+    "addressPictures": [
+        {
+            "route": ""
+        }
+    ],
+    "IdentityPictures": [
+        {
+            "route": ""
+        }
+    ],
+    "socialNetworks": [
+        {
+            "catSocialNetwork": "",
+            "data": ""
+        }
+    ]
+}

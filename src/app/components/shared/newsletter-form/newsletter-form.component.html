@@ -1,0 +1,56 @@
+<div class="row justify-content-around align-items-center text-center">
+
+    <div class="col-md-3 col-sm-12">
+        <img src="../../../../assets/newsletter/logo-desarrolla-blanco.png" alt="Logo Desarrolla" />
+    </div>
+
+    <div class="col-md-3 col-sm-12 text-left">
+        <div class="ess-container-social">
+            <h6>Síguenos</h6>
+            <div class="ess-container-icon">
+                <a href="#">
+                    <i class="bi bi-facebook"></i>
+                </a>
+            </div>
+            <div class="ess-container-icon">
+                <a href="#">
+                    <i class="bi bi-instagram"></i>           
+                </a>
+            </div>
+        </div>
+        <a class="ess-links" data-toggle="modal" data-target="#modalPoliticasDePrivacidad">POLÍTICAS DE PRIVACIDAD</a>
+        <a class="ess-links" href="#">PREGUNTAS FRECUENTES</a>
+    </div>
+
+    <div class="col-md-3 col-sm-12">
+        <h6>INSCRIBETE AL BOLETÍN</h6>
+        <form #subscribeForm='ngForm' (ngSubmit)='subscribe(subscribeForm)'>
+            <mat-form-field>
+                <mat-label>Ingresa tu correo</mat-label>
+                <input
+                    class="{{class}}"
+                    autocomplete="off"
+                    pattern="\S+@\S+\.\S+"
+                    matInput 
+                    placeholder="Correo"
+                    name='userName'
+                    [formControl]="email" 
+                    [(ngModel)]='subscribeData.email'
+                    value="{{value}}"
+                    required>
+                <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+            </mat-form-field>
+            <button type='submit' [disabled]="email.invalid">ENVIAR</button>
+        </form>
+    </div>
+
+    <div class="col-md-3 col-sm-12">
+        <img src="../../../../assets/newsletter/logo-inaes-blanco.png" alt="Logo INAES" />
+    </div>
+</div>
+
+
+<!-- Modal POLÍTICAS DE PRIVACIDAD  -->
+<div class="modal fade" id="modalPoliticasDePrivacidad" tabindex="-1" role="dialog" aria-labelledby="modalPoliticasDePrivacidadLabel" aria-hidden="true">
+    <app-politicas-privacidad></app-politicas-privacidad>
+</div>

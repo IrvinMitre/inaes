@@ -1,0 +1,877 @@
+<div class="container">
+  <div class="row text-left">
+    <div class="col">
+      <img
+        src="../../../assets/logo_desarrolla.svg"
+        width="200vw"
+        height="150vh"
+        alt=""
+        srcset=""
+      />
+    </div>
+  </div>
+
+  <div class="row text-center">
+    <div class="col">
+      <div class="text-center mb-5">
+        <p class="ess-text-hightlight">¡Edita tu producto!</p>
+        <p class="ess-text-subtitle">
+          Verifica y complementa la siguiente información.
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="row text-center">
+    <div class="col-md-12">
+      <form [formGroup]="postForm" (submit)="submit()">
+        <mat-accordion>
+          <mat-expansion-panel hideToggle>
+            <mat-expansion-panel-header>
+              <mat-panel-title class="ess-text-paragraph">
+                Paso 1
+              </mat-panel-title>
+              <mat-panel-description class="ess-text-subtitle">
+                Categorias
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            <section id="categorias" class="p-3">
+              <div class="row">
+                <div class="col-md">
+                  <p
+                    class="ess-text-subtitle mt-4 text-center ess-text-subtitle"
+                  >
+                    ¿Tu producto pertenece a algún sector económico?
+                  </p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md">
+                  <mat-form-field class="ess-input-full">
+                    <mat-label class="ess-text-subtitle">Categoria</mat-label>
+                    <mat-select formControlName="categoria">
+                      <mat-option
+                        class="ess-text-subtitle"
+                        value="{{ item }}"
+                        *ngFor="let item of categories"
+                        (onSelectionChange)="setSubcategorie('sub1', item)"
+                        >{{ item }}</mat-option
+                      >
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+                <div class="col-md">
+                  <mat-form-field class="ess-input-full">
+                    <mat-label class="ess-text-subtitle"
+                      >Sub-categoria</mat-label
+                    >
+                    <mat-select formControlName="subCategoria">
+                      <mat-option
+                        class="ess-text-subtitle"
+                        value="{{ item.subproduct }}"
+                        *ngFor="let item of sub1"
+                        (onSelectionChange)="
+                          setSubcategorie('sub2', item.subproduct)
+                        "
+                        >{{ item.subproduct }}</mat-option
+                      >
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+                <div class="col-md-4">
+                  <mat-form-field class="ess-input-full" *ngIf="third">
+                    <mat-label class="ess-text-subtitle"
+                      >Sub-categoria</mat-label
+                    >
+                    <mat-select formControlName="subCategoria2">
+                      <mat-option
+                        class="ess-text-subtitle"
+                        value="{{ item.subsubproduct }}"
+                        *ngFor="let item of sub2"
+                        (onSelectionChange)="
+                          setSubcategorie('otherSub', item.subsubproduct)
+                        "
+                        >{{ item.subsubproduct }}</mat-option
+                      >
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md">
+                  <mat-form-field class="ess-input-full">
+                    <mat-label class="ess-text-subtitle">Categoria</mat-label>
+                    <mat-select formControlName="oCategoria">
+                      <mat-option
+                        class="ess-text-subtitle"
+                        value="{{ item }}"
+                        *ngFor="let item of categories"
+                        (onSelectionChange)="setSubcategorie('sub1', item)"
+                        >{{ item }}</mat-option
+                      >
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+                <div class="col-md">
+                  <mat-form-field class="ess-input-full">
+                    <mat-label class="ess-text-subtitle"
+                      >Sub-categoria</mat-label
+                    >
+                    <mat-select formControlName="oCategoria2">
+                      <mat-option
+                        class="ess-text-subtitle"
+                        value="{{ item.subproduct }}"
+                        *ngFor="let item of sub1"
+                        (click)="setSubcategorie('sub2', item.subproduct)"
+                        >{{ item.subproduct }}</mat-option
+                      >
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+              </div>
+            </section>
+          </mat-expansion-panel>
+          <mat-expansion-panel hideToggle>
+            <mat-expansion-panel-header>
+              <mat-panel-title class="ess-text-paragraph">
+                Paso 2
+              </mat-panel-title>
+              <mat-panel-description class="ess-text-subtitle">
+                Certificado
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            <section id="certificado" class="p-3">
+              <div class="row text-center">
+                <div class="col-md">
+                  <p class="ess-text-subtitle mt-5">
+                    Indica si tu producto cuenta con alguna de las siguientes
+                    caracteristicas
+                  </p>
+                </div>
+              </div>
+              <div class="row text-center">
+                <ng-container *ngFor="let cert of productData.features">
+                  <div
+                    *ngIf="cert.type === 'Marca registrada'"
+                    class="col-lg-3 text-center pt-3"
+                  >
+                    <div class="row">
+                      <div class="col">
+                        <div class="ess-redes">
+                          <mat-checkbox
+                            formControlName="cert1"
+                            class="example-margin ess-text-subtitle"
+                            labelPosition="before"
+                            [disabled]="true"
+                            [checked]="true"
+                            >Marca Registrada
+                          </mat-checkbox>
+                          <button
+                            style="border: none; border-radius: 30px"
+                            (click)="erase1($event)"
+                          >
+                            borrar foto
+                          </button>
+                        </div>
+                        <div class="image-upload pt-3">
+                          <label for="file-input">
+                            <img src="{{ url }}" height="80" />
+                          </label>
+                          <input
+                            id="file-input"
+                            type="file"
+                            (change)="onSelectFile($event)"
+                          />
+                        </div>
+                        <p class="text-muted text-center ess-text-subtitle">
+                          + Adjunta la imagen de tu certicación en caso de
+                          contar con ella
+                        </p>
+                      </div>
+                    </div>
+                    <div class="row" *ngIf="textImage1">
+                      <div
+                        class="col"
+                        style="
+                          color: red;
+                          font-size: 10px;
+                          font-family: Montserrat-Light;
+                        "
+                      >
+                        * La imagen rebasa el peso limite de 200 KB, intenta
+                        nuevamente
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    *ngIf="cert.type === 'Sello de comercio justo'"
+                    class="col-lg-3 text-center pt-3"
+                  >
+                    <div class="row">
+                      <div class="col">
+                        <div class="ess-redes">
+                          <mat-checkbox
+                            formControlName="cert2"
+                            class="example-margin ess-text-subtitle"
+                            labelPosition="before"
+                            [disabled]="true"
+                            checked="true"
+                            >Sello de Comercio Justo
+                          </mat-checkbox>
+                          <button
+                            style="border: none; border-radius: 30px"
+                            (click)="erase2($event)"
+                          >
+                            borrar foto
+                          </button>
+                        </div>
+                        <div class="image-upload pt-3">
+                          <label for="file-input2">
+                            <img src="{{ url2 }}" height="80" />
+                          </label>
+                          <input
+                            id="file-input2"
+                            type="file"
+                            (change)="onSelectFile2($event)"
+                          />
+                        </div>
+                        <p class="text-muted text-center ess-text-subtitle">
+                          + Adjunta la imagen de tu certicación en caso de
+                          contar con ella
+                        </p>
+                      </div>
+                    </div>
+                    <div class="row" *ngIf="textImage2">
+                      <div
+                        class="col"
+                        style="
+                          color: red;
+                          font-size: 10px;
+                          font-family: Montserrat-Light;
+                        "
+                      >
+                        * La imagen rebasa el peso limite de 200 KB, intenta
+                        nuevamente
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    *ngIf="cert.type === 'Denominación de origen'"
+                    class="col-lg-3 text-center pt-3"
+                  >
+                    <div class="row">
+                      <div class="col">
+                        <div class="ess-redes">
+                          <mat-checkbox
+                            formControlName="cert3"
+                            class="example-margin ess-text-subtitle"
+                            labelPosition="before"
+                            [checked]="true"
+                            [disabled]="true"
+                            >Denominación de origen
+                          </mat-checkbox>
+                          <button
+                            style="border: none; border-radius: 30px"
+                            (click)="erase3($event)"
+                          >
+                            borrar foto
+                          </button>
+                        </div>
+                        <div class="image-upload pt-3">
+                          <label for="file-input3">
+                            <img src="{{ url3 }}" height="80" />
+                          </label>
+                          <input
+                            id="file-input3"
+                            type="file"
+                            (change)="onSelectFile3($event)"
+                          />
+                        </div>
+                        <p class="text-muted text-center ess-text-subtitle">
+                          + Adjunta la imagen de tu certicación en caso de
+                          contar con ella
+                        </p>
+                      </div>
+                    </div>
+                    <div class="row" *ngIf="textImage3">
+                      <div
+                        class="col"
+                        style="
+                          color: red;
+                          font-size: 10px;
+                          font-family: Montserrat-Light;
+                        "
+                      >
+                        * La imagen rebasa el peso limite de 200 KB, intenta
+                        nuevamente
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    *ngIf="cert.type === 'Producto orgánico'"
+                    class="col-lg-3 text-center pt-3"
+                  >
+                    <div class="row">
+                      <div class="col">
+                        <div class="ess-redes">
+                          <mat-checkbox
+                            formControlName="cert4"
+                            class="example-margin ess-text-subtitle"
+                            labelPosition="before"
+                            [disabled]="true"
+                            [checked]="true"
+                            >Producto orgánico</mat-checkbox
+                          >
+                          <button
+                            style="border: none; border-radius: 30px"
+                            (click)="erase4($event)"
+                          >
+                            borrar foto
+                          </button>
+                        </div>
+                        <div class="image-upload pt-3">
+                          <label for="file-input4">
+                            <img src="{{ url4 }}" height="80" />
+                          </label>
+                          <input
+                            id="file-input4"
+                            type="file"
+                            (change)="onSelectFile4($event)"
+                          />
+                        </div>
+                        <p class="text-muted text-center ess-text-subtitle">
+                          + Adjunta la imagen de tu certicación en caso de
+                          contar con ella
+                        </p>
+                      </div>
+                    </div>
+                    <div class="row" *ngIf="textImage4">
+                      <div
+                        class="col"
+                        style="
+                          color: red;
+                          font-size: 10px;
+                          font-family: Montserrat-Light;
+                        "
+                      >
+                        * La imagen rebasa el peso limite de 200 KB, intenta
+                        nuevamente
+                      </div>
+                    </div>
+                  </div>
+                </ng-container>
+                <div class="row">
+                  <div class="col-md">
+                    <p class="text-muted text-center ess-text-subtitle">
+                      * Para acreditar lo anterior deberas anexar las
+                      constancias emitidas por las autoridades competentes .
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </mat-expansion-panel>
+          <mat-expansion-panel hideToggle>
+            <mat-expansion-panel-header>
+              <mat-panel-title class="ess-text-paragraph">
+                Paso 3
+              </mat-panel-title>
+              <mat-panel-description class="ess-text-subtitle">
+                Descripcion
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            <section id="descripcion" class="p-3">
+              <div class="row">
+                <div class="col-sm text-center">
+                  <p class="ess-text-subtitle">
+                    Agrega una descripción de tu producto
+                  </p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-lg">
+                  <div class="row">
+                    <div class="col">
+                      <mat-form-field class="ess-full-width">
+                        <mat-label class="ess-text-paragraph"
+                          >¿Qué es?</mat-label
+                        >
+                        <textarea
+                          matInput
+                          formControlName="question1"
+                          style="font-family: Montserrat-Light"
+                        ></textarea>
+                      </mat-form-field>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col">
+                      <mat-form-field class="ess-full-width">
+                        <mat-label>¿De dónde es?</mat-label>
+                        <textarea
+                          matInput
+                          formControlName="question2"
+                          style="font-family: Montserrat-Light"
+                        ></textarea>
+                      </mat-form-field>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md text-center m-4">
+                      Describe tu producto
+                      <button
+                        class="btn"
+                        matTooltip="Ingresa una descripción corta sobre las caracteristicas de tu producto, suscualidades y lo que lo hace único"
+                      >
+                        <mat-icon aria-hidden="false" aria-label="icon"
+                          >help</mat-icon
+                        >
+                      </button>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col">
+                      <mat-form-field class="ess-full-width">
+                        <textarea
+                          matInput
+                          placeholder="Describe tu producto"
+                          formControlName="description"
+                          style="font-family: Montserrat-Light"
+                        ></textarea>
+                        <mat-hint></mat-hint>
+                      </mat-form-field>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </mat-expansion-panel>
+          <mat-expansion-panel hideToggle>
+            <mat-expansion-panel-header>
+              <mat-panel-title class="ess-text-paragraph">
+                Paso 4
+              </mat-panel-title>
+              <mat-panel-description class="ess-text-subtitle">
+                Palabras Clave
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            <section id="palabrasClave" class="p-3">
+              <div class="row">
+                <div class="col-md text-center">
+                  <p class="ess-text-subtitle">
+                    Escribe una frase clave que describan tu producto
+                  </p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md">
+                  <mat-form-field appearance="outline" class="ess-full-width">
+                    <mat-label class="ess-text-subtitle">Frase clave</mat-label>
+                    <input matInput formControlName="pclave1" />
+                  </mat-form-field>
+                </div>
+              </div>
+            </section>
+          </mat-expansion-panel>
+          <mat-expansion-panel hideToggle>
+            <mat-expansion-panel-header>
+              <mat-panel-title class="ess-text-paragraph">
+                Paso 5
+              </mat-panel-title>
+              <mat-panel-description class="ess-text-subtitle">
+                Fotografias
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            <section id="fotografia" class="p-3">
+              <div class="row justify-content-center">
+                <div class="col-md-6 text-center">
+                  <p class="ess-text-subtitle">
+                    Anexa minímo 1 fotografía de tu producto que cumplan las
+                    especificaciones técnicas.
+                    <button
+                      class="btn pl-5"
+                      matTooltip="Tu imagen debe ilustrar tu producto y es recomendable que el producto aparezca en el centro de la imagen. La imagen no debe de rebasar 200kb de peso"
+                    >
+                      <mat-icon aria-hidden="false" aria-label="icon"
+                        >help</mat-icon
+                      >
+                    </button>
+                  </p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-4">
+                  <div class="row justify-content-center text-center">
+                    <div class="col">
+                      <div class="image-upload">
+                        <label for="file-input5">
+                          <img class="img-fluid ess-size" src="{{ url5 }}" />
+                        </label>
+                        <input
+                          id="file-input5"
+                          type="file"
+                          (change)="onSelectFile5($event)"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row justify-content-center text-center">
+                    <div class="col">
+                      <mat-form-field appearance="outline" style="width: 200px">
+                        <mat-label class="ess-text-subtitle"
+                          >Texto Alternativo</mat-label
+                        >
+                        <input
+                          matInput
+                          formControlName="textoAlternativo"
+                          placeholder="Agrega un texto alternativo, que describa tu imagen y/o producto."
+                        />
+                      </mat-form-field>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4">
+                  <div class="row justify-content-center text-center">
+                    <div class="col">
+                      <div class="image-upload">
+                        <label for="file-input6">
+                          <img class="img-fluid ess-size" src="{{ url6 }}" />
+                        </label>
+                        <input
+                          id="file-input6"
+                          type="file"
+                          (change)="onSelectFile6($event)"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row justify-content-center text-center">
+                    <div class="col">
+                      <mat-form-field appearance="outline" style="width: 200px">
+                        <mat-label class="ess-text-subtitle"
+                          >Texto Alternativo</mat-label
+                        >
+                        <input
+                          matInput
+                          formControlName="textoAlternativo2"
+                          placeholder="Agrega un texto alternativo, que describa tu imagen y/o producto."
+                        />
+                      </mat-form-field>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-lg-4">
+                  <div class="row justify-content-center text-center">
+                    <div class="col">
+                      <div class="image-upload">
+                        <label for="file-input7">
+                          <img class="img-fluid ess-size" src="{{ url7 }}" />
+                        </label>
+                        <input
+                          id="file-input7"
+                          type="file"
+                          (change)="onSelectFile7($event)"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row justify-content-center text-center">
+                    <div class="col">
+                      <mat-form-field appearance="outline" style="width: 200px">
+                        <mat-label class="ess-text-subtitle"
+                          >Texto Alternativo</mat-label
+                        >
+                        <input
+                          matInput
+                          formControlName="textoAlternativo3"
+                          placeholder="Agrega un texto alternativo, que describa tu imagen y/o producto."
+                        />
+                      </mat-form-field>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </mat-expansion-panel>
+          <mat-expansion-panel hideToggle>
+            <mat-expansion-panel-header>
+              <mat-panel-title class="ess-text-paragraph">
+                Paso 6
+              </mat-panel-title>
+              <mat-panel-description class="ess-text-subtitle">
+                A domicilio
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            <section id="entrega" class="p-3">
+              <div class="row justify-content-center">
+                <div class="col-md-6 text-center">
+                  <p class="ess-text-subtitle">
+                    ¿Puedes entregar tu producto o servicio a domicilio?
+                  </p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md">
+                  <mat-radio-group formControlName="entrega">
+                    <div class="row justify-content-center">
+                      <div class="col-md-1">
+                        <mat-radio-button value="si">si</mat-radio-button>
+                      </div>
+                      <div class="col-md-1">
+                        <mat-radio-button value="no">no</mat-radio-button>
+                      </div>
+                    </div>
+                  </mat-radio-group>
+                </div>
+              </div>
+            </section>
+          </mat-expansion-panel>
+          <mat-expansion-panel hideToggle>
+            <mat-expansion-panel-header>
+              <mat-panel-title class="ess-text-paragraph">
+                Paso 7
+              </mat-panel-title>
+              <mat-panel-description class="ess-text-subtitle">
+                Dirección adicional
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            <section id="adicional" class="p-3">
+              <div class="row justify-content-center" [formGroup]="dataForm">
+                <div
+                  class="col-md-8"
+                  formArrayName="items"
+                  *ngFor="
+                    let item of dataForm.get('items')['controls'];
+                    let i = index
+                  "
+                >
+                  <div [formGroupName]="i">
+                    <mat-form-field class="ess-camposI">
+                      <mat-label class="ess-text-subtitle"
+                        >Selecciona</mat-label
+                      >
+                      <mat-select
+                        formControlName="nombre"
+                        style="
+                          font-family: Montserrat-Light;
+                          font-size: 16px !important;
+                        "
+                      >
+                        <mat-option
+                          style="
+                            font-family: Montserrat-Light;
+                            font-size: 16px !important;
+                          "
+                          class="text-center"
+                          value="{{ item.type }}"
+                          *ngFor="let item of establecimiento"
+                          (onSelectionChange)="setSubtypeArray(i, item)"
+                          >{{ item.type }}</mat-option
+                        >
+                      </mat-select>
+                    </mat-form-field>
+                    <mat-form-field
+                      class="ess-campos pt-4 ml-2"
+                      id="direccion"
+                      *ngIf="subsArray"
+                    >
+                      <mat-label class="ess-text-subtitle"
+                        >¿Cuál es la dirección?</mat-label
+                      >
+                      <input
+                        style="
+                          font-family: Montserrat-Light;
+                          font-size: 16px !important;
+                        "
+                        matInput
+                        placeholder="¿Cuál es la dirección?"
+                        formControlName="direccion"
+                      />
+                      <mat-hint></mat-hint>
+                    </mat-form-field>
+                  </div>
+                  <div class="row justify-content-center">
+                    <div class="col-md-7">
+                      <mat-chip-list
+                        class="example-chip"
+                        cdkDropList
+                        cdkDropListOrientation="horizontal"
+                        formControlName="subs"
+                      >
+                        <mat-chip
+                          value="{{ item.subtype }}"
+                          *ngFor="let item of subsArray[i]"
+                        >
+                          <mat-checkbox
+                            *ngIf="item.subtype !== 'OTRO'"
+                            (change)="handleSubtypes(i, item.subtype)"
+                            [checked]="item.checked"
+                            class="example-margin mb-1 mt-2"
+                            >{{ item.subtype }}</mat-checkbox
+                          >
+                          <mat-checkbox
+                            (change)="handleSubtypes(i, otros.value)"
+                            [checked]="item.checked"
+                            *ngIf="item.subtype === 'OTRO'"
+                          >
+                            <input
+                              matInput
+                              #otros
+                              class="mt-2 mb-3"
+                              id="otros"
+                              style="border: none"
+                              placeholder="{{ item.subtype }}"
+                            />
+
+                          </mat-checkbox>
+                          <button
+                          type="button"
+
+                          *ngIf="item.subtype === 'OTRO'"
+                          class="btn btn-link"
+                          onclick="document.getElementById('otros').value = ''"
+                        >
+                        X</button>
+                        </mat-chip>
+                      </mat-chip-list>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-10 text-right">
+                  <div class="mb-4">
+                    <button
+                      class="button_direccion"
+                      mat-stroked-button
+                      color="primary"
+                      type="button"
+                      (click)="addItem()"
+                      style="
+                        font-family: Montserrat-Regular;
+                        font-size: 16px !important;
+                      "
+                    >
+                      AÑADIR NUEVO
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </mat-expansion-panel>
+          <mat-expansion-panel hideToggle>
+            <mat-expansion-panel-header>
+              <mat-panel-title class="ess-text-paragraph">
+                Paso 8
+              </mat-panel-title>
+              <mat-panel-description class="ess-text-subtitle">
+                Métodos de pago
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            <section id="pago" class="p-3">
+              <div class="row">
+                <div class="col">
+                  <p class="ess-text-subtitle">
+                    ¿Qué medios de pago aceptas en tu negocio?
+                  </p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="ess-cards">
+                  <div class="ess-card">
+                    <img
+                      src="../../../assets/dinero1.svg"
+                      class="ess-image"
+                      alt=""
+                    /><mat-checkbox
+                      formControlName="efectivo"
+                      value="Efectivo"
+                    ></mat-checkbox
+                    ><strong>Efectivo</strong>
+                  </div>
+                  <div class="ess-card">
+                    <img
+                      src="../../../assets/dinero2.svg"
+                      class="ess-image"
+                      alt=""
+                    /><mat-checkbox
+                      formControlName="transferencia"
+                      value="Transferencia electrónica"
+                    ></mat-checkbox
+                    ><strong>Transferencia electrónica</strong>
+                  </div>
+                  <div class="ess-card">
+                    <img
+                      src="../../../assets/dinero3.svg"
+                      class="ess-image"
+                      alt=""
+                    /><mat-checkbox
+                      formControlName="tarjeta"
+                      value="Tarjeta de crédito o débito"
+                    ></mat-checkbox
+                    ><strong>Tarjeta de crédito o débito</strong>
+                  </div>
+                  <div class="ess-card">
+                    <img
+                      src="../../../assets/dinero4.svg"
+                      class="ess-image"
+                      alt=""
+                    /><mat-checkbox
+                      formControlName="codi"
+                      value="CODI"
+                    ></mat-checkbox
+                    ><strong>CODI</strong>
+                  </div>
+                  <div class="ess-card">
+                    <img
+                      src="../../../assets/dinero5.svg"
+                      class="ess-image"
+                      alt=""
+                    /><mat-checkbox
+                      formControlName="paypal"
+                      value="PayPal"
+                    ></mat-checkbox
+                    ><strong>PayPal</strong>
+                  </div>
+                  <div class="ess-card">
+                    <img
+                      src="../../../assets/dinero6.svg"
+                      class="ess-image"
+                      alt=""
+                    /><mat-checkbox
+                      formControlName="mercado"
+                      value="Mercado Pago"
+                    ></mat-checkbox
+                    ><strong>Mercado Pago</strong>
+                  </div>
+                  <div class="ess-card">
+                    <img
+                      src="../../../assets/contra entrega.svg"
+                      class="ess-image"
+                      alt=""
+                    /><mat-checkbox
+                      formControlName="pago"
+                      value="Pago contra entrega"
+                    ></mat-checkbox
+                    ><strong>Pago contra entrega</strong>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </mat-expansion-panel>
+        </mat-accordion>
+        <button
+          type="submit"
+          class="button_direccion m-3"
+          mat-stroked-button
+          color="primary"
+        >
+          ACTUALIZAR
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

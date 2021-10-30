@@ -1,0 +1,30 @@
+<div class="container-fluid">
+  <div class="row pt-4 pr-5">
+    <div class="col-lg-4 mb-3" *ngFor="let service of ServiceData">
+      <ng-container> <!--Contenedor para hacer dinamicas las cards-->
+        <mat-card class="ess-serviceCard">
+          <a [routerLink]="['/editar-servicio/'+ service._id]"><img class="ess-productedit img-fluid" src="../../../../assets/edit.png" /></a>
+          <img mat-card-image src="{{service.pictures[0].route}}" alt="">
+          <mat-card-content>
+            <a [routerLink]="['/servicio/' + service._id+'/'+service.socialEnterpriseKey]"><h2 class="text-left">{{service.whatIsIt}}</h2></a>
+            <p class="text-left">
+             {{service.whereItIs}}
+            </p>
+          </mat-card-content>
+          <mat-card-actions>
+          </mat-card-actions>
+        </mat-card>
+      </ng-container>
+    </div>
+    <div class="col mb-3">
+      <a [routerLink]="['/producto-servicio']">
+        <button class="ess-add" [routerLink]="['/producto-servicio']">
+          <p class="ess-cross mb-5">+</p>
+          <p class="ess-add-text">AGREGAR SERVICIO</p>
+        </button>
+      </a>
+    </div>
+  </div>
+
+</div>
+

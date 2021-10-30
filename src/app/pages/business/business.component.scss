@@ -1,0 +1,285 @@
+.ess-stylePro {
+  font-family: Montserrat-Light;
+  font-size: 22px;
+  line-height: 30px;
+  color: #000000;
+}
+.ess-styleName {
+  font-family: Montserrat-Light;
+  font-size: 14px;
+  line-height: 20px;
+  color: #000000;
+}
+
+.ess-image1 {
+    position: relative;
+    top: 0;
+    left: 0;
+    max-width: 80%;
+    max-height: 70%;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+}
+
+.ess-image2 {
+    position: absolute;
+    top: 430px;
+    left: 400px;
+    max-width: 40%;
+    max-height: 40%;
+}
+
+
+::ng-deep .mat-expansion-panel-header[aria-disabled=true] {
+  color: rgba(0, 0, 0, .87);
+}
+
+::ng-deep .mat-card {
+  border: rgb(255, 255, 255) !important;
+  transition: none !important;
+  box-shadow: none !important;
+}
+
+::ng-deep .mat-card:hover {
+  border: 0.01px solid;
+  //padding: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) !important;
+  .ess-productedit {
+      display: block;
+      @media (min-width: 700px) {
+          width: 3vw !important;
+          height: 5vh !important;
+          position: absolute !important;
+          right: 5px;
+      }
+      @media (max-width: 700px) {
+          width: 11vw !important;
+          height: 5vh !important;
+          position: absolute !important;
+          right: 1px;
+      }
+  }
+  .ess-hoverLike {
+      display: none;
+  }
+  .ess-radio {
+      display: none;
+  }
+  .ess-hoverLike {
+      display: block;
+  }
+}
+
+.ess-info {
+    @media (max-width: 766px) {
+        margin-top: 50px;
+    }
+}
+
+.ess-hoverLike {
+    display: none;
+}
+
+.ess-radio {
+    display: none;
+}
+
+.ess-productedit {
+    display: none;
+}
+
+.ess-checkbox {
+    display: none;
+}
+
+.mat-card-image {
+    object-fit: cover;
+}
+
+//Estrellas css
+#form {
+    width: 250px;
+    margin: 0 auto;
+    height: 50px;
+}
+
+#form p {
+    text-align: center;
+}
+
+#form label {
+    font-size: 20px;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+label {
+    color: grey;
+}
+
+.clasificacion {
+    direction: rtl;
+    unicode-bidi: bidi-override;
+}
+
+label:hover,
+label:hover~label {
+    color: #bc955c;
+}
+
+input[type="radio"]:checked~label {
+    color: #bc955c;
+}
+
+footer {
+    background-color: #bc955c !important;
+    color: white !important;
+}
+
+a {
+    color: white;
+}
+
+i.ess-redes {
+    display: inline-block;
+    border-radius: 60px;
+    box-shadow: 0px 0px 2px #888;
+    padding: 0.5em 0.7em;
+    background-color: #bc955c;
+    color: white;
+}
+
+i.ess-redes-2 {
+    display: inline-block;
+    border-radius: 60px;
+    box-shadow: 0px 0px 2px #888;
+    padding: 0.5em 0.7em;
+    background-color: white;
+    color: #bc955c;
+}
+
+.mat-card-image {
+    height: 250px;
+    object-fit: cover;
+}
+
+::ng-deep .mat-focused .mat-form-field-label {
+    /*change color of label*/
+    color: white !important;
+}
+
+::ng-deep .mat-form-field-underline {
+    /*change color of underline*/
+    background-color: white !important;
+}
+
+
+/* Border */
+
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+    color: white !important;
+}
+
+::ng-deep .mat-form-field-ripple {
+    /*change color of underline when focused*/
+    background-color: white !important;
+}
+
+//Mobile style
+@media only screen and (max-width: 1200px) and ( min-width: 760px) {
+    .ess-parent {
+        width: 100%;
+        position: relative;
+    }
+    .ess-image1 {
+        width: 100%;
+        position: relative;
+        top: 0;
+        left: 0;
+    }
+    .ess-image2 {
+        width: 40%;
+        top: 225px;
+        left: 100px;
+        display: none;
+    }
+}
+
+.ess-click {
+    cursor: pointer;
+}
+
+.ess-p {
+    font-family: Montserrat-Bold;
+    font-size: 18px;
+}
+
+.ess-m {
+    font-family: Montserrat-regular;
+    font-size: 18px;
+}
+
+.ess-click {
+    cursor: pointer;
+}
+
+::ng-deep .breadcrumb a {
+    color: #BC955C !important;
+}
+
+::ng-deep .breadcrumb {
+    background-color: white !important;
+    color: #BC955C !important;
+}
+
+.ess-productCard {
+    max-width: 300px;
+}
+
+@media (max-width: 700px) {
+    .ess-image2 {
+        width: 35%;
+        top: 625px;
+        left: 180px;
+        position: absolute;
+    }
+}
+
+@media (max-width: 500px) {
+    .ess-image2 {
+        width: 35%;
+        top: 390px;
+        left: 120px;
+        position: absolute;
+    }
+}
+
+@media (max-width: 400px) {
+    .ess-image2 {
+        width: 35%;
+        top: 350px;
+        left: 120px;
+        position: absolute;
+    }
+}
+
+@media (max-width: 766px) {
+    .ess-start {
+        margin-top: 60px;
+    }
+}
+.ess-name{
+  font-family: Montserrat-Light;
+  font-size:48px;
+  line-height: 50px;
+  @media (max-width: 800px) {
+    font-size: 25px;
+    line-height: 40px;
+    font-family: Montserrat-Light;
+    white-space: pre-line;
+    padding-right: 20px;
+
+}
+}

@@ -1,0 +1,81 @@
+<div class="container mt-5 mb-4 ml-3 ess-ds">
+    <div class="row justify-content-left">
+        <div class="col-12 tex-left">
+
+            <form class="text-left" [formGroup]="postForm" (submit)="submit()">
+                <div class="row justify-content-left">
+                    <div class="col-md-5 text-left ml-5">
+                        <mat-form-field class="ess-campos" appearance="outline">
+                            <mat-label>Nombre(s)</mat-label>
+                            <input matInput placeholder="Nombre(s)" formControlName="name" />
+                            <small class="form-text text-muted" *ngIf="
+                postForm.get('name').touched &&
+                postForm.get('name').hasError('required')
+              ">Este campo es requerido.</small>
+                        </mat-form-field>
+                    </div>
+
+                </div>
+
+                <div class="row justify-content-left">
+                    <div class="col-md-5 text-left ml-5">
+                        <mat-form-field class="ess-campos" appearance="outline">
+                            <mat-label>Apellido(s)</mat-label>
+                            <input matInput placeholder="Apellido(s)" formControlName="apellido" />
+                            <small class="form-text text-muted" *ngIf="
+                postForm.get('apellido').touched &&
+                postForm.get('apellido').hasError('required')
+              ">Este campo es requerido.</small>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="row justify-content-left">
+                    <div class="col-md-5 text-left ml-5">
+                        <mat-form-field class="ess-input-full mr-3 ess-campos">
+                            <mat-label>Correo electrónico</mat-label>
+                            <input matInput placeholder="Correo electronico" formControlName="correo" />
+                            <small class="form-text text-muted" *ngIf="
+                postForm.get('correo').touched &&
+                postForm.get('correo').hasError('required')
+              ">Este campo es requerido.</small>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="row justify-content-left">
+                    <div class="col-md-5 text-left ml-5">
+                        <mat-form-field class="ess-input-full mr-3 ess-campos">
+                            <mat-label>Teléfono móvil</mat-label>
+                            <input matInput placeholder="Teléfono móvil" formControlName="movil" />
+                            <small class="form-text text-muted" *ngIf="
+                postForm.get('movil').touched &&
+                postForm.get('movil').hasError('required')
+              " s>Este campo es requerido.</small>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="row justify-content-left">
+                    <div class="col-md-5 text-left ml-5">
+
+                        <a routerLink='/dashboard/edit-contrasena'>
+                            <button class="button_direccion " mat-stroked-button color="primary">
+                Quiero cambiar de contraseña
+              </button>
+                        </a>
+                    </div>
+                </div>
+                <div class="row justify-content-left pt-4">
+                    <div class="col-md-5 text-left ml-5">
+                        <div class="mb-2 pt-3">
+                            <button class="button_Actualizar" mat-stroked-button color="primary" [disabled]="!postForm.valid">
+                ACTUALIZAR
+              </button>
+                        </div>
+
+                    </div>
+                </div>
+            </form>
+
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+</div>

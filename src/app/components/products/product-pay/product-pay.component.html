@@ -1,0 +1,90 @@
+<div class="container mt-2">
+  <div class="row text-left">
+    <div class="col">
+      <img src="../../../assets/logo_desarrolla.svg" width="200vw" height="150vh" alt="" srcset="">
+    </div>
+  </div>
+  <div class="row">
+      <div class="col-md">
+          <img class="img-fluid mb-3" src="../../../assets/LOGO PROP.svg" alt="" />
+      </div>
+  </div>
+  <div class="row">
+      <div class="col-3"></div>
+      <div class="col-md">
+          <div class="text-center">
+              <p>Barra de Progreso va aqui</p>
+          </div>
+      </div>
+      <div class="col-3"></div>
+  </div>
+  <div class="row">
+      <div class="col-3"></div>
+      <div class="col-md">
+          <div class="text-center">
+              <p class="ess-text-hightlight">
+                  <strong>Información adicional de tu negocio</strong>
+              </p>
+              <p class="ess-text-subtitle">
+                ¿Qué medios de pago aceptas en tu Empresa Social?
+              </p>
+          </div>
+      </div>
+      <div class="col-3"></div>
+  </div>
+  <div class="row">
+      <div class="col-3"></div>
+      <div class="col-md text-center">
+          <p><strong>Puedes elegir más de una opción</strong></p>
+      </div>
+      <div class="col-3"></div>
+  </div>
+  <form [formGroup]="postForm">
+      <div class="row">
+          <div class="ess-cards">
+              <div class="ess-card"><img
+                src="../../../assets/dinero1.svg"
+                class="ess-image"
+                alt=""
+              /><mat-checkbox formControlName="efectivo" ></mat-checkbox><strong>Efectivo</strong> </div>
+              <div class="ess-card"><img
+                src="../../../assets/dinero2.svg"
+                class="ess-image"
+                alt=""
+              /><mat-checkbox formControlName="transferencia"></mat-checkbox><strong>Transferencia electrónica</strong> </div>
+              <div class="ess-card"> <img
+                src="../../../assets/dinero3.svg"
+                class="ess-image"
+                alt=""
+              /><mat-checkbox formControlName="tarjeta"></mat-checkbox><strong>Tarjeta de crédito o débito</strong></div>
+              <div class="ess-card"><img
+                src="../../../assets/dinero4.svg"
+                class="ess-image"
+                alt=""
+              /><mat-checkbox formControlName="codi"></mat-checkbox><strong>CODI</strong></div>
+              <div class="ess-card"><img
+                src="../../../assets/dinero5.svg"
+                class="ess-image"
+                alt=""
+              /><mat-checkbox formControlName="paypal"></mat-checkbox><strong>PayPal</strong></div>
+              <div class="ess-card"><img
+                src="../../../assets/dinero6.svg"
+                class="ess-image"
+                alt=""
+              /><mat-checkbox formControlName="mercado"></mat-checkbox><strong>Mercado Pago</strong></div>
+              <div class="ess-card"><img
+                src="../../../assets/contra entrega.svg"
+                class="ess-image"
+                alt=""
+              /><mat-checkbox formControlName="pago"></mat-checkbox><strong>Pago contra entrega</strong></div>
+          </div>
+        </div>
+      <div class="row">
+          <div class="col p-3 text-center">
+              <button (click)="modal()" mat-stroked-button color="primary">
+      SIGUIENTE
+    </button>
+          </div>
+      </div>
+  </form>
+</div>

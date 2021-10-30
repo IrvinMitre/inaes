@@ -1,0 +1,106 @@
+<div class="container mt-2">
+  <div class="row text-left pb-5">
+    <div class="col">
+      <img src="../../../assets/logo_desarrolla.svg" width="130vw" height="100vh" alt="" srcset="" />
+    </div>
+  </div>
+  <div class="row ">
+    <div class="col-md">
+      <div class="progress">
+        <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+      </div>
+    </div>
+  </div>
+  <div class="row pt-4">
+    <div class="col-3"></div>
+    <div class="col-md">
+      <div class="text-center">
+        <p class="ess-text-title mt-4 mb-4">
+          <strong>Información adicional de tu negocio</strong>
+        </p>
+        <p class="ess-text-Subtitle pt-4 pb-4">
+          ¿Qué medios de pago aceptas en tu Empresa Social?
+        </p>
+      </div>
+    </div>
+    <div class="col-3"></div>
+  </div>
+  <div class="row">
+    <div class="col-3"></div>
+    <div class="col-md text-center my-3">
+      <p><strong>Puedes elegir más de una opción</strong></p>
+    </div>
+    <div class="col-3"></div>
+  </div>
+  <form [formGroup]="postForm">
+    <div class="row">
+      <div class="ess-cards">
+        <div class="ess-card">
+          <img src="../../../assets/dinero1.svg" class="ess-image" alt="" />
+          <div class="ess-container-checkbox">
+            <mat-checkbox formControlName="efectivo" value="Efectivo"></mat-checkbox>
+          </div>
+          <strong>Efectivo</strong>
+        </div>
+        <div class="ess-card">
+          <img src="../../../assets/dinero2.svg" class="ess-image" alt="" />
+          <div class="ess-container-checkbox">
+            <mat-checkbox formControlName="transferencia" value="Transferencia electrónica"></mat-checkbox>
+          </div>
+          <strong>Transferencia electrónica</strong>
+        </div>
+        <div class="ess-card">
+          <img src="../../../assets/dinero3.svg" class="ess-image" alt="" />
+          <div class="ess-container-checkbox">
+            <mat-checkbox formControlName="tarjeta" value="Tarjeta de crédito o débito"></mat-checkbox>
+          </div>
+
+          <strong>Tarjeta de crédito o débito</strong>
+        </div>
+        <div class="ess-card">
+          <img src="../../../assets/dinero4.svg" class="ess-image" alt="" />
+          <div class="ess-container-checkbox">
+            <mat-checkbox formControlName="codi" value="CODI"></mat-checkbox>
+          </div>
+
+          <strong>CODI</strong>
+        </div>
+        <div class="ess-card">
+          <img src="../../../assets/dinero5.svg" class="ess-image" alt="" />
+          <div class="ess-container-checkbox">
+            <mat-checkbox formControlName="paypal" value="PayPal"></mat-checkbox>
+          </div>
+          <strong>PayPal</strong>
+        </div>
+        <div class="ess-card">
+          <img src="../../../assets/dinero6.svg" class="ess-image" alt="" />
+          <div class="ess-container-checkbox">
+            <mat-checkbox formControlName="mercado" value="Mercado Pago"></mat-checkbox>
+          </div>
+          <strong>Mercado Pago</strong>
+        </div>
+        <div class="ess-card">
+          <img src="../../../assets/contra entrega.svg" class="ess-image" alt="" />
+          <div class="ess-container-checkbox">
+            <mat-checkbox formControlName="pago" value="Pago contra entrega"></mat-checkbox>
+          </div>
+          <strong>Pago contra entrega</strong>
+        </div>
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <button class="button_direccion" (click)="modal()">
+        SIGUIENTE
+      </button>
+    </div>
+  </form>
+</div>
+
+
+<script>
+  jQuery('.body').on('click', 'mat-checkbox', function(){
+    window.alert('hola');
+    this.closest('.ess-container-checkbox').css('background-color', '#212529');
+  })
+
+</script>

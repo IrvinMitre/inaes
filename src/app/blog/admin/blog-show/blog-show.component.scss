@@ -1,0 +1,57 @@
+.ess-divisor {
+  height: 1px;
+  background-color: black;
+  width: 100%;
+  margin: 3vh 0;
+}
+
+h1{
+    margin: 0;
+}
+
+.ess-container-labels{
+    margin: 0;
+
+    h2{
+        font-family: "Montserrat-Regular";
+        font-style: normal;
+        font-weight: normal;
+        font-size: 1em;
+        line-height: 18px;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        color: #000000;
+        margin: 0;
+    }
+
+    .col-md-2, .col-md-4{
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+}
+
+.ess-container-posts{
+    font-family: "Montserrat-Regular";
+    margin: 4vh 0;
+    background: rgba(196, 196, 196, 0.05);
+    font-style: normal;
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 15px;
+    color: #000000;
+    padding: 2vh 0;
+
+    .col-md-2, .col-md-4{
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+    .ess-post-etiqueta{
+        word-spacing: 100vw;
+        margin: auto;
+    }
+    .ess-post-acciones{
+        button{
+            margin: 0 auto;
+        }
+    }
+}

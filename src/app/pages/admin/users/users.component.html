@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="row">
+    <div class="col-6 text-center">
+      <p class="ess-text-title">Lista de usuarios</p>
+    </div>
+    <div class="col-text-6">
+      <p class="ess-text-subtitle mt-3"> <a style="color: black" [routerLink]="['/admin/usuarios/perfil']" > Añadir usuarios</a> </p>
+    </div>
+  </div>
+  <div class="row p-5">
+    <div class="col">
+      <mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+        <!-- Position Column -->
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="email">
+          <mat-header-cell *matHeaderCellDef style="font-family: Montserrat-Light;"> Correo Electronico </mat-header-cell>
+          <mat-cell *matCellDef="let element" style="font-family: Montserrat-Regular;"> {{element.email}} </mat-cell>
+        </ng-container>
+
+        <!-- Weight Column -->
+        <ng-container matColumnDef="role">
+          <mat-header-cell *matHeaderCellDef style="font-family: Montserrat-Light;"> Role </mat-header-cell>
+          <mat-cell *matCellDef="let element" style="font-family: Montserrat-Regular;"> {{element.role}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="">
+          <mat-cell *matCellDef="let element"><button class="btn btn-danger" style="font-family: Montserrat-Bold;" (click)="delete(element.email)">Eliminar</button></mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+      </mat-table>
+    </div>
+  </div>
+</div>

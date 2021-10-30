@@ -1,0 +1,512 @@
+.ess-bg {
+    @media (min-width: 600px) {
+        width: 100%;
+        height: 530px;
+        background: url("../../../assets/orilla.png"), url("../../../assets/casa.png");
+        background-position: left top, right top;
+        background-repeat: no-repeat, no-repeat;
+    }
+    @media (max-width: 600px) {
+      width: 100%;
+      height: 530px;
+        background: url("../../../assets/casa.png");
+        background-position: left top, right top;
+        background-repeat: no-repeat, no-repeat;
+    }
+}
+
+.ess-fbj {
+    @media (min-width: 600px) {
+        height: 730px;
+        width: 100%;
+        background-color: #E5E5E5;
+        background-repeat: no-repeat;
+        border-top: 30px;
+    }
+}
+.ess-fbj1 {
+  @media (min-width: 600px) {
+
+      width: 100%;
+      background-color: #E5E5E5;
+      background-repeat: no-repeat;
+     // border-top: 30px;
+  }
+  @media (max-width: 600px) {
+    background-repeat: no-repeat;
+    background-color: #ffffff
+  }
+}
+.ess-card {
+  max-width: 250px;
+}
+
+.ess-redes {
+  display: inline-block;
+  border-radius: 120px;
+  box-shadow: 0px 0px 0px #888;
+  padding: 1.0em 1.0em;
+  background-color: #bc955c;
+  color: white;
+}
+
+footer {
+  background-color: #bc955c !important;
+  color: white !important;
+}
+
+.ess-image1 {
+  @media (min-width: 600px) {
+      position: relative;
+      top: 0;
+      left: 420px;
+      max-width: 908px;
+      max-height: 510px;
+  }
+}
+
+.ess-image2 {
+  @media (min-width: 600px) {
+      position: absolute;
+      top: 355px;
+      left: 20px;
+      max-width: 500px;
+      max-height: 600px;
+  }
+}
+
+.ess-parent {
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+.ess-fsl {
+  background-color: #E5E5E5;
+
+
+  height: 300px;
+  @media (max-width: 600px) {
+      height: 300px;
+  }
+}
+
+.ess-bg-b {
+  background-color: #DDC9A3;
+  width: 100%;
+  height: 100px;
+}
+
+.ess-img1 {
+  @media (min-width: 600px) {
+      position: relative;
+      top: 465px;
+      left: 75px;
+      max-width: 908px;
+      max-height: 510px;
+  }
+}
+
+.ess-img2 {
+  @media (min-width: 600px) {
+      position: absolute;
+      top: 0;
+      left: 0px;
+      max-width: 908px;
+      max-height: 510px;
+  }
+}
+
+.ess-absoT {
+  @media (min-width: 600px) {
+      position: absolute;
+      top: 100px;
+      right: px;
+      max-width: 100%;
+      max-height: 510px;
+      line-height: 20px;
+  }
+}
+
+.ess-let {
+  line-height: 40px;
+}
+
+.ess-img3 {
+  @media (min-width: 600px) {
+      position: relative;
+      top: 485px;
+      left: 30px;
+      max-width: 908px;
+      max-height: 510px;
+  }
+}
+
+.ess-white {
+  @media (min-width: 600px) {
+      background-color: white;
+      width: 100%;
+      height: 50px;
+  }
+
+
+}
+
+.ess-white2 {
+  @media (min-width: 600px) {
+      background-color: white;
+      width: 100%;
+      height: 200px;
+  }
+}
+
+.ess-tittle-1 {
+  font-size: 40px;
+  font-family: Montserrat-Light, sans-serif;
+}
+
+.ess-tittle-2 {
+  @media (max-width: 700px) {
+      color: white;
+      width: 100%;
+      height: 200px;
+  }
+}
+
+.ess-tittle {
+  font-family: Montserrat-Light;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 50px;
+  line-height: 64px;
+  @media (max-width: 700px) {
+      color: white;
+      font-size: 6vw;
+  }
+}
+
+.ess-pad {
+  @media (min-width: 1293px) {
+      position: relative;
+      top: 185px;
+      left: 30px;
+      max-width: 100%;
+      max-height: 510px;
+  }
+}
+
+a {
+  color: white;
+}
+
+//desaparecer
+.ess-desc {
+  @media (max-width: 600px) {
+      display: none;
+  }
+}
+
+.ess-ascc {
+  @media (min-width: 600px) {
+      display: none;
+  }
+}
+
+.ess-desc1 {
+  @media (max-width: 1292px) {
+      display: none;
+  }
+}
+
+.ess-asc1 {
+  @media (min-width: 1292px) {
+      display: none;
+  }
+}
+
+//movil
+::ng-deep .mat-focused .mat-form-field-label {
+  /*change color of label*/
+  color: white !important;
+}
+
+::ng-deep .mat-form-field-underline {
+  /*change color of underline*/
+  background-color: white !important;
+}
+
+
+/* Border */
+
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+  color: white !important;
+}
+
+::ng-deep .mat-form-field-ripple {
+  /*change color of underline when focused*/
+  background-color: white !important;
+}
+
+.quedate {
+  font-family: Montserrat-Black;
+  font-size: 140%;
+  color: #691C32;
+}
+
+.subtitle {
+  font-family: Montserrat-Light;
+  font-size: 200%;
+  color: #235B4E;
+  margin-bottom: 18px;
+  margin-left: 18px;
+  margin-right: 18px;
+  margin-top: 18px;
+}
+
+.cat {
+  font-family: Montserrat-Bold;
+  font-size: 140%;
+}
+
+.home {
+  color: #691C32;
+  font-size: 13px;
+}
+
+.ess-position {
+  position: absolute;
+  width: 600px;
+  height: 409px;
+  right: 103px;
+  top: 150px;
+  @media (max-width: 920px) {
+      top: 70px;
+  }
+  @media (max-width: 895px) {
+      top: 60px;
+  }
+  @media (max-width: 842px) {
+      top: 150px;
+  }
+}
+
+.ess-position {
+  position: absolute;
+  width: 600px;
+  height: 409px;
+  right: 103px;
+  top: 150px;
+  @media (max-width: 920px) {
+      top: 70px;
+  }
+  @media (max-width: 895px) {
+      top: 60px;
+  }
+  @media (max-width: 800px) {
+      top: 150px;
+  }
+  @media all and (min-width: 700px) and (max-width:799px) {
+      display: none;
+  }
+  @media (max-width: 700px) {
+      left: 30px;
+  }
+  @media (max-width: 550px) {
+      display: none;
+  }
+}
+
+.ess-position-mobile {
+  @media (max-width: 550px) {
+      display: block !important;
+      top: 120px;
+      left: 20px;
+  }
+}
+
+.ess-position1 {
+  position: absolute;
+  width: 400px;
+  right: 150px;
+  top: 120px;
+  @media (max-width: 1161px) {
+      right: 100px;
+  }
+  @media (max-width: 945px) {
+      right: 50px;
+  }
+  @media (max-width: 920px) {
+      top: 40px;
+  }
+  @media (max-width: 895px) {
+      top: 20px;
+  }
+  @media (max-width: 800px) {
+      right: 200px;
+  }
+  @media all and (min-width: 700px) and (max-width:799px) {
+      display: none;
+  }
+  @media (max-width: 700px) {
+      left: 60px;
+      top: 80px;
+  }
+  @media (max-width: 550px) {
+      left: 50px;
+  }
+}
+
+.ess-position2 {
+  position: absolute;
+  left: 300px;
+  top: 110px;
+  @media (max-width: 945px) {
+      right: 150px;
+  }
+  @media (max-width: 920px) {
+      top: 50px;
+      right: 170px;
+  }
+}
+
+.ess-position3 {
+  position: absolute;
+  right: 260px;
+  top: 400px;
+  @media (max-width: 1161px) {
+      right: 150px;
+  }
+  @media (max-width: 945px) {
+      right: 100px;
+  }
+  @media (max-width: 800px) {
+      right: 150px;
+  }
+  @media all and (min-width: 700px) and (max-width:799px) {
+      display: none;
+  }
+  @media (max-width: 800px) {
+      right: 150px;
+  }
+}
+
+@media (max-width: 1056px) {
+  .des-mov1 {
+      display: none;
+  }
+}
+
+@media (max-width: 845px) {
+  .des-mov {
+      display: none;
+  }
+  .ess-p {
+      position: absolute;
+      left: 290px;
+      bottom: 20px;
+  }
+}
+
+@media (max-width: 1030px) {
+  .positionText {
+      font-size: 11px;
+  }
+}
+
+@media (min-width: 1030px) {
+  .positionText {
+      font-size: 13px;
+  }
+}
+
+@media (min-width: 1056px) {
+  .des-mov1 {
+      display: block;
+  }
+}
+
+@media (min-width: 845px) {
+  .des-mov {
+      display: block;
+  }
+}
+
+#Controls .carousel-control-next-icon {
+  /* change fill="currentColor" to %23fff to make it white  */
+  background-image: url('../../../assets/slideHome.png')
+}
+
+#carouselTitle .carousel-control-next-icon {
+  /* change fill="currentColor" to %23fff to make it white  */
+  background-image: url('../../../assets/arrowHomeSilla.svg') !important;
+  margin-right: 150px !important;
+}
+
+
+
+.carousel-control-next-icon,
+.carousel-control-prev-icon {
+  /* Use to adjust size of icons */
+  width: 2rem;
+  height: 2rem;
+}
+
+.ess-imageDes:hover {
+  border: 0.01px solid;
+  //padding: 20px;
+  box-shadow: 0.4px 0.4px 0.4px 0.4px #888888 !important;
+}
+
+.ess-size {
+  height: 190px;
+  width: 350px;
+}
+
+.ess-des {
+  color: #E5E5E5;
+}
+
+.ess-imageH {
+  width: 450px;
+}
+
+.ess-bj-Testi {
+  height: 300px;
+}
+
+
+@media (min-width: 1130px) {
+  .ess-carruHom{
+  display: block;
+  }
+  }
+
+  @media (max-width: 1130px) {
+    .ess-carruHom{
+    display: none;
+
+    }
+
+    }
+
+    @media (max-width: 300px) {
+      .ess-carruHom1{
+      display: block;
+      }
+      }
+
+      @media (min-width: 1130px) {
+        .ess-carruHom1{
+        display: none;
+
+        }
+
+        }
+
+
+
+
+        .ess-imagesli{
+          width: 60px;
+          height: 60px;
+        }

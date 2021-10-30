@@ -1,0 +1,259 @@
+<div class="container" *ngIf="desEmpresa">
+  <div class="row">
+    <div class="col">
+      <hr />
+    </div>
+    <div class="col"></div>
+  </div>
+  <section *ngFor="let empresa of empresas">
+    <div class="row" *ngIf="empresa.createdAccount === false">
+      <div class="col">
+        <a
+          *ngIf="empresa.nameEnterprise === null"
+          style="cursor: pointer; color: black !important"
+          (click)="product(empresa.socialEnterpriseKey)"
+        >
+          nombre empresa
+        </a>
+        <a
+          *ngIf="empresa.nameEnterprise !== null"
+          style="cursor: pointer; color: black !important"
+          (click)="product(empresa.socialEnterpriseKey)"
+        >
+          {{ empresa.nameEnterprise }}
+        </a>
+
+        <hr />
+      </div>
+      <div class="col">
+        <div class="col">
+          <button class="img-b" alt="">PENDIENTE DE APROBACIÓN</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<div class="container" *ngIf="desEmpresa === false">
+  <div class="row">
+    <div class="col">
+      <p class="titleP">{{ enterpriseDataShow.nameEnterprise }}</p>
+    </div>
+  </div>
+
+  <ul class="nav nav-tabs" id="myTab" role="tablist">
+    <li class="nav-item">
+      <a class="nav-link active" id="home-tab" data-toggle="tab" (click)="changeDivide(tru)" role="tab" aria-controls="home" aria-selected="true"  style="cursor: pointer; color: black !important">INFORMACIÓN</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="profile-tab" data-toggle="tab" (click)="changeDivide(fal)" role="tab" aria-controls="profile" aria-selected="false"  style="cursor: pointer; color: black !important">PRODUCTO</a>
+    </li>
+
+  </ul>
+
+
+  <section *ngIf="divide">
+
+    <div class="row mb-5 ">
+      <div class="col-md-8 text-left">
+        <p class="mt-4 ess-rede">
+          {{ enterpriseDataShow.shortDescription }}
+        </p>
+      </div>
+      <div class="col-md-1 mr-5">
+        <button
+          class="button color"
+          (click)="changeAprova(enterpriseDataShow.socialEnterpriseKey, tru)"
+
+        >
+          APROBADA
+        </button>
+      </div>
+      <div class="col-md-1">
+        <button
+          class="img-bb"
+          (click)="changeAprova(enterpriseDataShow.socialEnterpriseKey, fal)"
+          disabled
+        >
+          NO APROBADA
+        </button>
+      </div>
+    </div>
+    <div class="row mt-3 text-left">
+      <div class="col-4 text-left ess-rede" *ngIf="enterpriseDataShow.contact.email !== ''">
+        <img class="pl-1" src="../../../../assets/fi_link.png" alt="" />
+        {{ enterpriseDataShow.contact.email }}
+      </div>
+      <div class="col-4 text-left ess-rede" *ngIf="enterpriseDataShow.reference !== ''">
+        <img src="../../../../assets/large.png" alt="" />
+        {{ enterpriseDataShow.reference }}
+      </div>
+    </div>
+    <div class="row mt-3 text-left" *ngIf="enterpriseDataShow.contact.localphone !== ''">
+      <div class="col-4 text-left ess-rede">
+        <img class="pl-1" src="../../../../assets/fi_phone.png" alt="" />
+        {{ enterpriseDataShow.contact.localphone }}
+      </div>
+    </div>
+    <div class="row text-left mt-3 ess-rede" *ngIf="enterpriseDataShow.contact.facebook !== ''">
+      <div class="col-4">
+        <img src="../../../../assets/facebookAdmin.png" alt="" />
+        <a target="_blank" style="color: black;" href="{{ enterpriseDataShow.contact.facebook }}">Facebook</a>
+      </div>
+    </div>
+    <div class="row text-left mt-3 ess-rede" *ngIf="enterpriseDataShow.contact.instagram !== ''">
+      <div class="col-4">
+        <img class="pl-1 pr-1" src="../../../../assets/instagram.svg" alt="" />
+        <a target="_blank" style="color: black;" href="{{enterpriseDataShow.contact.instagram}}">Instagram</a>
+      </div>
+    </div>
+    <div class="row text-left mt-3 ess-rede" *ngIf="enterpriseDataShow.contact.website !== ''">
+      <div class="col-4">
+          <img class="pl-1 pr-1" src="../../../../assets/linkAdmin.png" alt="" />
+          <a target="_blank" style="color: black;" href="{{enterpriseDataShow.contact.website}}">Sitio web</a>
+      </div>
+    </div>
+    <div class="row mt-5">
+      <div class="col">
+        <div class="row">
+          <div class="col ess-des">Logo</div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <img
+              class="imageEmpresa"
+              src="{{ enterpriseDataShow.identityPictures[0].route }}"
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="row">
+          <div class="col ess-des">Imagen</div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <img
+              class="imageEmpresa img-fluid"
+              src="{{ enterpriseDataShow.identityPictures[1].route }}"
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section *ngIf="divide == false">
+    <div *ngFor="let producto of productData1">
+      <mat-accordion>
+        <mat-expansion-panel hideToggle>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              <p class="titleP">-{{ producto.whatIsIt }}</p>
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+
+          <div class="row justify-content-left">
+            <div class="col-lg-3 text-left ess-produ-T">
+              <p class="text-desP">-{{ producto.whatIsIt }}</p>
+            </div>
+            <div class="col-xs-1"></div>
+            <div class="col-lg-9 text-left mt-3 ess-rede">
+              <p class="text-desP">{{ producto.whereItIs }}</p>
+            </div>
+          </div>
+
+          <div class="row pt-5">
+            <div class="col">
+              <img
+                class="imageEmpresa img-fluid"
+                src="{{ producto.pictures[0].route }}"
+                alt=""
+              />
+            </div>
+            <div class="col">
+              <img
+                class="imageEmpresa img-fluid"
+                src="{{ producto.pictures[1].route }}"
+                alt=""
+              />
+            </div>
+            <div class="col">
+              <img
+                class="imageEmpresa img-fluid"
+                src="{{ producto.pictures[2].route }}"
+                alt=""
+              />
+            </div>
+          </div>
+          <div class="row text-left mt-3">
+            <div class="col-8"></div>
+            <div class="col-md-2">
+              <button
+                class="buttonp1"
+                [disabled]="producto.aprovedItem === 'true'"
+                (click)="
+                  changeAprovaI(producto._id, producto.socialEnterpriseKey, tru)
+                "
+              >
+                Aceptado
+              </button>
+            </div>
+            <div class="col-md-2">
+              <button
+                class="buttonp1"
+                [disabled]="
+                  producto.aprovedItem === 'false' ||
+                  producto.aprovedItem === ''
+                "
+                (click)="
+                  changeAprovaI(producto._id, producto.socialEnterpriseKey, fal)
+                "
+              >
+                No aprobado
+              </button>
+            </div>
+          </div>
+
+          <div *ngFor="let certificado of producto.features">
+            <hr />
+            <div class="row justify-content-center">
+              <div class="col-md-2">
+                <img
+                  class="ess-cert img-fluid"
+                  src="{{ certificado.pictureRoute }}"
+                  alt=""
+                />
+              </div>
+
+              <div class="col-md-7">
+                <div class="row">
+                  <div class="col text-left ess-t-cert">
+                    {{ certificado.type }}
+                  </div>
+                  <div class="col text-left">
+                    <p style="font-family: Montserrat-Light;">Status: {{certificado.aprovedCertification}}</p>
+                  </div>
+                </div>
+                <div class="row mt-2">
+                  <div class="col text-left">
+                    <button class="buttonp" (click)="changeCertA(producto._id,producto.socialEnterpriseKey, certificado.type)" [disabled]="certificado.aprovedCertification === 'Aceptado'" >Aceptado</button>
+                  </div>
+                  <div class="col text-left">
+                    <button class="buttonp" (click)="changeCertN(producto._id,producto.socialEnterpriseKey, certificado.type)" [disabled]="certificado.aprovedCertification === 'No Aceptado'">No Aceptado</button>
+                  </div>
+                  <div class="col text-left">
+                    <button class="buttonp" (click)="changeCertI(producto._id,producto.socialEnterpriseKey, certificado.type)" [disabled]="certificado.aprovedCertification === 'No Identificado' || certificado.aprovedCertification === 'null'">No Identificado</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <hr />
+        </mat-expansion-panel>
+      </mat-accordion>
+    </div>
+  </section>
+</div>

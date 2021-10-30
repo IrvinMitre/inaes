@@ -1,0 +1,564 @@
+<div class="container">
+  <div class="row text-left">
+    <div class="col">
+      <img
+        src="../../../assets/logodesarrolla.png"
+        width="200vw"
+        height="150vh"
+        alt=""
+        srcset=""
+      />
+    </div>
+  </div>
+
+  <div class="row text-center">
+    <div class="col">
+      <div class="text-center mb-5">
+        <p class="ess-text-hightlight">¡Edita tu Servicio!</p>
+        <p class="ess-text-subtitle">
+          Verifica y complementa la siguiente información.
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="row text-center">
+    <div class="col-md-12">
+      <form [formGroup]="postForm" (submit)="submit()">
+        <mat-accordion>
+          <mat-expansion-panel hideToggle>
+            <mat-expansion-panel-header>
+              <mat-panel-title> Paso 1 </mat-panel-title>
+              <mat-panel-description> Categoria </mat-panel-description>
+            </mat-expansion-panel-header>
+            <section id="categoria" class="p-3">
+              <div class="row">
+                <div class="col">
+                  <p
+                    class="ess-text-subtitle mt-4 text-center ess-text-subtitle"
+                  >
+                    ¿Tu servicio pertenece a algún sector económico?
+                  </p>
+                </div>
+              </div>
+              <div class="row justify-content-center">
+                <div class="col-md-8">
+                  <div class="row">
+                    <div class="col-md">
+                      <mat-form-field class="ess-input-full">
+                        <mat-label>Turismo en Naturaleza</mat-label>
+                        <input
+                          id="natu"
+                          matInput
+                          placeholder="¿Qué es?"
+                          [disabled]="true"
+                        />
+                      </mat-form-field>
+                    </div>
+                    <div class="col-md">
+                      <mat-form-field class="ess-input-full">
+                        <mat-label>Categoria</mat-label>
+                        <mat-select formControlName="ecoturismo">
+                          <mat-option
+                            [value]="item"
+                            *ngFor="let item of categories"
+                            >{{ item }}</mat-option
+                          >
+                        </mat-select>
+                      </mat-form-field>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </mat-expansion-panel>
+
+          <mat-expansion-panel hideToggle>
+            <mat-expansion-panel-header>
+              <mat-panel-title> Paso 2 </mat-panel-title>
+              <mat-panel-description> Certificado </mat-panel-description>
+            </mat-expansion-panel-header>
+            <section id="certificado">
+              <div class="row">
+                <div class="col">
+                  <p class="ess-text-subtitle mt-5">
+                    Indica si tu producto cuenta con alguna de las siguientes
+                    caracteristicas
+                  </p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <div class="row">
+                    <div class="col">
+                      <div class="ess-redes">
+                        <mat-checkbox
+                        formControlName="cert1"
+                          class="example-margin"
+                          (change)="trueUpload = !trueUpload"
+                          labelPosition="before"
+                          >Marca Registrada
+                        </mat-checkbox>
+                      </div>
+                      <div class="image-upload pt-3">
+                        <label for="file-input">
+                          <img src="{{ url }}" height="80" />
+                        </label>
+                        <input
+                          id="file-input"
+                          type="file"
+                          (change)="onSelectFile($event)"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row" *ngIf="textImage1">
+                    <div class="col" style="color: red; font-size: 10px;">
+                      * La imagen rebasa el peso limite de 200 KB, intenta nuevamente
+                    </div>
+                  </div>
+
+                </div>
+                <div class="col">
+                  <div class="row">
+                    <div class="col">
+                      <div class="ess-redes">
+                        <mat-checkbox
+                        formControlName="cert2"
+                          class="example-margin"
+                          (change)="trueUpload2 = !trueUpload2"
+                          labelPosition="before"
+                          >Denominación de origen
+                        </mat-checkbox>
+                      </div>
+                      <div class="image-upload pt-3">
+                        <label for="file-input2">
+                          <img [src]="url2" height="80" />
+                        </label>
+                        <input
+                          id="file-input2"
+                          type="file"
+                          (change)="onSelectFile2($event)"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row" *ngIf="textImage2">
+                    <div class="col" style="color: red; font-size: 10px;">
+                      * La imagen rebasa el peso limite de 200 KB, intenta nuevamente
+                    </div>
+                  </div>
+
+                </div>
+
+              </div>
+              <div class="row">
+                <div class="col">
+                  <p class="text-muted text-center pl-3 pt-5">
+                    + Adjunta la imagen de tu certicación en caso de contar con
+                    ella
+                  </p>
+                </div>
+              </div>
+            </section>
+          </mat-expansion-panel>
+
+          <mat-expansion-panel hideToggle>
+            <mat-expansion-panel-header>
+              <mat-panel-title> Paso 3 </mat-panel-title>
+              <mat-panel-description> Descripción </mat-panel-description>
+            </mat-expansion-panel-header>
+            <section id="descripcion">
+              <div class="row">
+                <div class="col">
+                  <p class="ess-text-subtitle">descripción de tu servicio</p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <div class="row mb-3">
+                    <div class="col-md">
+                      <mat-form-field class="ess-campos">
+                        <input
+                          matInput
+                          placeholder="¿Qué es?"
+                          formControlName="nombre"
+                        />
+                      </mat-form-field>
+                    </div>
+                  </div>
+                  <div class="row mb-3">
+                    <div class="col-md">
+                      <mat-form-field class="ess-campos">
+                        <input
+                          matInput
+                          placeholder="¿De dónde es?"
+                          formControlName="direccion"
+                        />
+                      </mat-form-field>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col"></div>
+                    <div class="col-md-6 text-center">
+                      <p>
+                        Describe tu servicio
+                        <button class="btn" matTooltip="Info about the action">
+                          <mat-icon aria-hidden="false" aria-label="icon"
+                            >help</mat-icon
+                          >
+                        </button>
+                      </p>
+                    </div>
+                    <div class="col"></div>
+                  </div>
+                  <div class="row mb-3">
+                    <div class="col-md">
+                      <mat-form-field class="ess-campos">
+                        <input
+                          matInput
+                          placeholder="Descripcion"
+                          formControlName="descripcion"
+                        />
+                      </mat-form-field>
+                    </div>
+                  </div>
+                  <div class="row mb-3">
+                    <div class="col-md">
+                      <mat-form-field class="ess-campos">
+                        <input
+                          matInput
+                          placeholder="Qué atracciones adicionales puedes recomendar?"
+                          formControlName="recomen"
+                        />
+                      </mat-form-field>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col"></div>
+                    <div class="col-md-6 text-center">
+                      <p>Selecciona los servicios especificos:</p>
+                    </div>
+                    <div class="col"></div>
+                  </div>
+                  <div class="row">
+                    <div class="cards">
+                      <div class="card">
+                        RENTA DE HABITACIONES
+                        <mat-checkbox formControlName="rent"></mat-checkbox>
+                      </div>
+                      <div class="card">
+                        RESTAURANTE
+                        <mat-checkbox formControlName="rest"></mat-checkbox>
+                      </div>
+                      <div class="card">
+                        WIFI
+                        <mat-checkbox formControlName="wifi"></mat-checkbox>
+                      </div>
+                      <div class="card">
+                        TV
+                        <mat-checkbox formControlName="tv"></mat-checkbox>
+                      </div>
+                      <div class="card">
+                        AIRE ACONDICIONADO
+                        <mat-checkbox formControlName="air"></mat-checkbox>
+                      </div>
+                      <div class="card">
+                        CALEFACCIÓN
+                        <mat-checkbox formControlName="cale"></mat-checkbox>
+                      </div>
+                      <div class="card">
+                        RENTA DE EQUIPO
+                        <mat-checkbox formControlName="renta"></mat-checkbox>
+                      </div>
+                      <div class="card">
+                        CAMPING
+                        <mat-checkbox formControlName="camp"></mat-checkbox>
+                      </div>
+                      <div class="card">
+                        TOURS PERSONALIZADOS
+                        <mat-checkbox formControlName="tours"></mat-checkbox>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </mat-expansion-panel>
+
+          <mat-expansion-panel hideToggle>
+            <mat-expansion-panel-header>
+              <mat-panel-title> Paso 4 </mat-panel-title>
+              <mat-panel-description> Palabras clave </mat-panel-description>
+            </mat-expansion-panel-header>
+            <section id="palabras-clave">
+              <div class="row">
+                <div class="col">
+                  <p class="ess-text-subtitle">
+                    Escribe una frase clave que describan tu servicio
+                  </p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <mat-form-field appearance="outline" style="width: 50vw">
+                    <mat-label>Frase clave</mat-label>
+                    <input matInput formControlName="pclave1" />
+                    <small
+                      class="form-text text-muted"
+                      *ngIf="
+                        postForm.get('pclave1').touched &&
+                        postForm.get('pclave1').hasError('required')
+                      "
+                      >Este campo es requerido.</small
+                    >
+                  </mat-form-field>
+                </div>
+              </div>
+            </section>
+          </mat-expansion-panel>
+
+          <mat-expansion-panel hideToggle>
+            <mat-expansion-panel-header>
+              <mat-panel-title> Paso 5 </mat-panel-title>
+              <mat-panel-description> Fotografia </mat-panel-description>
+            </mat-expansion-panel-header>
+            <section id="fotografia" class="p-3">
+              <div class="row justify-content-center">
+                <div class="col-md-6 text-center">
+                  <p class="ess-text-subtitle">
+                    Anexa minímo 1 fotografía de tu producto que cumplan las
+                    especificaciones técnicas.
+                    <button
+                      class="btn pl-5"
+                      matTooltip="Tu imagen debe ilustrar tu producto y es recomendable que el producto aparezca en el centro de la imagen. La imagen no debe de rebasar 200kb de peso"
+                    >
+                      <mat-icon aria-hidden="false" aria-label="icon"
+                        >help</mat-icon
+                      >
+                    </button>
+                  </p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-4">
+                  <div class="row justify-content-center text-center">
+                    <div class="col">
+                      <div class="row">
+                        <div class="col">
+                          <div class="image-upload">
+                            <label for="file-input3">
+                              <img class="img-fluid ess-size" src="{{ url3 }}" />
+                            </label>
+                            <input
+                              id="file-input3"
+                              type="file"
+                              (change)="onSelectFile3($event)"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row" *ngIf="textImage3">
+                        <div class="col" style="color: red; font-size: 10px;">
+                          * La imagen rebasa el peso limite de 200 KB, intenta nuevamente
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+
+                  <div class="row justify-content-center text-center">
+                    <div class="col">
+                      <mat-form-field appearance="outline" style="width: 200px">
+                        <mat-label>Texto Alternativo</mat-label>
+                        <input
+                          matInput
+                          formControlName="textoAlternativo"
+                          placeholder="Agrega un texto alternativo, que describa tu imagen y/o producto."
+                        />
+                      </mat-form-field>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4">
+                  <div class="row justify-content-center text-center">
+                    <div class="col">
+                      <div class="row">
+                        <div class="col">
+                          <div class="image-upload">
+                            <label for="file-input4">
+                              <img class="img-fluid ess-size" src="{{ url4 }}" />
+                            </label>
+                            <input
+                              id="file-input4"
+                              type="file"
+                              (change)="onSelectFile4($event)"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row" *ngIf="textImage4">
+                        <div class="col" style="color: red; font-size: 10px;">
+                          * La imagen rebasa el peso limite de 200 KB, intenta nuevamente
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row justify-content-center text-center">
+                    <div class="col">
+                      <mat-form-field appearance="outline" style="width: 200px">
+                        <mat-label>Texto Alternativo</mat-label>
+                        <input
+                          matInput
+                          formControlName="textoAlternativo2"
+                          placeholder="Agrega un texto alternativo, que describa tu imagen y/o producto."
+                        />
+                      </mat-form-field>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-lg-4">
+                  <div class="row justify-content-center text-center">
+                    <div class="col">
+                      <div class="row">
+                        <div class="col">
+                          <div class="image-upload">
+                            <label for="file-input5">
+                              <img class="img-fluid ess-size" src="{{ url5 }}" />
+                            </label>
+                            <input
+                              id="file-input5"
+                              type="file"
+                              (change)="onSelectFile5($event)"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row" *ngIf="textImage5">
+                        <div class="col" style="color: red; font-size: 10px;">
+                          * La imagen rebasa el peso limite de 200 KB, intenta nuevamente
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row justify-content-center text-center">
+                    <div class="col">
+                      <mat-form-field appearance="outline" style="width: 200px">
+                        <mat-label>Texto Alternativo</mat-label>
+                        <input
+                          matInput
+                          formControlName="textoAlternativo3"
+                          placeholder="Agrega un texto alternativo, que describa tu imagen y/o producto."
+                        />
+                      </mat-form-field>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </mat-expansion-panel>
+
+          <mat-expansion-panel hideToggle>
+            <mat-expansion-panel-header>
+              <mat-panel-title> Paso 6 </mat-panel-title>
+              <mat-panel-description> Pago </mat-panel-description>
+            </mat-expansion-panel-header>
+            <section id="pago">
+              <div class="row">
+                <div class="col">
+                  <p class="ess-text-subtitle">
+                    ¿Qué medios de pago aceptas en tu negocio?
+                  </p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <div class="row">
+                    <div class="ess-cards1">
+                      <div class="ess-card1">
+                        <img
+                          src="../../../assets/dinero1.svg"
+                          class="ess-image"
+                          alt=""
+                        /><mat-checkbox
+                          formControlName="efectivo"
+                          value="Efectivo"
+                        ></mat-checkbox
+                        ><strong>Efectivo</strong>
+                      </div>
+                      <div class="ess-card1">
+                        <img
+                          src="../../../assets/dinero2.svg"
+                          class="ess-image"
+                          alt=""
+                        /><mat-checkbox
+                          formControlName="transferencia"
+                          value="Transferencia electrónica"
+                        ></mat-checkbox
+                        ><strong>Transferencia electrónica</strong>
+                      </div>
+                      <div class="ess-card1">
+                        <img
+                          src="../../../assets/dinero3.svg"
+                          class="ess-image"
+                          alt=""
+                        /><mat-checkbox
+                          formControlName="tarjeta"
+                          value="Tarjeta de crédito o débito"
+                        ></mat-checkbox
+                        ><strong>Tarjeta de crédito o débito</strong>
+                      </div>
+                      <div class="ess-card1">
+                        <img
+                          src="../../../assets/dinero4.svg"
+                          class="ess-image"
+                          alt=""
+                        /><mat-checkbox formControlName="codi" value="CODI"></mat-checkbox
+                        ><strong>CODI</strong>
+                      </div>
+                      <div class="ess-card1">
+                        <img
+                          src="../../../assets/dinero5.svg"
+                          class="ess-image"
+                          alt=""
+                        /><mat-checkbox formControlName="paypal" value="PayPal"></mat-checkbox
+                        ><strong>PayPal</strong>
+                      </div>
+                      <div class="ess-card1">
+                        <img
+                          src="../../../assets/dinero6.svg"
+                          class="ess-image"
+                          alt=""
+                        /><mat-checkbox
+                          formControlName="mercado"
+                          value="Mercado Pago"
+                        ></mat-checkbox
+                        ><strong>Mercado Pago</strong>
+                      </div>
+                      <div class="ess-card1">
+                        <img
+                          src="../../../assets/contra entrega.svg"
+                          class="ess-image"
+                          alt=""
+                        /><mat-checkbox
+                          formControlName="pago"
+                          value="Pago contra entrega"
+                        ></mat-checkbox
+                        ><strong>Pago contra entrega</strong>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </mat-expansion-panel>
+        </mat-accordion>
+        <button class="button_direccion m-3" mat-stroked-button color="primary">
+          ACTUALIZAR
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

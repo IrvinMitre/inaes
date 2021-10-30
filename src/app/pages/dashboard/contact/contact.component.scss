@@ -1,0 +1,22 @@
+mat-label {
+    font-family: Lato-Regular;
+    font-size: 14px;
+}
+
+mat-form-field {
+    font-family: Lato-Regular;
+    font-size: 17px;
+}
+
+.button_Actualizar {
+    font-family: Lato-Bold;
+    border-color: #000000 !important;
+    font-size: 15px;
+    width: 200px;
+}
+.ess-ds{
+  @media (max-width: 700px) {
+    padding-right:100px;
+  }
+
+}

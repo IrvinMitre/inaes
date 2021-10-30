@@ -1,0 +1,197 @@
+.ess-text-title {
+  font-size: 17pt;
+}
+
+#fichero {
+  display: none;
+}
+
+.ess-subir {
+  width: 183px;
+  height: 83px;
+  background-image: url('../../../../assets/background-upload-image.jpg');
+  cursor: pointer;
+}
+
+::ng-deep .mat-chip.mat-standard-chip {
+  background: white;
+  border: 1px solid black;
+}
+
+::ng-deep .mat-checkbox {
+  margin-bottom: -1.00em;
+}
+
+.ess-redes {
+  display: inline-block;
+  border-radius: 40px;
+  box-shadow: 0px 0px 2px #888;
+
+  background-color: white;
+  border-color: black;
+  padding: 4px;
+}
+
+::ng-deep .mat-checkbox-frame {
+  border-color: gray;
+}
+
+::ng-deep .mat-checkbox-checked.mat-accent .mat-checkbox-ripple .mat-ripple-element {
+  opacity: 0.03 !important;
+  background-color: #235B4E !important;
+}
+
+::ng-deep .mat-checkbox-checked.mat-accent .mat-checkbox-background,
+.mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
+  background-color: #235B4E;
+}
+
+.image-upload>input {
+  display: none;
+}
+
+.ess-text-hightlight {
+  font-family: 'Montserrat-Bold';
+  color: #10312B;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 29px;
+  text-align: center;
+  margin-bottom: 3vh;
+  margin-top: 5vh;
+}
+
+button {
+  //Tamaño del btn
+  min-width: 184px;
+  min-height: 38px;
+  width: auto;
+  height: auto;
+  border-radius: 5px;
+  //Aspecto visual del btn
+  border: 1px solid black;
+  color: black;
+  background-color: white;
+  //Texto en el btn
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+
+  //Btn Deshabilitado
+  &:disabled {
+    background-color: #E5E5E5;
+    border: 1px solid #98989A;
+    color: #98989A;
+    cursor: not-allowed;
+  }
+
+  &:hover:enabled {
+    background-color: #98989A;
+    border: 1px solid #98989A;
+    color: white;
+  }
+}
+
+.progress {
+  height: 10px;
+  width: 100%;
+  border: 1px solid #B9B9B9;
+  border-radius: 4px;
+  background-color: white;
+
+  .progress-bar {
+    width: 37.5%;
+    height: 8px;
+    background: #C4C4C4;
+    border-radius: 4px;
+  }
+}
+
+.ess-text-subtitle {
+  width: 50%;
+  margin: 35px 25% 25px 25%;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 22px;
+  text-align: center;
+  color: black;
+}
+
+
+.ess-redes {
+  padding: 12px 25px 6px 25px;
+}
+
+
+.image-upload {
+  max-width: 183px;
+  margin: 0 auto;
+  position: relative;
+  margin-top: 35px;
+
+  div {
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 20px;
+    height: 20px;
+    font-weight: 800;
+    font-size: 18px;
+    cursor: pointer;
+  }
+
+  img {
+    max-width: 183px;
+    height: 83px;
+    background-size: cover;
+  }
+}
+
+.ess-text-imgCertif {
+  font-style: normal;
+  font-weight: 300;
+  font-size: 10px;
+  line-height: 12px;
+  text-align: left;
+  color: #B9B9B9;
+  margin: 0 auto;
+  width: 174px;
+}
+
+.ess-text-nota {
+  width: 304px;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 10px;
+  line-height: 12px;
+  display: flex;
+  text-align: center;
+  color: #B9B9B9;
+  margin: 0 auto;
+}
+
+.ess-text-nota1 {
+  width: 154px;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 10px;
+  line-height: 12px;
+  display: flex;
+  text-align: center;
+  color: #B9B9B9;
+  margin: 0 auto;
+}
+
+.container-nota-btn {
+  display: flex;
+  align-items: center;
+  margin-top: 70px;
+  margin-bottom: 20vh;
+}

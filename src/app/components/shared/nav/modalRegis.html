@@ -1,0 +1,106 @@
+<div class="container ess-container-register">
+	<div class="row">
+		<div class="col-md-12">
+
+        	<h1>Únete a la comunidad</h1>
+
+            <form [formGroup]="postForm" (submit)="submit()">
+
+				<mat-form-field appearance="outline">
+					<mat-label>
+						Ingresa tu correo electrónico
+					</mat-label>
+					<input matInput autocomplete="off" placeholder="Correo electrónico" formControlName="correo" required/>
+					<small 
+						class="form-text text-muted" 
+						*ngIf="postForm.get('correo').touched && postForm.get('correo').hasError('required')">
+						Este campo es requerido.
+					</small>
+					<small
+						class="form-text text-muted"
+						*ngIf="postForm.get('correo').updateOn && postForm.get('correo').hasError('pattern')">
+						No es un correo valido.
+					</small>
+				</mat-form-field>
+				<p class="error">{{error}}</p>
+
+				<mat-form-field appearance="outline">
+					<mat-label>
+						Contraseña
+					</mat-label>
+					<input matInput autocomplete="off" [type]="hide ? 'password' : 'text'" formControlName="contrasena" required/>
+					<button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+						<mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+					</button>
+					<small 
+						class="form-text text-muted" 
+						*ngIf="postForm.get('contrasena').touched && postForm.get('contrasena').hasError('required')">
+						Este campo es requerido.
+					</small>
+					<small
+						class="form-text text-muted"
+						*ngIf="postForm.get('contrasena').updateOn && postForm.get('contrasena').hasError('pattern')">
+						Revisa tu contraseña
+					</small>
+					<mat-hint>
+						Ingresa al menos 8 carácteres y máximo 12, una mayuscúla, un número y un signo.
+					</mat-hint>
+				</mat-form-field>
+
+				<mat-form-field appearance="outline">
+					<mat-label>
+						Repite tu contraseña
+					</mat-label>
+					<input matInput autocomplete="off" [type]="hide ? 'password' : 'text'" formControlName="confcontrasena" required/>
+					<small 
+						class="form-text text-muted" 
+						*ngIf="postForm.get('confcontrasena').touched && postForm.get('confcontrasena').hasError('required')">
+						Este campo es requerido.
+					</small>
+					<small
+						class="form-text text-muted"
+						*ngIf="postForm.get('confcontrasena').value !== postForm.get('contrasena').value">
+						Contraseñas no coinciden.
+					</small>
+				</mat-form-field>
+
+
+				<mat-checkbox formControlName="term">
+					<p>
+						Acepto recibir información del Boletín Informativo
+					</p>
+				</mat-checkbox>
+
+				<mat-checkbox formControlName="term1">
+					<p>
+						Acepto las <a data-toggle="modal" data-target="#modalPoliticasDePrivacidad">políticas de privacidad</a>
+					</p>
+				</mat-checkbox>
+
+				<button class="button_direccion" [disabled]="!postForm.valid ">
+					CREAR CUENTA
+				</button>
+            </form>
+			<div class="col-md-12 text-center mt-5">O por redes sociales</div>
+
+
+            <button class="button_direccion" (click)="signInWithFB()">
+                FACEBOOK
+            </button>
+
+
+            <button class="button_direccion" (click)="signInWithGoogle()">
+                GMAIL
+            </button>
+
+			<a class="ess-link-no-account" role="button" (click)="login()">
+                Ya tengo cuenta
+            </a>
+		</div>
+	</div>
+</div>
+
+<!-- Modal POLÍTICAS DE PRIVACIDAD  -->
+<div class="modal fade" id="modalPoliticasDePrivacidad" tabindex="-1" role="dialog" aria-labelledby="modalPoliticasDePrivacidadLabel" aria-hidden="true">
+    <app-politicas-privacidad></app-politicas-privacidad>
+</div>

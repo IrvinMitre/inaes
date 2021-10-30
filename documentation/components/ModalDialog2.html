@@ -1,0 +1,349 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>social documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">social documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>ModalDialog2</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/pages/profile/profile.component.ts</code>
+</p>
+
+
+
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>dialog</code></td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>modal.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+
+
+
+
+
+
+
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Product, ProductModel } from &#x27;./../../models/productRequest.model&#x27;;
+import * as ProductActions from &#x27;./../../actions/product.actions&#x27;;
+import { State, Store } from &#x27;@ngrx/store&#x27;;
+import { Router } from &#x27;@angular/router&#x27;;
+import { Component, OnInit } from &#x27;@angular/core&#x27;;
+import { FormBuilder, FormGroup, Validators } from &#x27;@angular/forms&#x27;;
+import { MatDialog } from &#x27;@angular/material/dialog&#x27;;
+import { ProductService } from &#x27;./../../services/product.service&#x27;;
+
+
+@Component({
+  selector: &#x27;ess-profile&#x27;,
+  templateUrl: &#x27;./profile.component.html&#x27;,
+  styleUrls: [&#x27;./profile.component.scss&#x27;],
+})
+export class ProfileComponent implements OnInit {
+  constructor(private state: State&lt;ProductModel&gt;, private store: Store&lt;{ product: ProductModel }&gt;, private fb: FormBuilder, public dialog: MatDialog, private router: Router, private proServ: ProductService) { }
+  postForm: FormGroup;
+  hide &#x3D; true;
+  ngOnInit() {
+    this.postForm &#x3D; this.fb.group({
+      nombre: [&#x27;&#x27;, [Validators.required]],
+      apellido: [&#x27;&#x27;, [Validators.required]],
+      correo: [&#x27;&#x27;, [Validators.required, Validators.email]],
+      telefono: [&#x27;&#x27;, [Validators.required, Validators.maxLength(10)]],
+      contrasena: [&#x27;&#x27;, [Validators.required]],
+      confcontrasena: [&#x27;&#x27;, [Validators.required]],
+      term: [false, [Validators.requiredTrue]],
+      term1: [false, [Validators.requiredTrue]]
+    });
+  }
+
+  openDialog() {
+    const dialogRef &#x3D; this.dialog.open(ModalDialog2);
+  }
+
+  openDialog2() {
+    const dialogRef &#x3D; this.dialog.open(ModalDialog3);
+  }
+
+  submit() {
+    if (!this.postForm.valid) {
+      return;
+    }
+    this.store.dispatch(ProductActions.SetAdmin({ firstName: this.postForm.value.nombre, lastName: this.postForm.value.apellido, email: this.postForm.value.correo, movil: this.postForm.value.movil, password: this.postForm.value.contrasena }));
+    //this.router.navigateByUrl(&#x27;/registro/informacion-adicional&#x27;)
+    console.log(this.state.getValue().products);
+    this.proServ.postEmpresas(this.state.getValue().products).subscribe(
+      res &#x3D;&gt; {
+        console.log(res);
+        console.log(this.state.getValue().products);
+      },
+      err &#x3D;&gt; {
+        console.log(err);
+      }
+    );
+  }
+
+
+}
+
+
+
+@Component({
+  selector: &#x27;dialog&#x27;,
+  templateUrl: &#x27;modal.html&#x27;,
+})
+export class ModalDialog2 {
+
+}
+
+@Component({
+  selector: &#x27;dialog1&#x27;,
+  templateUrl: &#x27;modal2.html&#x27;,
+})
+export class ModalDialog3 {
+  constructor(private router: Router, public dialog: MatDialog) { }
+  closeDialog() {
+    const dialogRef &#x3D; this.dialog.closeAll()
+  }
+
+  rediPerfil() {
+    this.closeDialog()
+    this.router.navigateByUrl(&#x27;/dashboard/perfil&#x27;)
+  }
+
+  rediBienes() {
+    this.closeDialog()
+    this.router.navigateByUrl(&#x27;/producto/producto-servicio&#x27;)
+  }
+}
+
+
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;h2 mat-dialog-title&gt;Información en general&lt;/h2&gt;
+&lt;mat-dialog-content class&#x3D;&quot;mat-typography&quot;&gt;
+  &lt;p&gt;A) Manifiesto bajo protesta de decir verdad que mi Empresa Social cumple toda la normativa correspondiente al bien y/o servicio que comercializa, por lo que mi Empresa Social y yo nos obligamos a sacar en paz y a salvo a la Secretaría de Bienestar  y al INAES de cualquier reclamación o acción al respecto.
+    &lt;/p&gt;
+
+    &lt;p&gt;B) Acepto que para la mejor difusión  de los bienes o servicios que
+      comercializa mi Empresa  Social, la Secretaría del Bienestar y el INAES,
+      conjunta o separadamente, podrán emplear el nombre, denominación o razón social de mi Empresa Social; la imagen de los integrantes o socios de dicha Empresa o bien la de la marca de ésta; por lo que la Secretaría de Bienestar y el INAES no reconocerán u otorgarán contraprestación a mi.&lt;/p&gt;
+    &lt;p&gt;
+      C) Bajo protesta de decir la verdad manifiesto que, al momento de realizar el presente trámite, ninguno de los socios o integrantes de mi Empresa Social es cónyuge o pariete consanguíneo hasta el cuarto grado por ambas líneas, ascendente o descendente; por afinidad hasta el
+      segundo grado; o civiles, de algún servidor público del INAES.
+    &lt;/p&gt;
+    &lt;p&gt;
+      Entiendo que parientes por consanguinidad el cuarto grado son:
+    &lt;/p&gt;
+    &lt;p&gt;
+      I. En línea recta ascendente: padres, abuelos,
+      bisabuelos y tatarabuelos; en línea recta descendente: hijos, nietos, bisnietos y tataranietos.
+    &lt;/p&gt;
+    &lt;p&gt;
+      II. En línea transversal: tíos, primos, hermanos, sobrinos, tíos-abuelos y sobrinos nietos.
+    &lt;/p&gt;
+    &lt;p&gt;
+      Entiendo que parientes por afinidad hasta el segundo grado son: suegros, abuelos políticos, yernos/nueras y cuñados.
+    &lt;/p&gt;
+    &lt;p&gt;
+      Entiendo que parientes civiles son: adoptante y adoptado.
+    &lt;/p&gt;
+
+&lt;/mat-dialog-content&gt;
+&lt;mat-dialog-actions align&#x3D;&quot;end&quot;&gt;
+  &lt;button mat-button mat-dialog-close&gt;Cerrar&lt;/button&gt;
+  &lt;button mat-button [mat-dialog-close]&#x3D;&quot;true&quot; cdkFocusInitial&gt;Aceptar&lt;/button&gt;
+&lt;/mat-dialog-actions&gt;
+</code></pre>
+    </div>
+
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><h2 mat-dialog-title>Información en general</h2><mat-dialog-content class="mat-typography">  <p>A) Manifiesto bajo protesta de decir verdad que mi Empresa Social cumple toda la normativa correspondiente al bien y/o servicio que comercializa, por lo que mi Empresa Social y yo nos obligamos a sacar en paz y a salvo a la Secretaría de Bienestar  y al INAES de cualquier reclamación o acción al respecto.    </p>    <p>B) Acepto que para la mejor difusión  de los bienes o servicios que      comercializa mi Empresa  Social, la Secretaría del Bienestar y el INAES,      conjunta o separadamente, podrán emplear el nombre, denominación o razón social de mi Empresa Social; la imagen de los integrantes o socios de dicha Empresa o bien la de la marca de ésta; por lo que la Secretaría de Bienestar y el INAES no reconocerán u otorgarán contraprestación a mi.</p>    <p>      C) Bajo protesta de decir la verdad manifiesto que, al momento de realizar el presente trámite, ninguno de los socios o integrantes de mi Empresa Social es cónyuge o pariete consanguíneo hasta el cuarto grado por ambas líneas, ascendente o descendente; por afinidad hasta el      segundo grado; o civiles, de algún servidor público del INAES.    </p>    <p>      Entiendo que parientes por consanguinidad el cuarto grado son:    </p>    <p>      I. En línea recta ascendente: padres, abuelos,      bisabuelos y tatarabuelos; en línea recta descendente: hijos, nietos, bisnietos y tataranietos.    </p>    <p>      II. En línea transversal: tíos, primos, hermanos, sobrinos, tíos-abuelos y sobrinos nietos.    </p>    <p>      Entiendo que parientes por afinidad hasta el segundo grado son: suegros, abuelos políticos, yernos/nueras y cuñados.    </p>    <p>      Entiendo que parientes civiles son: adoptante y adoptado.    </p></mat-dialog-content><mat-dialog-actions align="end">  <button mat-button mat-dialog-close>Cerrar</button>  <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Aceptar</button></mat-dialog-actions></div>'
+    var COMPONENTS = [{'name': 'AddressComponent', 'selector': 'ess-address'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BusinessComponent', 'selector': 'ess-business'},{'name': 'ContactComponent', 'selector': 'ess-contact'},{'name': 'DestinationComponent', 'selector': 'ess-destination'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'GoodsAndServicesComponent', 'selector': 'ess-goods-and-services'},{'name': 'HomeComponent', 'selector': 'ess-home'},{'name': 'HomeDashboardComponent', 'selector': 'ess-home-dashboard'},{'name': 'InformationComponent', 'selector': 'ess-information'},{'name': 'ModalDialog', 'selector': 'dialo'},{'name': 'ModalDialog', 'selector': 'dialog-content-example-dialog'},{'name': 'ModalDialog2', 'selector': 'dialog'},{'name': 'ModalDialog3', 'selector': 'dialog1'},{'name': 'ModalDialog4', 'selector': 'dialog-content-example-dialog'},{'name': 'ModalDialog4', 'selector': 'dialog-content-example-dialog'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'ProductCategoryComponent', 'selector': 'app-product-category'},{'name': 'ProductComponent', 'selector': 'app-product'},{'name': 'ProductDescriptionComponent', 'selector': 'app-product-description'},{'name': 'ProductPathComponent', 'selector': 'app-product-path'},{'name': 'ProductPayComponent', 'selector': 'app-product-pay'},{'name': 'ProductPhotoComponent', 'selector': 'app-product-photo'},{'name': 'ProductsComponent', 'selector': 'ess-products'},{'name': 'ProductsDashboardComponent', 'selector': 'ess-products-dashboard'},{'name': 'ProfileComponent', 'selector': 'ess-profile'},{'name': 'ProfileDashboardComponent', 'selector': 'ess-profile-dashboard'},{'name': 'RegistryComponent', 'selector': 'ess-registry'},{'name': 'SearchComponent', 'selector': 'app-search'},{'name': 'ServicesDashboardComponent', 'selector': 'ess-services-dashboard'},{'name': 'ServiciosComponent', 'selector': 'app-servicios'},{'name': 'SteperComponent', 'selector': 'app-steper'},{'name': 'StoresComponent', 'selector': 'ess-stores'},{'name': 'TourismCategoryComponent', 'selector': 'ess-tourism-category'},{'name': 'TourismComponent', 'selector': 'ess-tourism'},{'name': 'WelcomeComponent', 'selector': 'ess-welcome'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'ModalDialog2'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'ModalDialog2.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

@@ -1,0 +1,148 @@
+.row {
+  background-color: rgba(188, 149, 92, 0.6);
+  color: white;
+  width: 100%;
+  height: 200px;
+  margin-right: 0;
+  margin-left: 0;
+  margin-top: 5vh;
+
+  .ess-links {
+    font-family: "Montserrat-Regular";
+    color: white;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 21px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    display: block;
+    margin: 1vh 0;
+    cursor: pointer;
+    &:hover {
+      text-decoration-line: underline;
+    }
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  h6 {
+    font-family: "Montserrat-Regular";
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 17px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #BC955C;
+    text-align: left;
+  }
+
+  mat-form-field {
+    width: 100%;
+  }
+
+  input {
+    width: 100%;
+  }
+
+  .ess-container-social {
+
+    h6,
+    .ess-container-icon {
+      display: inline-block;
+    }
+
+    h6 {
+      margin-right: 20px;
+    }
+
+    a {
+      color: #BC955C;
+      margin: 0;
+      font-size: 18px;
+    }
+
+    .ess-container-icon {
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background-color: white;
+      color: #BC955C;
+      font-size: 18px;
+      text-align: center;
+      padding-top: 3.7px;
+      margin: 0 10px;
+    }
+  }
+
+  button {
+    background-color: transparent;
+    border: none;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 18px;
+    letter-spacing: 0.2em;
+    color: #BC955C;
+    padding: 10px 15px;
+    &:hover{
+      border: 1px solid #BC955C;
+    }
+    &:focus{
+      outline: none;
+      box-shadow: none;
+    }
+    &:disabled{
+      display: none;
+    }
+  }
+  mat-label, mat-error{
+    font-size: 1.2em;
+  }
+  .success{
+    color: #28a745;
+  }
+  .error{
+    color: #dc3545;
+  }
+}
+
+
+
+//Css para tablets y celulares
+@media (max-width: 768px) {
+  .row {
+    height: auto;
+    text-align: center;
+    padding: 5vh 0;
+
+    .ess-container-social {
+      text-align: center;
+    }
+
+    .ess-links {
+      text-align: center;
+      font-size: 16px;
+      margin: 3vh 0;
+    }
+
+    h6 {
+      text-align: center;
+      font-size: 18px;
+    }
+
+    .col-sm-12 {
+      margin: 5vh 0;
+    }
+
+    mat-form-field {
+      width: 80%;
+      margin: 0 10%;
+    }
+  }
+
+}

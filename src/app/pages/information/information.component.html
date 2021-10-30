@@ -1,0 +1,115 @@
+<div class="container mt-5">
+  <div class="row text-left">
+    <div class="col">
+      <img
+        src="../../../assets/logo_desarrolla.svg"
+        width="130vw"
+        height="100vh"
+        alt=""
+        srcset=""
+      />
+    </div>
+  </div>
+  <div class="row justify-content-center">
+    <div class="col-md-8 text-center">
+      <p class="ess-text-hightlight mb-3">
+        Información adicional de tu negocio
+      </p>
+      <p class="ess-text-subtitle pt-3 pb-3">
+        ¿Cuáles son tus medios de contacto?
+      </p>
+      <form class="ess-form" [formGroup]="postForm" (submit)="submit()">
+        <div class="row justify-content-center">
+          <div class="col col-md-7">
+            <div class="col">
+              <mat-form-field class="ess-input-full">
+                <mat-label>Correo electrónico</mat-label>
+                <input
+                  matInput
+                  placeholder="Correo electronico"
+                  formControlName="correo"
+                />
+                <small
+                style="width: 40vw; color: red;"
+                  class="form-text text-muted"
+                  *ngIf="
+                    postForm.get('correo').touched &&
+                    postForm.get('correo').errors
+                  "
+                  > <p style="width: 40vw; color: red;">Ingresa correo valido.</p></small
+                >
+                <mat-hint></mat-hint>
+              </mat-form-field>
+            </div>
+            <div class="col">
+              <mat-form-field class="ess-input-full">
+                <mat-label>Facebook</mat-label>
+                <textarea
+                  matInput
+                  placeholder="Liga de Facebook"
+                  formControlName="facebook"
+                  cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1"
+                ></textarea>
+                <mat-hint></mat-hint>
+              </mat-form-field>
+            </div>
+            <div class="col">
+              <mat-form-field class="ess-input-full">
+                <mat-label>Instagram</mat-label>
+                <input
+                  matInput
+                  placeholder="Instagram"
+                  formControlName="insta"
+                />
+                <mat-hint></mat-hint>
+              </mat-form-field>
+            </div>
+            <div class="col">
+              <mat-form-field class="ess-input-full">
+                <mat-label>Pagina Web</mat-label>
+                <input
+                  matInput
+                  placeholder="Indica la liga de tu LinkedIn, Twitter, etc."
+                  formControlName="red"
+                />
+                <mat-hint></mat-hint>
+              </mat-form-field>
+            </div>
+            <div class="col">
+              <mat-form-field class="ess-input-full">
+                <mat-label>Teléfono fijo</mat-label>
+                <input
+                  matInput
+                  formControlName="telefono"
+                  type="tel"
+                />
+                <small class="form-text text-muted" *ngIf="
+                postForm.get('telefono').errors
+              " style="width: 40vw; color: red;"> <p style="width: 40vw; color: red;">Teléfono incorrecto ingresa 10 dígitos.</p></small>
+              </mat-form-field>
+            </div>
+            <div class="col">
+              <mat-form-field class="ess-input-full">
+                <mat-label>WhatsApp de tu negocio</mat-label>
+                <input
+                  matInput
+                  placeholder="10 dígitos"
+                  formControlName="telefonoW"
+                  type="number"
+                />
+                <small
+                  class="form-text text-muted"
+                  *ngIf="postForm.get('telefonoW').errors"
+                >
+                  Ingresa 10 dígitos
+                </small>
+                <mat-hint></mat-hint>
+              </mat-form-field>
+            </div>
+            <button>SIGUIENTE</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

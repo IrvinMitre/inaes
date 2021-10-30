@@ -1,0 +1,189 @@
+.imageEmpresa{
+  max-width: 400px;
+  height: 300px;
+}
+.imageEmpresa1{
+  max-width: 300px;
+  height: 200px;
+}
+.button {
+  //Tamaño del btn
+
+
+  border-radius: 30px;
+  //Aspecto visual del btn
+
+  color: black;
+  background-color: white;
+  //Texto en el btn
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #000000;
+  //Espacio del btn
+  margin: 10px 15px;
+  font-family: Montserrat-Bold;
+  font-size: 12px;
+  padding: 5px;
+  width: 110px;
+}
+
+
+.button2 {
+  //Tamaño del btn
+  min-width: 175px;
+  min-height: 38px;
+  width: auto;
+  height: auto;
+  border-radius: 30px;
+  //Aspecto visual del btn
+  border: 1px solid black;
+  color: black;
+  background-color: #3C64B1;
+  //Texto en el btn
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: white;
+  //Espacio del btn
+  margin: 10px 15px;
+}
+
+::ng-deep .mat-expansion-panel-body .mat-expansion-panel-header .mat-expansion-panel{
+  padding: 0px 0px 0px 0px;
+  color: rebeccapurple !important;
+}
+
+.color{
+  background-color:  #3C64B1;
+color: white;
+width: 110px;
+}
+.ess-cert {
+  display: inline-block;
+  border-radius: 50%;
+  box-shadow: 0px 0px 0px #888;
+  width: 100px;
+  height: 100px;
+  // background-color: #93a6bb8c;
+  color: white;
+}
+
+.ess-des{
+font-family:Lato-Regular;
+font-size: 12px;
+}
+.ess-rede{
+  font-family: Montserrat-Light;
+  font-size: 14px;
+}
+
+.ess-produ-T{
+  font-family: Montserrat-Light;
+  font-size: 18px;
+}
+
+.buttonp{
+  border-radius: 30px;
+  //Aspecto visual del btn
+  border: 1px solid black;
+  color: black;
+  background-color: white;
+  font-family: Montserrat-Regular;
+  font-size: 12px;
+}
+
+.ess-t-cert{
+  font-family: Montserrat-Regular;
+  font-size: 14px;
+}
+
+::ng-deep .mat-button-toggle{
+  font-family: Montserrat-Regular;
+  font-size: 12px;
+}
+
+.buttonp1{
+  border-radius: 30px;
+  //Aspecto visual del btn
+  border: 1px solid black;
+  color: black;
+  background-color: white;
+  font-family: Montserrat-Regular;
+  font-size: 12px;
+  width:  100px;
+}
+
+::ng-deep .p{
+  cursor: pointer;
+
+}
+
+.classtrubotton{
+  border-radius: 30px;
+  //Aspecto visual del btn
+  border: 1px solid black;
+  background-color: blue;
+  font-family: Montserrat-Regular;
+  font-size: 12px;
+  width:  100px;
+  color: white;
+
+}
+
+.classfalsebotton{
+  border-radius: 30px;
+  //Aspecto visual del btn
+  border: 1px solid black;
+  background-color: blue;
+  font-family: Montserrat-Regular;
+  font-size: 12px;
+  width:  100px;
+  color: white;
+
+}
+
+.img-b {
+  width: 250px;
+  height: 40px;
+  font-family: Montserrat-Bold;
+  color: #3C64B1;
+  font-size: 14px;
+  border: none;
+  border-radius: 30px;
+  opacity: 0.7;
+}
+.img-bb{
+
+  border-radius: 30px;
+  //Aspecto visual del btn
+
+  color: #3C64B1;
+  background-color: #FBFCFD;
+  //Texto en el btn
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 18px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  //Espacio del btn
+  margin: 10px 15px;
+  font-family: Montserrat-Bold;
+  font-size: 12px;
+  padding: 5px;
+  width: 150px;
+  border: none;
+
+}
+
+.titleP{
+  font-size: 18px;
+  font-family: Montserrat-Bold;
+}

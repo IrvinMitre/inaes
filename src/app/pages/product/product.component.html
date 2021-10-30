@@ -1,0 +1,489 @@
+<app-nav></app-nav>
+<div class="container-fluid mt-2 ">
+  <div class="row">
+    <div class="col-md-6 ess-desc">
+      <div class="row ess-fon" style="background: url({{ imgPhoto1 }})">
+        <div class="col"></div>
+      </div>
+      <div class="row ess-desc mt-3 mr-1">
+        <div class="col-7">
+          <img class="img-fluid" src="{{ imgPhoto2 }}" alt="" />
+        </div>
+        <div class="col-5">
+          <img class="img-fluid" src="{{ imgPhoto3 }}" alt="" />
+        </div>
+      </div>
+    </div>
+
+    <div class="col ess-asc">
+      <div class="row">
+        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active ess-carrusel">
+              <img class="img-fluid" src="{{ imgPhoto1 }}" alt="First slide" />
+            </div>
+            <div class="carousel-item ess-carrusel">
+              <img class="img-fluid" src="{{ imgPhoto2 }}" alt="Second slide" />
+            </div>
+            <div class="carousel-item ess-carrusel">
+              <img class="img-fluid" src="{{ imgPhoto3 }}" alt="Third slide" />
+            </div>
+          </div>
+          <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6 ess-size-content">
+      <div class="row ess-styleName justify-content-center">
+        <div class="col ess-styleName ">
+          <a class="ess-styleName" routerLink="/empresas/{{ key }}">{{
+            name
+            }}</a>
+        </div>
+      </div>
+      <div class="row pt-4">
+        <div class="col">
+          <h1 class="ess-stylePro">-{{ productData.whatIsIt }}</h1>
+        </div>
+      </div>
+      <div class="row pt-4">
+        <div class="col ess-styleDes">
+          {{ productData.description }}
+        </div>
+      </div>
+      <hr />
+      <div class="row pt-2">
+        <div class="col-6">
+          <div class="row text-center">
+            <div class="col-5">
+              <strong style="font-family: Montserrat-Bold;font-size:12px;">COMPARTIR</strong>
+            </div>
+            <div class="col-2">
+              <a (click)="goToLink(socialData.facebook)"><img class="mr-1 ml-1 ess-click" src="../../../assets/fbl.svg"
+                  alt="" /></a>
+            </div>
+            <div class="col-2">
+              <a (click)="goToLink(socialData.instagram)"><img class="mr-1 ml-1 ess-click"
+                  src="../../../assets/instagram.svg" alt="" /></a>
+            </div>
+            <div class="col-2">
+              <a (click)="goToLink(socialData.website)">
+                <img class="mr-1 ml-1 ess-click" src="../../../assets/linked2.png" alt="" /></a>
+            </div>
+          </div>
+
+          <div class="row mt-3">
+            <ng-container *ngFor="let ft of cer">
+              <div class="col p-1">
+                <div aria-hidden="true" class="ess-cert p-2 mr-1">
+                  <img class="mr-2 ess-cert" src="{{ ft.pictureRoute }}" alt="" />
+                </div>
+
+              <div class="row">
+                <div class="col p-3">
+                  <p class="ess-text-small">{{ ft.type }}</p>
+                </div>
+              </div>
+            </div>
+            </ng-container>
+
+          </div>
+
+        </div>
+
+        <div class="col-md-6">
+          <div class="row">
+            <div class="col"><strong style="font-family: Montserrat-Bold;font-size:12px;">CONTACTO</strong></div>
+          </div>
+          <div class="row pt-3">
+            <div class="col">
+              <div class="row mt-2">
+                <div class="col-12" style="font-family: Lato-Light;font-size:14px;">
+                  <img class="mr-4" src="../../../assets/link.svg" alt="" /> {{ email }}
+                </div>
+              </div>
+              <div class="row mt-3">
+                <div class="col-12" style="font-family: Lato-Light;font-size:14px;">
+                  <img class="mr-4" src="../../../assets/telefono.svg" alt="" /> {{ movil }}
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row mt-5">
+            <div class="col"><strong style="font-family: Lato-Bold;font-size:12px;">DE VENTA EN:</strong></div>
+          </div>
+
+          <div class="row mt-3" style="font-family: Lato-Light;font-size:14px;">
+            <div class="col" >
+              <ul>
+                <li *ngFor="let cat of descriptions">
+                  <a  *ngIf="cat.catCommercializationType === 'Tienda en línea externa (Amazon, Mercado libre, Linio, otra.)' || cat.catCommercializationType === 'Tienda en línea propia'" style="font-family: Lato-Light;font-size:14px; color: black;"  (click)=" direct(cat.description)" >
+                    <p>Website</p>
+                     </a>
+
+                  <p *ngIf="cat.catCommercializationType === 'Establecimiento propio' || cat.catCommercializationType === 'Establecimiento arrendado' || cat.catCommercializationType === 'Establecimiento dado en comodado' || cat.catCommercializationType === 'Mercados locales' "> {{ cat.description }}</p>
+
+                    <p *ngIf="cat.catCommercializationType === 'Súper mercado'  ||  cat.catCommercializationType ==='Tiendas de conveniencia ' || cat.catCommercializationType ==='Almácenes' || cat.catCommercializationType ==='Tiendas departamentales' ">{{cat.catCommercializationType}}</p>
+
+                    <ul *ngIf="cat.catCommercializationType === 'Súper mercado'  || cat.catCommercializationType === 'Tiendas de conveniencia ' || cat.catCommercializationType ==='Almácenes' ||cat.catCommercializationType === 'Tiendas departamentales' ">
+                      <li *ngFor="let tien of cat.catCommercializationSubType">
+                        {{ tien }}
+                      </li>
+                    </ul>
+
+                </li>
+
+
+
+              </ul>
+            </div>
+          </div>
+
+
+
+        </div>
+      </div>
+      <hr />
+		<div class="row">
+			<div class="col">
+				<div class="row">
+					<div class="col">
+						<div class="row">
+							<div class="col">Entrega a domicilio</div>
+							<div class="col">Medios de pago</div>
+						</div>
+						<div class="row mt-3">
+							<div class="col">
+								<img src="../../../assets/truck.svg" alt="" *ngIf="descriptions.description !== null" />
+							</div>
+
+							<div class="col">
+								<div class="row" *ngFor="let item of payment">
+								<div class="col">
+									<mat-checkbox class="example-margin" [checked]="true" [disabled]="true" *ngIf="item.catPayment !== null">{{ item.catPayment }}
+									</mat-checkbox>
+								</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<hr />
+			</div>
+		</div>
+
+
+		<div class="row ess-container-comments">
+			<div class="col-md-8">
+				<h3>¿Qué opinan los usuarios?</h3>
+				<div class="ess-container-comment" *ngFor="let comment of commentsParsed">
+					<div class="row align-items-center">
+						<i class="bi bi-person-circle"></i>
+						<p class="ess-label-rating"> {{ comment.email }} </p>
+
+						<div class="stars d-flex flex-row-reverse ml-auto">
+              <div *ngFor="let n of numSequence( comment.rating ); let i = index;">
+                <input class="star star-checked" disabled/>
+                <label class="star star-checked" checked></label>
+              </div>
+						</div>
+					</div>
+					<p>
+            {{ comment.comment }}
+					</p>
+				</div>
+			</div>
+		</div>
+
+
+		<hr>
+
+		<div class="row">
+			<div class="col-md-8">
+				<form [formGroup] = "makeRating" (ngSubmit) = "submitRating(makeRating.value)" >
+					<div class="row align-items-center">
+						<p class="ess-label-rating">Calificar: </p>
+						<div class="stars d-flex flex-row-reverse">
+							<input class="star star-5" id="star-5" type="radio" value="5" name="star" formControlName = "rating"/>
+							<label class="star star-5" for="star-5"></label>
+			
+							<input class="star star-4" id="star-4" type="radio" value="4" name="star" formControlName = "rating"/>
+							<label class="star star-4" for="star-4"></label>
+							
+							<input class="star star-3" id="star-3" type="radio" value="3" name="star" formControlName = "rating"/>
+							<label class="star star-3" for="star-3"></label>
+			
+							<input class="star star-2" id="star-2" type="radio" value="2" name="star" formControlName = "rating"/>
+							<label class="star star-2" for="star-2"></label>
+			
+							<input class="star star-1" id="star-1" type="radio" value="1" name="star" formControlName = "rating"/>
+							<label class="star star-1" for="star-1"></label>
+						</div>
+					</div>
+					<p class="ess-warning-rating">
+						¿Cuantas estrellas le pondrías a este producto?
+					</p>
+
+					<mat-form-field>
+						<mat-label>Escribe tu comentario aquí:</mat-label>
+						<textarea 
+							matInput
+							cdkTextareaAutosize
+							#autosize="cdkTextareaAutosize"
+							formControlName = "comentario"
+						>
+						</textarea>
+					</mat-form-field>
+
+					<button [disabled]="makeRating.invalid" class="ess-btn-rating" type="submit">Enviar</button>
+				</form>
+			</div>
+		</div>
+			
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</div>
+
+<div class="container mt-3">
+  <div class="row">
+    <div class="col pb-3" style="font-family: Montserrat-Bold;font-size:18px;"><strong>Relacionados</strong></div>
+  </div>
+  <div class="row pt-2">
+    <div class="col mb-3">
+      <mat-card class="ess-card" *ngIf="productData1[0]">
+        <img mat-card-image src="{{productData1[0].pictures[0].route}}" alt="foto producto uno" />
+        <mat-card-content>
+          <a [routerLink]="['/productos/'+productData1[0]._id+'/'+productData1[0].socialEnterpriseKey]">
+            <h2 class="text-left" style="font-family: Montserrat-Bold;font-size:18px; color: black;">
+              {{productData1[0].whatIsIt}}</h2>
+          </a>
+
+          <p class="text-left" style="font-family: Montserrat-Light;font-size:12px;">
+
+            {{productData1[0].description}}
+
+          </p>
+
+        </mat-card-content>
+        <mat-card-actions>
+          <div class="row justify-content-rigth ess-hoverLike">
+            <div class="col text-rigth">
+              <span (click)="changeLike()">
+                <i class="fa fa-heart" *ngIf="like" aria-hidden="true"></i>
+              </span>
+              <span (click)="changeLike()">
+                <i class="fa fa-heart-o" *ngIf="!like" aria-hidden="true"></i>
+              </span>
+            </div>
+          </div>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+    <div class="col mb-3">
+      <mat-card class="ess-card" *ngIf="productData1[1]">
+
+        <img mat-card-image src="{{productData1[1].pictures[0].route}}" alt="foto producto uno" />
+        <mat-card-content>
+          <a [routerLink]="['/productos/'+productData1[1]._id+'/'+productData1[1].socialEnterpriseKey]">
+            <h2 class="text-left" style="font-family: Montserrat-Bold;font-size:18px; color: black;">
+              {{productData1[1].whatIsIt}}</h2>
+          </a>
+          <p class="text-left" style="font-family: Montserrat-Light;font-size:12px;">
+            {{productData1[1].description}}
+          </p>
+        </mat-card-content>
+        <mat-card-actions>
+          <div class="row justify-content-rigth ess-hoverLike">
+            <div class="col text-rigth">
+              <span (click)="changeLike()">
+                <i class="fa fa-heart" *ngIf="like" aria-hidden="true"></i>
+              </span>
+              <span (click)="changeLike()">
+                <i class="fa fa-heart-o" *ngIf="!like" aria-hidden="true"></i>
+              </span>
+            </div>
+          </div>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+    <div class="col mb-3">
+      <mat-card class="ess-card" *ngIf="productData1[2]">
+        <img mat-card-image src="{{productData1[2].pictures[0].route}}" alt="foto producto uno" />
+        <mat-card-content>
+          <a [routerLink]="['/productos/'+productData1[2]._id+'/'+productData1[2].socialEnterpriseKey]">
+            <h2 class="text-left" style="font-family: Montserrat-Bold;font-size:18px; color: black;">
+              {{productData1[2].whatIsIt}}</h2>
+          </a>
+          <p class="text-left" style="font-family: Montserrat-Light;font-size:12px;">
+            {{productData1[2].description}}
+          </p>
+        </mat-card-content>
+        <mat-card-actions>
+          <div class="row justify-content-rigth ess-hoverLike">
+            <div class="col text-rigth">
+              <span (click)="changeLike()">
+                <i class="fa fa-heart" *ngIf="like" aria-hidden="true"></i>
+              </span>
+              <span (click)="changeLike()">
+                <i class="fa fa-heart-o" *ngIf="!like" aria-hidden="true"></i>
+              </span>
+            </div>
+          </div>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+    <div class="col mb-3">
+      <mat-card class="ess-card" *ngIf="productData1[3]">
+        <img mat-card-image src="{{productData1[3].pictures[0].route}}" alt="foto producto uno" />
+        <mat-card-content>
+          <a [routerLink]="['/productos/'+productData1[3]._id+'/'+productData1[3].socialEnterpriseKey]">
+            <h2 class="text-left" style="font-family: Montserrat-Bold;font-size:18px; color: black;">
+              {{productData1[3].whatIsIt}}</h2>
+          </a>
+          <p class="text-left" style="font-family: Montserrat-Light;font-size:12px;">
+            {{productData1[3].description}}
+          </p>
+        </mat-card-content>
+        <mat-card-actions>
+          <div class="row justify-content-rigth ess-hoverLike">
+            <div class="col text-rigth">
+              <span (click)="changeLike()">
+                <i class="fa fa-heart" *ngIf="like" aria-hidden="true"></i>
+              </span>
+              <span (click)="changeLike()">
+                <i class="fa fa-heart-o" *ngIf="!like" aria-hidden="true"></i>
+              </span>
+            </div>
+          </div>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+  <div class="row pt-2">
+    <div class="col mb-3">
+      <mat-card class="ess-card" *ngIf="productData1[4]">
+        <img mat-card-image src="{{productData1[4].pictures[0].route}}" alt="foto producto uno" />
+        <mat-card-content>
+          <a [routerLink]="['/productos/'+productData1[4]._id+'/'+productData1[4].socialEnterpriseKey]">
+            <h2 class="text-left" style="font-family: Montserrat-Bold;font-size:18px; color: black;">
+              {{productData1[4].whatIsIt}}</h2>
+          </a>
+          <p class="text-left" style="font-family: Montserrat-Light;font-size:12px;">
+            {{productData1[4].description}}
+          </p>
+        </mat-card-content>
+        <mat-card-actions>
+          <div class="row justify-content-rigth ess-hoverLike">
+            <div class="col text-rigth">
+              <span (click)="changeLike()">
+                <i class="fa fa-heart" *ngIf="like" aria-hidden="true"></i>
+              </span>
+              <span (click)="changeLike()">
+                <i class="fa fa-heart-o" *ngIf="!like" aria-hidden="true"></i>
+              </span>
+            </div>
+          </div>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+    <div class="col mb-3">
+      <mat-card class="ess-card" *ngIf="productData1[5]">
+
+        <img mat-card-image src="{{productData1[5].pictures[0].route}}" alt="foto producto uno" />
+        <mat-card-content>
+          <a [routerLink]="['/productos/'+productData1[5]._id+'/'+productData1[5].socialEnterpriseKey]">
+            <h2 class="text-left" style="font-family: Montserrat-Bold;font-size:18px; color: black;">
+              {{productData1[5].whatIsIt}}</h2>
+          </a>
+          <p class="text-left" style="font-family: Montserrat-Light;font-size:12px;">
+            {{productData1[5].description}}
+          </p>
+        </mat-card-content>
+        <mat-card-actions>
+          <div class="row justify-content-rigth ess-hoverLike">
+            <div class="col text-rigth">
+              <span (click)="changeLike()">
+                <i class="fa fa-heart" *ngIf="like" aria-hidden="true"></i>
+              </span>
+              <span (click)="changeLike()">
+                <i class="fa fa-heart-o" *ngIf="!like" aria-hidden="true"></i>
+              </span>
+            </div>
+          </div>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+    <div class="col mb-3">
+      <mat-card class="ess-card" *ngIf="productData1[6]">
+        <img mat-card-image src="{{productData1[6].pictures[0].route}}" alt="foto producto uno" />
+        <mat-card-content>
+          <a [routerLink]="['/productos/'+productData1[6]._id+'/'+productData1[6].socialEnterpriseKey]">
+            <h2 class="text-left" style="font-family: Montserrat-Bold;font-size:18px; color: black;">
+              {{productData1[6].whatIsIt}}</h2>
+          </a>
+          <p class="text-left" style="font-family: Montserrat-Light;font-size:12px;">
+            {{productData1[6].description}}
+          </p>
+        </mat-card-content>
+        <mat-card-actions>
+          <div class="row justify-content-rigth ess-hoverLike">
+            <div class="col text-rigth">
+              <span (click)="changeLike()">
+                <i class="fa fa-heart" *ngIf="like" aria-hidden="true"></i>
+              </span>
+              <span (click)="changeLike()">
+                <i class="fa fa-heart-o" *ngIf="!like" aria-hidden="true"></i>
+              </span>
+            </div>
+          </div>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+    <div class="col mb-3">
+      <mat-card class="ess-card" *ngIf="productData1[7]">
+        <img mat-card-image src="{{productData1[7].pictures[0].route}}" alt="foto producto uno" />
+        <mat-card-content>
+          <a [routerLink]="['/productos/'+productData1[7]._id+'/'+productData1[7].socialEnterpriseKey]">
+            <h2 class="text-left" style="font-family: Montserrat-Bold;font-size:18px; color: black;">
+              {{productData1[7].whatIsIt}}</h2>
+          </a>
+          <p class="text-left" style="font-family: Montserrat-Light;font-size:12px;">
+            {{productData1[7].description}}
+          </p>
+        </mat-card-content>
+        <mat-card-actions>
+          <div class="row justify-content-rigth ess-hoverLike">
+            <div class="col text-rigth">
+              <span (click)="changeLike()">
+                <i class="fa fa-heart" *ngIf="like" aria-hidden="true"></i>
+              </span>
+              <span (click)="changeLike()">
+                <i class="fa fa-heart-o" *ngIf="!like" aria-hidden="true"></i>
+              </span>
+            </div>
+          </div>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+</div>
+
+<app-newsletter-form></app-newsletter-form>

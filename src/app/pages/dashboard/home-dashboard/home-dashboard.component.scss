@@ -1,0 +1,263 @@
+.edit-des{
+  @media (min-width: 1168px) {
+    font-family: Montserrat-regular;
+    margin-top: 5px;
+    width: 430px;
+}
+@media (max-width: 1168px) {
+
+}
+
+}
+.logo {
+    @media (min-width: 1130px) {
+        /* cambia estos dos valores para definir el tamaño de tu círculo */
+        height: 180px;
+        width: 180px;
+        /* los siguientes valores son independientes del tamaño del círculo */
+        background-repeat: no-repeat;
+        background-position: 50%;
+        border-radius: 50%;
+        background-size: 100% auto;
+        position: absolute;
+       // margin-left: 130px;
+       left: 0px;
+
+        bottom: 30px;
+       // margin-right: 100px;
+    }
+
+    @media (max-width: 1130px) {
+      /* cambia estos dos valores para definir el tamaño de tu círculo */
+      height: 160px;
+      width: 160px;
+      /* los siguientes valores son independientes del tamaño del círculo */
+      background-repeat: no-repeat;
+      background-position: 50%;
+      border-radius: 50%;
+      background-size: 100% auto;
+      position: absolute;
+     // margin-left: 130px;
+     left: 0px;
+
+        bottom: 50px;
+     // margin-right: 100px;
+  }
+
+
+
+
+}
+.logo1 {
+  @media (min-width: 1130px) {
+      /* cambia estos dos valores para definir el tamaño de tu círculo */
+      height: 200px;
+      width: 200px;
+      /* los siguientes valores son independientes del tamaño del círculo */
+      background-repeat: no-repeat;
+      background-position: 50%;
+      border-radius: 50%;
+      background-size: 100% auto;
+
+  }
+  @media (max-width: 300px) {
+      /* cambia estos dos valores para definir el tamaño de tu círculo */
+      height: 120px;
+      width: 120px;
+      /* los siguientes valores son independientes del tamaño del círculo */
+      background-repeat: no-repeat;
+      background-position: 50%;
+      border-radius: 50%;
+      background-size: 100% auto;
+
+  }
+}
+
+.logoInput {
+    @media (min-width: 1130px) {
+        position: absolute;
+        left: 150px;
+        top: 20px;
+        cursor: pointer;
+    }
+    @media (max-width: 1130px) {
+        position: absolute;
+        margin-left: 70px;
+        // margin-top: 30px;
+        cursor: pointer;
+    }
+}
+
+.logoInput1 {
+    @media (min-width: 1168px) {
+        position: absolute;
+        margin-left: 1000px;
+        margin-top: 100px;
+        cursor: pointer;
+    }
+    @media (max-width: 1168px) {
+        position: absolute;
+        margin-left: 260px;
+        margin-top: 0px;
+        cursor: pointer;
+    }
+}
+
+.ess-imageFon {
+    width: 100%;
+    height: 169px;
+    background-size: cover !important;
+    background-position: center !important;
+    overflow: hidden;
+    // background: url("../../../../assets/Rectangle73.svg");
+    //background-image: url("../../../assets/Rectangle73.svg");
+}
+
+.ess-cafe {
+  @media (min-width: 1130px) {
+    font-family: Lato-Light;
+    font-size: 36px;
+    line-height: 40px;
+    color: #000000;
+    padding-left: 50px;
+    white-space: pre-wrap;
+  }
+  @media (max-width: 1130px) {
+    font-family: Lato-Light;
+    font-size: 20px;
+    line-height: 40px;
+    color: #000000;
+    padding-left: 50px;
+    white-space: pre-wrap;
+  }
+
+}
+
+.ess-hrv {
+    border: none;
+    border-left: 1px solid hsla(200, 10%, 50%, 100);
+    height: 70vh;
+    width: 0px;
+}
+
+.ess-ga {
+    width: 30vw;
+}
+
+.ess-left-nav {
+    list-style: none;
+}
+
+a {
+    font-family: Montserrat-Bold;
+    color: black;
+}
+
+.logoInput {
+  @media (min-width: 800px) {
+    cursor: pointer;
+   // margin-left: 180px;
+
+}
+@media (max-width: 800px) {
+  cursor: pointer;
+  margin-top: 40px;
+  margin-left: 60px;
+
+}
+
+
+}
+
+.logoInput1 {
+    cursor: pointer;
+}
+
+.image-upload>input {
+    display: none;
+}
+
+.image-upload1>input {
+    display: none;
+
+}
+
+.logoInput1 {
+    cursor: pointer;
+}
+
+.ess-description {
+    padding-left: 70px;
+    font-family: Lato-Light;
+    font-size: 14px;
+}
+
+li {
+    font-family: Lato-Regular;
+    font-size: 14px;
+    font-weight: 500px;
+}
+
+.button_direccion {
+    width: 100px;
+    font-family: Lato-Bold;
+}
+
+.ess-lineaCentral {
+    border-color: #000000;
+    padding-left: -0.25em;
+}
+
+.ess-desa{
+  @media (min-width: 1168px) {
+   display: block;
+}
+@media (max-width: 1168px) {
+    display: none;
+}
+}
+
+
+
+.movile-ess{
+  @media (min-width: 553px) {
+    display: block;
+ }
+ @media (max-width: 553px) {
+     display: none;
+ }
+}
+
+.movile-ess1{
+  @media (max-width: 553px) {
+    display: block;
+ }
+ @media (min-width: 553px) {
+     display: none;
+ }
+}
+
+.logoMovile{
+  height: 150px;
+  width: 150px;
+  /* los siguientes valores son independientes del tamaño del círculo */
+  background-repeat: no-repeat;
+  background-position: 50%;
+  border-radius: 50%;
+  background-size: 100% auto;
+
+
+}
+
+.ess-cafe1 {
+
+    font-family: Lato-Light;
+    font-size: 36px;
+    line-height: 40px;
+    color: #000000;
+
+    white-space: pre-wrap;
+
+
+
+}

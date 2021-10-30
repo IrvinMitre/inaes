@@ -1,0 +1,98 @@
+<div class="ess-container-options">
+  <button class="ess-button-publicar">
+      Publicar
+      <i class="bi bi-calendar-check"></i>
+  </button>
+
+
+  <div class="ess-divisor"></div>
+
+
+  <!--    Plantilla   -->
+  <label class="my-1 mr-2" for="ess-select-plantilla">Plantilla</label>
+  <select class="custom-select my-1 mr-sm-2" id="ess-select-plantilla">
+    <option selected>Selecciona una plantilla</option>
+    <option value="1">Imagen destacada</option>
+    <option value="2">Galería</option>
+    <option value="3">Video</option>
+  </select>
+
+
+  <div class="ess-divisor"></div>
+
+
+  <!--    Categoría   -->
+  <label class="my-1 mr-2" for="ess-select-categoria">Categoría</label>
+  <select class="custom-select my-1 mr-sm-2" id="ess-select-categoria">
+    <option selected>Selecciona una categoría</option>
+    <option value="1">Economía social</option>
+    <option value="2">Impulso de cooperativas</option>
+    <option value="3">Testímonios</option>
+    <option value="4">Historias de vida</option>
+    <option value="5">Turismo</option>
+  </select>
+
+
+  <div class="ess-divisor"></div>
+
+  <!--    Agregar categoría   -->
+  <label class="my-1 mr-2" for="ess-input-categoria">Crear categoría</label>
+  <input id="ess-input-categoria" type="text" class="form-control" placeholder="Ingresa la categoría">
+
+
+  <div class="ess-divisor"></div>
+
+
+  <!--    Imagen destacada   -->
+  <label class="my-1 mr-2" for="ess-imagen-subir">Imagen destacada</label>
+  <div id="ess-imagen-subir" class="row justify-content-center">
+    <div class="col">
+      <div class="image-upload">
+        <label for="file-input3">
+          <img src="{{ url }}" />
+          <div>
+            <p>
+              +
+            </p>
+          </div>
+        </label>
+        <input id="file-input" type="file" (change)="onSelectFile($event)" />
+      </div>
+    </div>
+  </div>
+
+
+  <div class="ess-divisor"></div>
+
+
+  <!--    Etiquetas   -->
+  <label class="my-1 mr-2" for="ess-input-etiqueta">Etiquetas</label>
+  <ngx-tags-input 
+    id="ess-input-etiqueta"
+    [header]="header"
+    [limit]="limit"
+    [placeholder]="placeholder" 
+    [mode]="'primary'"
+    (tagsChange)="displayTags($event)">
+ </ngx-tags-input>
+
+  <div class="ess-divisor"></div>
+
+
+  <!--    Post ponderado   -->
+  <label class="my-1 mr-2" for="ess-radio-post">Relevancia de publicación</label>
+  <div class="form-check" id="ess-radio-post">
+    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+    <label class="form-check-label" for="exampleRadios1">
+      Relevantes
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+    <label class="form-check-label" for="exampleRadios2">
+      Desatacados
+    </label>
+  </div>
+</div>
+
+

@@ -1,0 +1,41 @@
+.ess-inputt {
+  border: 0px solid #444444;
+  height: 39px;
+  width: 100%;
+  background: url("../../../../assets/background-upload-image.jpg") no-repeat right top;
+  color: #fff;
+}
+.ess-input-full {
+  width: 100%;
+}
+.ess-image {
+  background-image: url("../../../../assets/background-upload-image.jpg");
+  background-size: cover;
+  width: 200px;
+  height: 200px;
+}
+.ess-map {
+  width: 992px !important;
+  height: 211px !important;
+}
+.ess-image {
+  background: url("../../../../assets/background-upload-image.jpg") no-repeat;
+}
+#fichero {
+  display: none;
+}
+.ess-subir {
+  width: 183px;
+  height: 83px;
+  background-image: url("../../../../assets/background-upload-image.jpg");
+  cursor: pointer;
+}
+.ess-inputDire {
+  width: 100%;
+}
+.image-upload>input {
+  display: none;
+}
+img {
+  cursor: pointer;
+}

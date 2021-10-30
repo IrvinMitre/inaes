@@ -1,0 +1,22 @@
+h1{
+    margin: 7vh 0;
+}
+.ess-container-info-author{
+    margin: 1vh 0 ;
+}
+.ess-content{
+    text-align: justify;
+}
+img{
+    max-width: 100%;
+}
+
+//Css para tablets y celulares
+@media (max-width: 768px) {
+    .ess-container-tag{
+        margin: 3vh 10px 0vh 0 !important;
+    }
+    h1{
+        margin: 5vh 0;
+    }
+}

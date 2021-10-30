@@ -1,0 +1,84 @@
+<div class="container mt-3">
+  <div class="row text-left">
+    <div class="col">
+      <img src="../../../assets/logo_desarrolla.svg" width="130vw" height="100vh" alt="" srcset="" />
+    </div>
+  </div>
+  <div class="row p-5">
+    <div class="col-md">
+      <div class="progress">
+        <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row mb-5">
+    <div class="col-md text-center">
+      <p class="ess-text-title">Sobre tu producto</p>
+      <p class="ess-text-Subtitle">Agrega una descripción de tu producto</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-3"></div>
+    <div class="col-md text-center">
+      <form class="ess-form" [formGroup]="postForm">
+        <div class="row">
+          <div class="col">
+            <mat-form-field class="ess-full-width">
+              <mat-label>¿Qué es?</mat-label>
+              <textarea matInput formControlName="question1" cdkTextareaAutosize #autosize="cdkTextareaAutosize"
+                cdkAutosizeMinRows="1"></textarea>
+              <small style="color: red !important; font-size: 9px !important;" class="form-text text-muted" *ngIf="
+                postForm.get('question1').touched &&
+                postForm.get('question1').hasError('required')
+              ">Este campo es requerido.</small>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <mat-form-field class="ess-full-width">
+              <mat-label>¿De dónde es?</mat-label>
+              <textarea matInput formControlName="question2" cdkTextareaAutosize #autosize="cdkTextareaAutosize"
+                cdkAutosizeMinRows="1"></textarea>
+              <small style="color: red !important; font-size: 9px !important;" class="form-text text-muted" *ngIf="
+                postForm.get('question2').touched &&
+                postForm.get('question2').hasError('required')
+              ">Este campo es requerido.</small>
+              <mat-hint></mat-hint>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md ess-label-producto">
+            Describe tu producto
+            <button class="btn"
+              matTooltip="Ingresa una descripción corta sobre las caracteristicas de tu producto, sus cualidades y lo que lo hace único" matTooltipPosition="above">
+              <mat-icon aria-hidden="false" aria-label="icon">help</mat-icon>
+            </button>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <mat-form-field class="ess-full-width">
+              <textarea matInput placeholder="" formControlName="description" cdkTextareaAutosize
+                #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1"></textarea>
+              <small style="color: red !important; font-size: 9px !important;" class="form-text text-muted" *ngIf="
+                postForm.get('description').touched &&
+                postForm.get('description').hasError('required')
+              ">Este campo es requerido.</small>
+              <small style="color: red !important; font-size: 9px !important;" class="form-text text-muted" *ngIf="
+              postForm.get('description').errors && postForm.get('description').errors.maxlength
+            ">Tu descripción rebasa los 300 caracteres, procura ingresar un texto más corto.</small>
+              <mat-hint></mat-hint>
+            </mat-form-field>
+          </div>
+        </div>
+        <button class="button_direccion" (click)="submit()" [disabled]="!postForm.valid">
+          SIGUIENTE
+        </button>
+      </form>
+    </div>
+    <div class="col-3"></div>
+  </div>
+</div>

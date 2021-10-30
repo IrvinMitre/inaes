@@ -1,0 +1,108 @@
+.ess-cross{
+  font-size: 60px;
+  color: #3C64B1;
+  font-family: Montserrat-Light;
+}
+.ess-add{
+  height: 272.19px;
+  width: 288px;
+  border: none;
+  color: #3C64B1;
+  opacity: 0.7;
+}
+.ess-add-text {
+  font-family: Montserrat-Bold;
+  color: #3C64B1;
+  font-size: 14px;
+}
+.ess-productCard {
+    max-width: 300px;
+}
+
+img {
+    width: 300px;
+    height: 272px;
+}
+
+.ess-alert {
+    width: 285px !important;
+    height: 60px !important;
+}
+
+.mat-card-image {
+    object-fit: cover;
+}
+
+.ess-productedit {
+    @media (min-width: 700px) {
+        width: 4vw !important;
+        height: 7vh !important;
+        position: absolute !important;
+        right: 5px;
+    }
+    @media (max-width: 700px) {
+        width: 11vw !important;
+        height: 5vh !important;
+        position: absolute !important;
+        right: 1px;
+    }
+}
+
+.img-b {
+    width: 250px;
+    height: 40px;
+    font-family: Montserrat-Bold;
+    color: #3C64B1;
+    font-size: 14px;
+    border: none;
+    border-radius: 30px;
+    opacity: 0.7;
+}
+
+.ess-cert {
+    display: inline-block;
+    border-radius: 50%;
+    box-shadow: 0px 0px 0px #888;
+    width: 30px;
+    height: 30px;
+    // background-color: #93a6bb8c;
+    color: white;
+}
+
+::ng-deep .mat-card {
+    border: rgb(255, 255, 255) !important;
+    transition: none !important;
+    box-shadow: none !important;
+}
+
+a {
+    font-family: Montserrat-Bold;
+    color: #000000;
+    font-size: 18px;
+}
+
+::ng-deep .mat-typography h2 {
+    font-family: Montserrat;
+    font-size: 18px;
+}
+
+::ng-deep .mat-typography p {
+    font-family: Montserrat-Light;
+    font-size: 12px;
+}
+
+.ess-noAprobado {
+    font-family: Lato-Light;
+    font-size: 12px;
+    color: #000000;
+}
+
+::ng-deep .material-icons {
+    color: #C6CACC;
+    font-size: 12px;
+    padding-bottom: 5px;
+    padding-top: -5px;
+    padding-left: -10px;
+}
+
+

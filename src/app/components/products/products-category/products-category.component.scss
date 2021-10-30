@@ -1,0 +1,110 @@
+::ng-deep .mat-select-arrow {
+  border-left: 5px solid!important;
+  border-right: none !important;
+  color: white !important;
+
+}
+
+::ng-deep  .mat-select-arrow-wrapper{
+  background-image: url('../../../../assets/Vector.svg')!important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+  background-position: center !important;
+}
+
+.ess-text-hightlight {
+  font-family: 'Montserrat-Bold';
+  color: #10312B;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 29px;
+  text-align: center;
+  margin-bottom: 3vh;
+  margin-top: 5vh;
+}
+
+.button_direccion {
+  //Tamaño del btn
+  min-width: 184px;
+  min-height: 38px;
+  width: auto;
+  height: auto;
+  border-radius: 5px;
+  //Aspecto visual del btn
+  border: 1px solid black;
+  color: black;
+  background-color: white;
+  //Texto en el btn
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #000000;
+  //Espacio del btn
+  margin: 10px 15px;
+  margin-top: 5vh;
+  margin-bottom: 20vh;
+
+  //Btn Deshabilitado
+  &:disabled {
+    background-color: #E5E5E5;
+    border: 1px solid #98989A;
+    color: #98989A;
+    cursor: not-allowed;
+  }
+
+  &:hover:enabled {
+    background-color: #98989A;
+    border: 1px solid #98989A;
+    color: white;
+  }
+}
+
+.progress {
+  height: 10px;
+  width: 100%;
+  border: 1px solid #B9B9B9;
+  border-radius: 4px;
+  background-color: white;
+
+  .progress-bar {
+    width: 25%;
+    height: 8px;
+    background: #C4C4C4;
+    border-radius: 4px;
+  }
+}
+
+.ess-text-subtitle {
+  font-style: normal;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 22px;
+  text-align: center;
+  color: black;
+}
+
+.ess-text-title{
+  font-family: Montserrat-Bold;
+  font-size: 24px;
+
+}
+
+mat-form-field {
+  font-family: Montserrat-Light;
+  font-size: 16px;
+}
+
+.ess-text-Subtitle{
+  font-family:  Montserrat-Light;
+  font-size: 18px;
+
+}
+
+mat-option{
+  font-family: Montserrat-Light;
+  font-size: 16px;
+}

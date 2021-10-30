@@ -1,0 +1,52 @@
+
+
+<div class="container ess-container-register" >
+  <div class="row">
+      <div class="col-md-12 ">
+
+          <h1>Ingresa</h1>
+
+          <form [formGroup]="postForm1" (submit)="submit1()">
+              <mat-form-field appearance="outline">
+                  <mat-label>Ingresa tu correo electrónico</mat-label>
+                  <input matInput autocomplete="off" placeholder="Correo electrónico" formControlName="correo1" />
+                  <small
+          class="form-text text-muted"
+          *ngIf="postForm1.get('correo1').touched && postForm1.get('correo1').hasError('required')">
+          Este campo es requerido.
+        </small>
+        <small
+          class="form-text text-muted"
+          *ngIf="postForm1.get('correo1').updateOn && postForm1.get('correo1').hasError('pattern')">
+          No es un correo valido.
+        </small>
+              </mat-form-field>
+
+
+              <mat-form-field appearance="outline">
+                  <mat-label>Contraseña</mat-label>
+                  <input matInput autocomplete="off" [type]="hide ? 'password' : 'text'" formControlName="contrasena1" />
+                  <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                      <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+                  </button>
+                  <small
+                      class="form-text text-muted"
+                      *ngIf="postForm1.get('contrasena1').touched && postForm1.get('contrasena1').hasError('required')">
+                      Este campo es requerido.
+                  </small>
+              </mat-form-field>
+              <p class="error">{{error}}</p>
+              <button class="button_direccion" [disabled]="!postForm1.valid ">
+                  ENTRAR
+              </button>
+
+          </form>
+
+
+          <a class="ess-link-no-account" role="button" (click)="regist()">
+              No tengo cuenta
+          </a>
+      </div>
+  </div>
+</div>
+

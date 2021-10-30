@@ -1,0 +1,220 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>social documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">social documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content module">
+                   <div class="content-data">
+
+
+
+<ol class="breadcrumb">
+    <li>Modules</li>
+    <li>ProductRoutingModule</li>
+</ol>
+
+
+<ul class="nav nav-tabs" role="tablist">
+    <li  class="active" >
+        <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+    </li>
+    <li >
+        <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+    </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info">
+
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/app/pages/products/products-routing.module.ts</code>
+        </p>
+
+
+
+
+        <div class="container-fluid module">
+            <div class="row">
+            </div>
+        </div>
+
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { NgModule } from &#x27;@angular/core&#x27;;
+import { Routes, RouterModule } from &#x27;@angular/router&#x27;;
+
+
+import { ProductsComponent } from &#x27;./products.component&#x27;;
+import { ProductsCategoryComponent } from &#x27;./../../components/products-category/products-category.component&#x27;;
+import { ProductKeywordComponent } from &#x27;./../../components/product-keyword/product-keyword.component&#x27;;
+import { ProductDescriptionComponent } from &#x27;./../../components/product-description/product-description.component&#x27;;
+import { ProductCertComponent } from &#x27;./../../components/product-cert/product-cert.component&#x27;;
+import { ProductPhotoComponent } from &#x27;./../../components/product-photo/product-photo.component&#x27;;
+import { ProductEntregaComponent } from &#x27;./../../components/product-entrega/product-entrega.component&#x27;;
+import { ProductAdicionalComponent } from &#x27;./../../components/product-adicional/product-adicional.component&#x27;;
+import { ProductPayComponent } from &#x27;./../../components/product-pay/product-pay.component&#x27;;
+import { ProductPathComponent } from &#x27;./../../components/product-path/product-path.component&#x27;;
+import { ProductServiceComponent } from &#x27;./../../components/product-service/product-service.component&#x27;;
+import { ServiciosComponent } from &#x27;./../../components/servicios/servicios.component&#x27;;
+
+
+const routes: Routes &#x3D; [
+  {
+    path: &#x27;&#x27;,
+    component: ProductsComponent,
+    children: [
+      {
+        path: &#x27;categoria&#x27;,
+        component: ProductsCategoryComponent
+      },
+      {
+        path: &#x27;certificado&#x27;,
+        component: ProductCertComponent
+      },
+      {
+        path: &#x27;descripcion&#x27;,
+        component: ProductDescriptionComponent
+      },
+      {
+        path: &#x27;palabras-clave&#x27;,
+        component: ProductKeywordComponent
+      },
+      {
+        path: &#x27;fotografia&#x27;,
+        component: ProductPhotoComponent
+      },
+      {
+        path: &#x27;entrega&#x27;,
+        component: ProductEntregaComponent
+      },
+      {
+        path: &#x27;adicional&#x27;,
+        component: ProductAdicionalComponent
+      },
+      {
+        path: &#x27;pago&#x27;,
+        component: ProductPayComponent
+      },
+      {
+        path: &#x27;path&#x27;,
+        component: ProductPathComponent
+      },
+      {
+        path: &#x27;producto-servicio&#x27;,
+        component: ProductServiceComponent
+      },
+      {
+        path: &#x27;servicio&#x27;,
+        component: ServiciosComponent
+      }
+
+
+    ]
+  }
+];
+
+@NgModule({
+  imports: [
+    RouterModule.forChild(routes)
+  ],
+  exports: [RouterModule]
+})
+export class ProductRoutingModule { }
+</code></pre>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'module';
+            var COMPODOC_CURRENT_PAGE_URL = 'ProductRoutingModule.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

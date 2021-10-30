@@ -1,0 +1,10 @@
+{
+    "/api": {
+      "target": "https://btqdesign.com:4040",
+      "secure": false,
+      "changeOrigin": true,
+      "pathRewrite": {
+        "^/api": ""
+      }
+    }
+  }

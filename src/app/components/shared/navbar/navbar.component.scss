@@ -1,0 +1,100 @@
+
+.containerHalfMenu{
+min-width: 30rem;
+.halfMenu{
+  width: 50%;
+  display: inline-block;
+}
+}
+.dropdown-item{
+text-align: left !important;
+}
+
+ul:empty {
+display: none !important;
+}
+
+
+.gobHeaderInitial{
+  width: 100%;
+background-color: #121f1c !important;
+a{
+  color: white ;
+}
+}
+
+.ess-nav1{
+  background-color: #10312B;
+min-height: 20px;
+width: 100%;
+  }
+  .ess-nav2{
+    background-color: #235B4E;
+    min-height: 40px;
+    width: 100%;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Small devices (landscape phones, 576px and up)
+@media (max-width: 767.98px) {
+
+.custom-toggler.navbar-toggler {
+  border-color: rgb(255,102,203);
+}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Medium devices (tablets, 577px and up)
+@media (min-width: 768px){
+
+
+    .menuLvl1{
+      width: 25%;
+    }
+    .unete{
+      border-right: 1px solid black;
+      border-radius: 0;
+      padding-right: 24px;
+      margin-right: 0px;
+
+
+
+}
+}
+.ess-sizeGob{
+width: 100%;
+}

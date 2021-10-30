@@ -1,0 +1,161 @@
+<div class="container ess-container-register" >
+  <div class="row justify-content-center">
+    <div class="col">
+
+
+      <form [formGroup]="postForm" (submit)="submit()">
+        <div class="row">
+          <div class="col">
+            <div class="row">
+              <div class="col-4">
+                <mat-form-field>
+                  <mat-label>Perfil</mat-label>
+                  <mat-select style="font-family: Montserrat-Light;
+                  font-size: 16px" formControlName="categoria" (selectionChange)="check($event.value)"
+                  required>
+
+                    <mat-option
+                    value="super_admin"
+                    >
+                      <i class="fa fa-check-circle-o mr-1" id="icon" *ngIf="tem ==='super_admin'" aria-hidden="true" ></i>  Super Administrador
+                    </mat-option>
+                    <mat-option
+                    value="admin">
+                      <i class="fa fa-check-circle-o mr-1" id="icon" *ngIf="tem ==='admin' " aria-hidden="true" ></i> Administrador de blog
+                    </mat-option>
+
+                  </mat-select>
+                </mat-form-field>
+              </div>
+            </div>
+
+
+            <div class="row">
+              <div class="col">
+                <mat-form-field appearance="outline">
+                  <mat-label> Ingresa tu correo electrónico </mat-label>
+                  <input
+                    matInput
+                    autocomplete="off"
+                    placeholder="Correo electrónico"
+                    formControlName="correo"
+                    required/>
+                  <small
+                    class="form-text text-muted"
+                    *ngIf="
+                      postForm.get('correo').touched &&
+                      postForm.get('correo').hasError('required')">
+                    Este campo es requerido.
+                  </small>
+                  <small
+                    class="form-text text-muted"
+                    *ngIf="
+                      postForm.get('correo').updateOn &&
+                      postForm.get('correo').hasError('pattern')">
+                    No es un correo valido.
+                  </small>
+                </mat-form-field>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <p class="error">{{ error }}</p>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col">
+                <mat-form-field appearance="outline">
+                  <mat-label> Contraseña </mat-label>
+                  <input
+                    matInput
+                    autocomplete="off"
+                    [type]="hide ? 'password' : 'text'"
+                    formControlName="contrasena"
+                    required
+                  />
+                  <button
+                    mat-icon-button
+                    matSuffix
+                    (click)="hide = !hide"
+                    [attr.aria-label]="'Hide password'"
+                    [attr.aria-pressed]="hide"
+                  >
+                    <mat-icon>{{
+                      hide ? "visibility_off" : "visibility"
+                    }}</mat-icon>
+                  </button>
+                  <small
+                    class="form-text text-muted"
+                    *ngIf="
+                      postForm.get('contrasena').touched &&
+                      postForm.get('contrasena').hasError('required')
+                    "
+                  >
+                    Este campo es requerido.
+                  </small>
+                  <small
+                    class="form-text text-muted"
+                    *ngIf="
+                      postForm.get('contrasena').updateOn &&
+                      postForm.get('contrasena').hasError('pattern')
+                    "
+                  >
+                    Revisa tu contraseña
+                  </small>
+                  <mat-hint>
+                    Ingresa al menos 8 carácteres y máximo 12, una mayuscúla, un
+                    número y un signo.
+                  </mat-hint>
+                </mat-form-field>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col">
+                <mat-form-field appearance="outline">
+                  <mat-label> Repite tu contraseña </mat-label>
+                  <input
+                    matInput
+                    autocomplete="off"
+                    [type]="hide ? 'password' : 'text'"
+                    formControlName="confcontrasena"
+                    required
+                  />
+                  <small
+                    class="form-text text-muted"
+                    *ngIf="
+                      postForm.get('confcontrasena').touched &&
+                      postForm.get('confcontrasena').hasError('required')
+                    "
+                  >
+                    Este campo es requerido.
+                  </small>
+                  <small
+                    class="form-text text-muted"
+                    *ngIf="
+                      postForm.get('confcontrasena').value !==
+                      postForm.get('contrasena').value
+                    "
+                  >
+                    Contraseñas no coinciden.
+                  </small>
+                </mat-form-field>
+              </div>
+            </div>
+
+
+
+            <div class="row">
+              <div class="col">
+                <button class="button_direccion" [disabled]="!postForm.valid">
+                  CREAR CUENTA
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

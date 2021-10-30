@@ -1,0 +1,70 @@
+export interface ServiceInterface {
+  serviceId:string,
+  socialEnterpriseKey:string,
+  locationCoordinates:
+  {
+    longitude:string,
+    latitude:string
+  },
+  whatIsIt:string,
+  whereItIs:string,
+  haveFun:string,
+  additionalAttractions:string,
+  approvedItem:string,
+  categories: Object,
+  features:Object,
+  tags:{},
+  pictures:Object,
+  comercializations:
+  [
+    {
+      catCommercializationType:string,
+          catCommercializationSubType:string,
+          description:string
+        }
+  ],
+  paymentMethods:{},
+  socialNetworks:
+  [
+    {
+      catSocialNetwork:string,
+      data:string
+    }
+  ],
+  especificServices:{}
+}
+export class ServiceModel {
+  serviceId:string;
+  socialEnterpriseKey:string;
+  locationCoordinates:
+  {
+    longitude:string,
+    latitude:string
+  };
+  whatIsIt:string;
+  whereItIs:string;
+  haveFun:string;
+  additionalAttractions:string;
+  approvedItem:string;
+  categories: Object;
+  features:{};
+  tags:{};
+  pictures:Object;
+  comercializations:
+  [
+    {
+      catCommercializationType:string,
+          catCommercializationSubType:string,
+          description:string
+        }
+  ];
+  paymentMethods:{};
+  socialNetworks:
+  [
+    {
+      catSocialNetwork:string,
+      data:string
+    }
+  ];
+  especificServices:{}
+}

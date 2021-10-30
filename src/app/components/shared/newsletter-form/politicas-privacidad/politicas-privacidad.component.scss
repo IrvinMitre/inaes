@@ -1,0 +1,106 @@
+.modal-dialog {
+  max-width: 60vw;
+  margin: 10vh auto;
+
+  p,
+  th,
+  a {
+    font-family: "Montserrat-Regular";
+  }
+
+  h1 {
+    font-family: "Montserrat-Bold";
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 29px;
+    text-align: center;
+    color: #000000;
+    margin-bottom: 5vh;
+  }
+
+  p {
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 18px;
+    align-items: center;
+    text-align: justify;
+    color: #000000;
+    margin: 15px 0;
+  }
+
+  strong {
+    font-family: "Montserrat-Bold";
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 18px;
+    text-align: justify;
+    color: #000000;
+  }
+
+  thead {
+    th {
+      font-family: "Montserrat-Bold";
+      font-style: normal;
+      font-weight: bold;
+      font-size: 14px;
+      line-height: 18px;
+      align-items: center;
+      text-align: justify;
+      color: #000000;
+    }
+  }
+
+  tbody {
+    th {
+      font-style: normal;
+      font-weight: 300;
+      font-size: 14px;
+      line-height: 18px;
+      align-items: center;
+      color: #000000;
+    }
+
+    td {
+      font-family: "Montserrat-Bold";
+      font-style: normal;
+      font-weight: bold;
+      font-size: 14px;
+      line-height: 18px;
+      display: flex;
+      align-items: center;
+      text-align: justify;
+      color: #000000;
+    }
+  }
+
+  table {
+    margin: 8vh auto;
+  }
+
+  .modal-content {
+    border-radius: 20px;
+  }
+}
+
+.modal-body {
+  padding: 10vh 10%;
+}
+
+.close {
+  position: absolute;
+  top: 0px;
+  right: 10px;
+  font-size: 4em;
+  z-index: 1;
+}
+
+
+//Css para tablets y celulares
+@media (max-width: 768px) {
+  .modal-dialog {
+    max-width: 80vw;
+  }
+}

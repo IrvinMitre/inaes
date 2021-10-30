@@ -1,0 +1,56 @@
+{
+    "serviceId": "",
+    "socialEnterpriseKey": "",
+    "whatIsIt": "",
+    "whereItIs": "",
+    "haveFun": "",
+    "additionalAttractions": "",
+    "homeDelivery": "",
+    "approvedItem": "",
+    "categories": [
+        {
+            "catService": "",
+            "catSubService": ""
+        }
+    ],
+    "features": [
+        {
+            "type": "",
+            "pictureRoute": ""
+        }
+    ],
+    "tags": [
+        {
+            "tag": ""
+        }
+    ],
+    "pictures": [
+        {
+            "route": "",
+            "description": ""
+        }
+    ],
+    "comercializations": [
+        {
+            "catCommercializationType": "",
+            "catCommercializationSubType": "",
+            "description": ""
+        }
+    ],
+    "paymentMethods": [
+        {
+            "catPayment": ""
+        }
+    ],
+    "socialNetworks": [
+        {
+            "catSocialNetwork": "",
+            "data": ""
+        }
+    ],
+    "especificServices": [
+        {
+            "catEspecificService": ""
+        }
+    ]
+}

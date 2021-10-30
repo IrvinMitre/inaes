@@ -1,0 +1,169 @@
+.ess-bg{
+  width: 100%;
+	height:530px;
+  background: url("../../../assets/fondoIz.png"), url("../../../assets/mitad.png"), url("../../../assets/fondoDe.png");
+  background-position:left top,center top, right top;
+	background-repeat:no-repeat, no-repeat, no-repeat;
+}
+
+.ess-bgf{
+  width: 100%;
+	height:500px;
+  background-color: #F8F4EE  ;
+}
+.ess-image{
+  height: 50px;
+  width: 60px;
+  margin-left: 50px;
+}
+.ess-titleF{
+  color: #235B4E;
+  font-size: 58px;
+  margin-left: 30%;
+  margin-top: 10%;
+  line-height: 60px;
+  font-family: Montserrat-Light;
+}
+
+.ess-titleFp{
+  color: #235B4E;
+  font-size: 40px;
+  margin-top: 30%;
+  line-height: 38px;
+  font-family: Montserrat-Light;
+}
+
+.ess-titleFi{
+  color: #235B4E;
+  font-size: 30px;
+  margin-top: 30%;
+}
+.ess-titleS{
+  color: #235B4E;
+  font-size: 64px;
+  margin-top: 20%;
+  font-family: Montserrat-Light;
+  line-height: 55px;
+
+}
+.ess-titleSi{
+  font-size: 10px;
+}
+.ess-titleslidecoli{
+  color: #BC955C;
+  font-size: 30px;
+}
+.ess-blog{
+  color: #235B4E;
+  font-size: 13px;
+}
+
+.ess-verm{
+  color: #BC955C;
+  font-size: 15px;
+}
+
+.ess-card {
+  background-color: #F6F1E6;
+  color: black;
+  padding: 1rem;
+  height: 110px;
+  width: 170px;
+}
+
+.ess-hombreL{
+  height: 400px;
+  width: 700px;
+}
+
+.ess-fondo-slider{
+  background-color: rgb(245,245,245);
+  height: 400px;
+  width: 100%;
+}
+
+.ess-desc{
+  @media (max-width: 845px) {
+    display: none !important;
+  }
+}
+
+.ess-asc{
+  @media (min-width: 600px) {
+    display: none !important;
+  }
+}
+.ess-input-full-l{
+color: white !important;
+}
+
+.ess-cards {
+  max-width: 100%;
+  margin: 0 auto;
+  display: grid;
+  grid-gap: 4rem;
+}
+/* Screen larger than 600px? 2 column */
+@media (min-width: 600px) {
+  .ess-cards {
+      grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Screen larger than 900px? 3 columns */
+@media (min-width: 1199px) {
+  .ess-cards {
+      grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+footer {
+  background-color: #BC955C !important;
+  color: white !important;
+}
+a {
+  color: white;
+}
+
+::ng-deep .mat-focused .mat-form-field-label {
+  /*change color of label*/
+  color: white !important;
+}
+
+::ng-deep .mat-form-field-underline {
+
+  /*change color of underline*/
+  background-color: white !important;
+}
+
+/* Border */
+::ng-deep  .mat-form-field-appearance-outline .mat-form-field-outline {
+  color: white !important;
+}
+
+::ng-deep .mat-form-field-ripple {
+  /*change color of underline when focused*/
+  background-color: white !important;
+}
+.ess-slidee{
+  width: 100%;
+}
+
+#Controls .carousel-control-next-icon {
+  /* change fill="currentColor" to %23fff to make it white  */
+
+  background-image: url('../../../assets/flechaDerechaT.png');
+  width: 30px;
+  height: 40px;
+ position: absolute;
+ left: 150px;
+}
+
+#Controls .carousel-control-prev-icon {
+  /* change fill="currentColor" to %23fff to make it white  */
+  background-image: url('../../../assets/flechazquierdaT.png') !important;
+  width: 30px;
+  height: 40px;
+  position: absolute;
+  right: 150px;
+}

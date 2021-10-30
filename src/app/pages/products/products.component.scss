@@ -1,0 +1,89 @@
+/**** .ess-fon{
+  width: 100%;
+  height: 300px;
+  background: url("../../../assets/Placeholder.png");
+}
+
+.ess-cert {
+  display: inline-block;
+  border-radius: 100px;
+  box-shadow: 0px 0px 0px #888;
+  padding: 1.4em 1.4em;
+  background-color: #93a6bb8c;
+  color: white;
+}
+
+#form {
+  width: 250px;
+  margin: 0 auto;
+  height: 50px;
+}
+#form p {
+  text-align: center;
+}
+#form label {
+  font-size: 20px;
+}
+input[type="radio"] {
+  display: none;
+}
+label {
+  color: grey;
+}
+.clasificacion {
+  direction: rtl;
+  unicode-bidi: bidi-override;
+}
+label:hover,
+label:hover ~ label {
+  color: #bc955c;
+}
+input[type="radio"]:checked ~ label {
+  color: #bc955c;
+}
+
+.ess-card {
+  max-width: 250px;
+  padding: 15px;
+}
+
+footer {
+  background-color: #bc955c !important;
+  color: white !important;
+}
+a {
+  color: white;
+}
+
+::ng-deep .mat-focused .mat-form-field-label {
+  /*change color of label
+  color: white !important;
+}
+
+::ng-deep .mat-form-field-underline {
+  /*change color of underline
+  background-color: white !important;
+}
+
+/* Border
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+  color: white !important;
+}
+
+::ng-deep .mat-form-field-ripple {
+  /*change color of underline when focused
+  background-color: white !important;
+}
+
+.ess-desc {
+  @media (max-width: 600px) {
+    display: none;
+  }
+}
+
+.ess-asc {
+  @media (min-width: 600px) {
+    display: none;
+  }
+}
+***////

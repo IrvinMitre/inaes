@@ -1,0 +1,60 @@
+<div class="container ess-container-register">
+    <div class="row">
+        <div class="col-md-12">
+
+            <h1>Ingresa</h1>
+
+            <form [formGroup]="postForm1" (submit)="submit()">
+                <mat-form-field appearance="outline">
+                    <mat-label>Ingresa tu correo electrónico</mat-label>
+                    <input matInput autocomplete="off" placeholder="Correo electrónico" formControlName="correo" />
+                    <small
+						class="form-text text-muted"
+						*ngIf="postForm1.get('correo').touched && postForm1.get('correo').hasError('required')">
+						Este campo es requerido.
+					</small>
+					<small
+						class="form-text text-muted"
+						*ngIf="postForm1.get('correo').updateOn && postForm1.get('correo').hasError('pattern')">
+						No es un correo valido.
+					</small>
+                </mat-form-field>
+
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Contraseña</mat-label>
+                    <input matInput autocomplete="off" [type]="hide ? 'password' : 'text'" formControlName="contrasena" />
+                    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                        <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+                    </button>
+                    <small
+                        class="form-text text-muted"
+                        *ngIf="postForm1.get('contrasena').touched && postForm1.get('contrasena').hasError('required')">
+                        Este campo es requerido.
+                    </small>
+                </mat-form-field>
+                <p class="error">{{error}}</p>
+                <button class="button_direccion" [disabled]="!postForm1.valid ">
+                    ENTRAR
+                </button>
+                <a role="button" (click)="recupe()">Olvidé mi contraseña</a>
+            </form>
+
+            <div class="col-md-12 text-center mt-5">O por redes sociales</div>
+
+
+            <button class="button_direccion" (click)="signInWithFB()">
+                FACEBOOK
+            </button>
+
+
+            <button class="button_direccion" (click)="signInWithGoogle()">
+                GMAIL
+            </button>
+
+            <a class="ess-link-no-account" role="button" (click)="regis()">
+                No tengo cuenta
+            </a>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,46 @@
+<div class="container mt-2">
+    <div class="row text-left">
+      <div class="col-md-3 col-ms d-inline-block align-top">
+            <img src="../../../assets/logo_desarrolla.svg"  alt="" srcset="" />
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col col-md-7">
+            <div class="text-center">
+                <p class="ess-text-hightlight">
+                    ¡Bienvenido a la plataforma comercial!
+                </p>
+                <p class="ess-text-title">
+                    Para ser parte de esta comunidad registra tu Empresa y
+                    <span weight="bold">¡vende más!</span>
+                </p>
+                <p class="ess-text-subtitle">
+                    Es necesario acreditar tu existencia como Empresa Social en el Directorio de Empresas Sociales, coloca tu clave aquí:
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row justify-content-center">
+        <div class="col col-md-6">
+            <form class="text-center" [formGroup]="postForm" (submit)="submit()">
+                <mat-form-field appearance="legacy" class="ess-input">
+                    <mat-label>Ingresa tu clave</mat-label>
+                    <input matInput placeholder="Clave" formControlName="clave" />
+                    <small style="color: red !important;" class="form-text text-muted" *ngIf="
+              postForm.get('clave').touched &&
+              postForm.get('clave').hasError('required')
+            ">Ingresa una clave valida.</small>
+                </mat-form-field>
+                <div>
+                    <button [disabled]="postForm.invalid" type="submit">
+            VERIFICAR
+          </button>
+                    <button (click)="create()">
+            TRAMITAR
+          </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

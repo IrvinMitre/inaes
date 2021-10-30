@@ -1,0 +1,141 @@
+<div class="container mt-2">
+  <div class="row text-left pb-4">
+    <div class="col">
+      <img src="../../../assets/logo_desarrolla.svg" width="130vw" height="100vh" alt="" srcset="" />
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md">
+      <div class="progress">
+        <div class="progress-bar" role="progressbar" aria-valuenow="75"
+          aria-valuemin="0" aria-valuemax="100"></div>
+      </div>
+    </div>
+  </div>
+  <div class="row pt-5">
+    <div class="col"></div>
+    <div class="col-md-6 text-center">
+      <p class="ess-text-title">Información adicional de tu negocio</p>
+      <p class="ess-text-Subtitle pt-3 pb-3">
+        Selecciona el (los) lugar(es) en que tu Empresa Social comercializa
+        actualmente este producto
+      </p>
+      <p class="">Puedes elegir más de una opción</p>
+    </div>
+    <div class="col"></div>
+  </div>
+  <div class="row justify-content-center" [formGroup]="dataForm">
+    <div
+      class="col-md-8"
+      formArrayName="items"
+      *ngFor="let item of dataForm.get('items')['controls']; let i = index"
+    >
+      <div [formGroupName]="i">
+        <div>
+          <mat-form-field class="ess-camposI">
+            <mat-label class="ess-text-paragraph">Selecciona opcion</mat-label>
+            <mat-select
+              (selectionChange)="select(i, $event.value)"
+              formControlName="nombre"
+              class="ess-text-paragraph"
+            >
+              <mat-option
+                value="{{ item.type }}"
+                (click)="setSubtypeArray(i, item)"
+                *ngFor="let item of opc1[i]"
+                class="ess-text-paragraph"
+                > <i class="fa fa-check-circle-o mr-1" id="icon" *ngIf="item.type === tem" aria-hidden="true" style="color: #10312b;"></i>{{ item.type }}</mat-option
+              >
+            </mat-select>
+            <small
+              class="form-text text-muted"
+              *ngIf="
+                this.dataForm.controls.items['controls'][i].controls.nombre
+                  .touched &&
+                this.dataForm.controls.items['controls'][
+                  i
+                ].controls.nombre.hasError('required')
+              "
+              style="width: 40vw"
+              >Este campo es requerido.</small
+            >
+          </mat-form-field>
+
+          <mat-form-field class="ess-campos" id="{{ i }}" *ngIf="subsArray">
+            <mat-label class="ess-text-paragraph" id="online{{ i }}"
+              >¿Cuál es la dirección?</mat-label
+            >
+            <mat-label
+              class="ess-text-paragraph"
+              style="display: none"
+              id="online2{{ i }}"
+              >¿Cuál es la dirección URL?</mat-label
+            >
+            <input
+              matInput
+              placeholder="¿Cuál es la dirección?"
+              formControlName="direccion"
+            />
+            <small
+              class="form-text text-muted"
+              *ngIf="
+                this.dataForm.controls.items['controls'][i].controls.direccion
+                  .touched &&
+                this.dataForm.controls.items['controls'][
+                  i
+                ].controls.direccion.hasError('required')
+              "
+              style="width: 40vw"
+              >Este campo es requerido.</small
+            >
+            <mat-hint></mat-hint>
+          </mat-form-field>
+        </div>
+        <div >
+          <mat-chip-list
+            formControlName="subs"
+            class="example-chip"
+            cdkDropList
+            cdkDropListOrientation="horizontal"
+          >
+            <mat-chip
+              value="{{ item.subtype }}"
+              *ngFor="let item of subsArray[i]"
+            >
+            <mat-checkbox *ngIf="item.subtype !== 'OTRO'" (change)="handleSubtypes(i, item.subtype)" [checked]="item.checked" class="example-margin mb-1 mt-2">{{ item.subtype }}</mat-checkbox>
+            <mat-checkbox (change)="handleSubtypes(i, otro.value)" [checked]="item.checked" *ngIf="item.subtype === 'OTRO'">
+                <input matInput #otro class="mt-2 mb-3" id="otros" style="border: none" formControlName="otro" placeholder="{{ item.subtype }}" />
+            </mat-checkbox>
+            <button *ngIf="item.subtype === 'OTRO'" class="btn btn-link" onclick="document.getElementById('otros').value = ''">X</button>
+            </mat-chip>
+          </mat-chip-list>
+          <div *ngFor="let item of subsArray[i]">
+            <input
+              *ngIf="item.subtype === 'OTRO _______________'"
+              matInput
+              placeholder="Escribe otros almacenes"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-10 text-right">
+      <div class="mb-4">
+        <button class="button_direccion" [disabled]="!dataForm.valid" type="button"
+          (click)="addItem(); select2(temp)">
+          AÑADIR NUEVO
+        </button>
+      </div>
+    </div>
+    <div class="col-md-10 text-right">
+      <div class="mb-4">
+        <button class="button_direccion" [disabled]="!dataForm.valid" type="button"
+          (click)="submit()">
+          SIGUIENTE
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

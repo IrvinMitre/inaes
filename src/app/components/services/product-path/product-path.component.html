@@ -1,0 +1,194 @@
+<div class="container mt-2">
+  <div class="row text-left">
+    <div class="col">
+      <img src="../../../assets/logo_desarrolla.svg" width="130vw" height="100vh" alt="" srcset="" />
+    </div>
+  </div>
+  <div class="row p-5">
+    <div class="col-md">
+      <div class="progress">
+        <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col"></div>
+    <div class="col-md-6 text-center">
+      <p class="ess-text-title">
+        Agrega servicios
+      </p>
+      <p class="ess-text-subtitle pt-3 ess-text-Subtitle">
+        Agrega una descripción de tu servicio
+      </p>
+    </div>
+    <div class="col"></div>
+  </div>
+  <div class="row mt-3">
+    <div class="col"></div>
+    <div class="col-md-6 text-center">
+      <form class="text-center" [formGroup]="postForm" (submit)="submit()">
+        <div class="row mb-3">
+          <div class="col-md">
+            <mat-form-field class="ess-campos">
+              <input matInput placeholder="¿Qué es?" formControlName="nombre" style="font-family: Montserrat-Light;
+                            font-size: 16px;" />
+              <small style="color: red !important; font-size: 9px!important;" class="form-text text-muted" *ngIf="
+            postForm.get('nombre').touched &&
+            postForm.get('nombre').hasError('required')
+          ">Ingresa el campo requerido.</small>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row mb-3">
+          <div class="col-md">
+            <mat-form-field class="ess-campos">
+              <input matInput placeholder="¿De dónde es?" formControlName="direccion" style="font-family: Montserrat-Light;
+                            font-size: 16px;" />
+              <small style="color: red !important; font-size: 9px!important;" class="form-text text-muted" *ngIf="
+            postForm.get('direccion').touched &&
+            postForm.get('direccion').hasError('required')
+          ">Ingresa el campo requerido.</small>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col"></div>
+          <div class="col-md-6 text-center ess-tooltip-productos">
+            <p>
+              Describe tu servicio
+              <button style="font-family: Montserrat-Regular;
+                            font-size: 20px;"
+                matTooltip="Ingresa una descripción corta sobre los servcios, sus características y beneficios.">
+                <mat-icon aria-hidden="false" aria-label="icon">help</mat-icon>
+              </button>
+            </p>
+          </div>
+          <div class="col"></div>
+        </div>
+        <div class="row mb-3">
+          <div class="col-md">
+            <mat-form-field class="ess-campos">
+              <textarea matInput placeholder="Descripcion" formControlName="descripcion" style="font-family: Montserrat-Light;
+                            font-size: 16px;"></textarea>
+              <small style="color: red !important; font-size: 9px!important;" class="form-text text-muted" *ngIf="
+          postForm.get('descripcion').touched &&
+          postForm.get('descripcion').hasError('required')
+        ">Ingresa el campo requerido.</small>
+
+              <small style="color: red !important; font-size: 9px!important;" class="form-text text-muted" *ngIf="
+        postForm.get('descripcion').touched &&
+        postForm.get('descripcion').errors
+      ">
+                Solo se permiten 350 caracteres
+              </small>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row mb-3">
+          <div class="col-md">
+            <mat-form-field class="ess-campos">
+              <textarea matInput placeholder="¿Qué atracciones adicionales puedes recomendar?"
+                formControlName="recomen"></textarea>
+              <small style="color: red !important; font-size: 9px!important;" class="form-text text-muted" *ngIf="
+          postForm.get('recomen').touched &&
+          postForm.get('recomen').hasError('required')
+        ">Ingresa el campo requerido.</small>
+        <small style="color: red !important; font-size: 9px!important;" class="form-text text-muted" *ngIf="
+        postForm.get('recomen').touched &&
+        postForm.get('recomen').errors
+      ">
+                Tu texto no puede rebasar los 350 caracteres
+              </small>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col"></div>
+          <div class="col-md-12 text-center">
+            <p class="ess-text-servicios">
+              Selecciona los servicios especificos:
+            </p>
+          </div>
+          <div class="col"></div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="ess-cards">
+            <div class="ess-card">
+              <img src="../../../assets/components-services-product-path/habitaciones.svg" class="ess-image" alt="" />
+              <div class="ess-container-checkbox">
+                <mat-checkbox formControlName="rent"></mat-checkbox>
+              </div>
+              <strong>RENTA DE HABITACIONES</strong>
+            </div>
+            <div class="ess-card">
+              <img src="../../../assets/components-services-product-path/restaurante.svg" class="ess-image" alt="" />
+              <div class="ess-container-checkbox">
+                <mat-checkbox formControlName="rest"></mat-checkbox>
+              </div>
+              <strong>RESTAURANTE</strong>
+            </div>
+            <div class="ess-card">
+              <img src="../../../assets/components-services-product-path/wifi.svg" class="ess-image" alt="" />
+              <div class="ess-container-checkbox">
+                <mat-checkbox formControlName="wifi"></mat-checkbox>
+              </div>
+              <strong>WIFI</strong>
+            </div>
+            <div class="ess-card">
+              <img src="../../../assets/components-services-product-path/tv.svg" class="ess-image" alt="" />
+              <div class="ess-container-checkbox">
+                <mat-checkbox formControlName="tv"></mat-checkbox>
+              </div>
+              <strong>TV</strong>
+            </div>
+            <div class="ess-card">
+              <img src="../../../assets/components-services-product-path/aire-acondicionado.svg" class="ess-image"
+                alt="" />
+              <div class="ess-container-checkbox">
+                <mat-checkbox formControlName="air"></mat-checkbox>
+              </div>
+              <strong>AIRE ACONDICIONADO</strong>
+            </div>
+            <div class="ess-card">
+              <img src="../../../assets/components-services-product-path/calefactor.svg" class="ess-image" alt="" />
+              <div class="ess-container-checkbox">
+                <mat-checkbox formControlName="cale"></mat-checkbox>
+              </div>
+              <strong>CALEFACCIÓN</strong>
+            </div>
+            <div class="ess-card">
+              <img src="../../../assets/components-services-product-path/renta-de-equipo.svg" class="ess-image"
+                alt="" />
+              <div class="ess-container-checkbox">
+                <mat-checkbox formControlName="renta"></mat-checkbox>
+              </div>
+              <strong>RENTA DE EQUIPO</strong>
+            </div>
+            <div class="ess-card">
+              <img src="../../../assets/components-services-product-path/camping.svg" class="ess-image" alt="" />
+              <div class="ess-container-checkbox">
+                <mat-checkbox formControlName="camp"></mat-checkbox>
+              </div>
+              <strong>CAMPING</strong>
+            </div>
+            <div class="ess-card">
+              <img src="../../../assets/components-services-product-path/tours-personalizados.svg" class="ess-image"
+                alt="" />
+              <div class="ess-container-checkbox">
+                <mat-checkbox formControlName="tours"></mat-checkbox>
+              </div>
+              <strong>TOURS PERSONALIZADOS</strong>
+            </div>
+          </div>
+        </div>
+        <div>
+          <button class="button_direccion" [disabled]="postForm.invalid" type="submit">
+            SIGUIENTE
+          </button>
+        </div>
+      </form>
+    </div>
+    <div class="col"></div>
+  </div>
+</div>

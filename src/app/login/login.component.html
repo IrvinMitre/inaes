@@ -1,0 +1,62 @@
+<br><br><br>
+
+<div class="jumbotron bg-transparent text-center">
+  <div *ngIf="!user" class="card text-center">
+    <h6 class="card-header">
+      Login y register con FB y Gmail
+    </h6>
+    <div class="card-block">
+      <h4 class="card-title">No se ha inicado sesion</h4>
+      <p class="card-text">Iniciar sesion con</p>
+    </div>
+    <div class="card-block">
+      <button class="btn btn-social-icon btn-google mx-1" (click)="signInWithGoogle()">Google</button>
+      <button class="btn btn-social-icon btn-facebook mx-1" (click)="signInWithFB()">Facebook</button>
+    </div>
+  </div>
+
+  <div *ngIf="user" class="card text-center">
+    <h6 class="card-header">
+      Login y register con FB y Gmail
+    </h6>
+    <div class="card-block"></div>
+    <img *ngIf="user.photoUrl" class="card-img-top img-responsive photo" src="{{ user.photoUrl }}">
+    <div class="card-block">
+      <h4 class="card-title">{{ user.name }}</h4>
+      <p class="card-text">{{ user.email }}</p>
+      <p class="card-text">Inciado con {{ user.provider }}</p>
+    </div>
+    <div class="card-block">
+      <button class="btn btn-danger" (click)="signOut()">Cerrar sesion</button>
+    </div>
+    <div class="card-block" *ngIf="user.provider === GoogleLoginProvider.PROVIDER_ID">
+      <button class="btn" (click)="refreshGoogleToken()">Refrescar token de google</button>
+    </div>
+  </div>
+</div>
+
+<h1>Register</h1>
+<div class="row">
+  <div class="col-md-12">
+    <input type="text" [(ngModel)]="email" placeholder="email">
+    <input type="password" [(ngModel)]="password" placeholder="password">
+    <button (click)="signInWithEmail(email, password)">Crear cuenta</button>
+  </div>
+</div>
+<br><br><br>
+<h1>Login</h1>
+<div class="row">
+  <div class="col-md-12">
+    <input type="text" [(ngModel)]="loginEmail" placeholder="email">
+    <input type="password" [(ngModel)]="loginPassword" placeholder="password">
+    <button (click)="loginWithEmail(loginEmail, loginPassword)">Iniciar sesión</button>
+  </div>
+</div>
+
+<div>
+  <p>Usuario logeado con correo <strong>{{ userLogedInWithEmail }}</strong></p>
+</div>
+
+<button (click)="logOutWithEmail()">Cerrar sesion</button>
+
+<br><br><br>

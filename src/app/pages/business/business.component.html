@@ -1,0 +1,198 @@
+<app-nav></app-nav>
+<div class="container-fixed mt-2 mb-5">
+  <div class="row mb-5">
+    <div class="col-md-6">
+      <div class="ess-parent">
+        <img class="ess-image1" src="{{ urlLogo }}" />
+      </div>
+      <img class="ess-image2 shadow" src="{{ urlCover }}" />
+    </div>
+    <div class="col-md-6 ess-info">
+      <div class="row p-3 justify-content-center" style="margin-top: 50px;">
+        <div class="col">
+          <form>
+            <p class="clasificacion">
+              <input class="mr-5" id="radio1" type="radio" name="estrellas" value="5" />
+              <label for="radio1">★</label>
+              <input class="mr-5" id="radio2" type="radio" name="estrellas" value="4" />
+              <label for="radio2">★</label>
+              <input class="mr-5" id="radio3" type="radio" name="estrellas" value="3" />
+              <label for="radio3">★</label>
+              <input class="mr-5" id="radio4" type="radio" name="estrellas" value="2" />
+              <label for="radio4">★</label>
+              <input class="mr-5" id="radio5" type="radio" name="estrellas" value="1" />
+              <label for="radio5">★</label>
+            </p>
+            <p>MARCA destacada</p>
+          </form>
+
+        </div>
+      </div>
+      <div class="row pt-2">
+        <div class="col-12">
+          <h1 class="ess-stylePro">-{{ name }}-</h1>
+        </div>
+      </div>
+      <div class="row pt-2">
+        <div class="col-12">
+          <h1 class="ess-styleName">{{ shortDescription }}</h1>
+        </div>
+      </div>
+      <div class="row pt-5">
+        <div class="col-12">
+          <div class="">
+            <p>
+              <i class="fa fa-map-marker fa-lg mr-2 ml-1" height="10px" aria-hidden="true"></i>
+               {{ enterpriseData.domicilio }}
+            </p>
+          </div>
+
+          <ul class="list-unstyled">
+            <li>
+              <p style="font-family: Montserrat-Light; font-size: 14px">
+                <i class="fa fa-link fa-lg mr-2 ml-1" aria-hidden="true"></i>
+                {{ socialData.email }}
+              </p>
+            </li>
+            <li>
+              <p style="font-family: Montserrat-Light; font-size: 14px">
+                <i class="fa fa-phone fa-lg mr-2 ml-1" aria-hidden="true"></i>
+                {{ socialData.localphone }}
+              </p>
+            </li>
+            <li>
+              <p class="ess-pre-wrap" style="font-family: Montserrat-Light; font-size: 14px">
+                <a (click)="goToLink(socialData.facebook)" style="cursor: pointer;">
+                  <i class="fa fa-facebook ess-redes ess-click mr-2" aria-hidden="true"></i>Síguenos
+                </a>
+              </p>
+            </li>
+            <li>
+              <p>
+                <a (click)="goToLink(socialData.instagram)" style="cursor: pointer;"><i class="fa fa-instagram ess-redes ess-click mr-2"
+                    aria-hidden="true"></i>Síguenos</a>
+              </p>
+            </li>
+            <li>
+              <p>
+                <a (click)="goToLink(socialData.website)" style="cursor: pointer;"> <img class="ess-redes mr-2 ess-click" src="../../../assets/linke.png"/>Síguenos</a>
+              </p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container pt-5">
+    <div class="row  mt-5 mb-3">
+      <div class="col-md-2 mt-5">
+        <p class="ess-p ml-3">Productos</p>
+      </div>
+      <div class="col-md-6">
+      </div>
+
+      <div class="col-md-2">
+      </div>
+    </div>
+
+
+
+    <div class="row pt-2">
+      <div class="col mr-3">
+          <mat-card class="ess-card" *ngIf="productData[0]">
+            <img mat-card-image src="{{productData[0].pictures[0].route}}" alt="foto producto uno" />
+            <mat-card-content>
+              <a [routerLink]="['/productos/'+productData[0]._id+'/'+productData[0].socialEnterpriseKey]"><h2 class="text-left" style="font-family: Montserrat-Bold;font-size:18px; color: black;">{{productData[0].whatIsIt}}</h2></a>
+                <p class="text-left" style="font-family: Montserrat-Light;font-size:12px;">
+                  {{productData[0].description}}
+                </p>
+              </mat-card-content>
+              <mat-card-actions>
+                  <div class="row justify-content-rigth ess-hoverLike">
+                      <div class="col text-rigth">
+                          <span (click)="changeLike()">
+            <i class="fa fa-heart" *ngIf="like" aria-hidden="true"></i>
+          </span>
+                          <span (click)="changeLike()">
+            <i class="fa fa-heart-o" *ngIf="!like" aria-hidden="true"></i>
+          </span>
+                      </div>
+                  </div>
+              </mat-card-actions>
+          </mat-card>
+      </div>
+      <div class="col mb-3" >
+          <mat-card class="ess-card" *ngIf="productData[1]">
+
+            <img mat-card-image src="{{productData[1].pictures[0].route}}" alt="foto producto uno" />
+            <mat-card-content>
+              <a [routerLink]="['/productos/'+productData[1]._id+'/'+productData[1].socialEnterpriseKey]"><h2 class="text-left" style="font-family: Montserrat-Bold;font-size:18px; color: black;">{{productData[1].whatIsIt}}</h2></a>
+                <p class="text-left" style="font-family: Montserrat-Light;font-size:12px;">
+                  {{productData[1].description}}
+                </p>
+              </mat-card-content>
+              <mat-card-actions>
+                  <div class="row justify-content-rigth ess-hoverLike">
+                      <div class="col text-rigth">
+                          <span (click)="changeLike()">
+            <i class="fa fa-heart" *ngIf="like" aria-hidden="true"></i>
+          </span>
+                          <span (click)="changeLike()">
+            <i class="fa fa-heart-o" *ngIf="!like" aria-hidden="true"></i>
+          </span>
+                      </div>
+                  </div>
+              </mat-card-actions>
+          </mat-card>
+      </div>
+      <div class="col mb-3" >
+          <mat-card class="ess-card" *ngIf="productData[2]">
+              <img mat-card-image src="{{productData[2].pictures[0].route}}" alt="foto producto uno" />
+              <mat-card-content>
+                <a [routerLink]="['/productos/'+productData[2]._id+'/'+productData[2].socialEnterpriseKey]"><h2 class="text-left" style="font-family: Montserrat-Bold;font-size:18px; color: black;">{{productData[2].whatIsIt}}</h2></a>
+                  <p class="text-left" style="font-family: Montserrat-Light;font-size:12px;">
+                    {{productData[2].description}}
+                  </p>
+              </mat-card-content>
+              <mat-card-actions>
+                  <div class="row justify-content-rigth ess-hoverLike">
+                      <div class="col text-rigth">
+                          <span (click)="changeLike()">
+              <i class="fa fa-heart" *ngIf="like" aria-hidden="true"></i>
+            </span>
+                          <span (click)="changeLike()">
+              <i class="fa fa-heart-o" *ngIf="!like" aria-hidden="true"></i>
+            </span>
+                      </div>
+                  </div>
+              </mat-card-actions>
+          </mat-card>
+      </div>
+      <div class="col mb-3" >
+          <mat-card class="ess-card" *ngIf="productData[3]">
+            <img mat-card-image src="{{productData[3].pictures[0].route}}" alt="foto producto uno" />
+            <mat-card-content>
+              <a [routerLink]="['/productos/'+productData[3]._id+'/'+productData[3].socialEnterpriseKey]"><h2 class="text-left" style="font-family: Montserrat-Bold;font-size:18px; color: black;">{{productData[3].whatIsIt}}</h2></a>
+                <p class="text-left" style="font-family: Montserrat-Light;font-size:12px;">
+                  {{productData[3].description}}
+                </p>
+              </mat-card-content>
+              <mat-card-actions>
+                  <div class="row justify-content-rigth ess-hoverLike">
+                      <div class="col text-rigth">
+                          <span (click)="changeLike()">
+            <i class="fa fa-heart" *ngIf="like" aria-hidden="true"></i>
+          </span>
+                          <span (click)="changeLike()">
+            <i class="fa fa-heart-o" *ngIf="!like" aria-hidden="true"></i>
+          </span>
+                      </div>
+                  </div>
+              </mat-card-actions>
+          </mat-card>
+      </div>
+  </div>
+  </div>
+  </div>
+
+<app-newsletter-form></app-newsletter-form>

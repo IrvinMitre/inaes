@@ -1,0 +1,42 @@
+<div class="row justify-content-center mt-4">
+  <div class="col-md-2">
+    <img src="../../../assets/logo_desarrolla.svg" class="logo" />
+  </div>
+  <div class="col-md-4 mt-5">
+    <div class="row"><div class="col">
+      {{correo}}
+    </div></div>
+
+  </div>
+</div>
+<hr />
+
+<div class="row">
+  <div class="col-md-3">
+    <ul class="ess-left-nav">
+      <li class="mb-4 p-2">
+        <a class="ml-3" [routerLink]="['nuevas-empresas']" routerLinkActive="router-link-active"
+          >Nuevas empresas</a
+        >
+      </li>
+      <li class="mb-4 p-2"><a class="ml-3" [routerLink]="['aprobadas']">Aprobadas</a></li>
+      <li class="mb-4 p-2"><a class="ml-3" [routerLink]="['no-aprobadas']">No Aprobadas</a></li>
+      <li class="mb-4">
+        <mat-expansion-panel hideToggle class="mat-elevation-z0 ">
+          <mat-expansion-panel-header>
+            <mat-panel-title class="text-left" style="font-family: Montserrat-Bold;">
+              Usuarios
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <a class="p-2" [routerLink]="['usuarios']" style="font-family: Montserrat-Regular"> <p> Todos los usuarios.</p></a>
+          <a class="p-2" [routerLink]="['perfil']" style="font-family: Montserrat-Regular"><p>+ Añadir nuevo.</p></a>
+          <a class="p-2" [routerLink]="['dashboard/perfil']" style="font-family: Montserrat-Regular"><p>Perfil.</p></a>
+        </mat-expansion-panel>
+      </li>
+    </ul>
+  </div>
+  <mat-divider [vertical]="true"></mat-divider>
+  <div class="col-md">
+    <router-outlet></router-outlet>
+  </div>
+</div>

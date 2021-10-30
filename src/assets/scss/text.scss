@@ -1,0 +1,42 @@
+@import "./variables.scss";
+
+h1, h2, h3, h4, h5, h6, p, textarea, small, button, input, label {
+  font-family: 'Montserrat-Regular';
+}
+
+.ess-text {
+  &-hightlight {
+    color: $ess-main;
+    font-size: 28px;
+    line-height: 29px;
+    font-family: Montserrat-Regular;
+    font-weight: bold;
+  }
+
+  &-title {
+    font-family: Montserrat-Light;
+    font-size: 34px;
+    line-height: 41px;
+  }
+
+  &-subtitle {
+    font-family: Montserrat-Light;
+    font-size: 15px;
+  }
+
+  &-paragraph {
+    font-family: Montserrat-Regular;
+    font-size: 14px;
+    line-height: 17px;
+  }
+
+  &-small {
+    font-family: Montserrat-Light;
+    font-size: 10px;
+  }
+}
+
+[weight="bold"] {
+  font-family: "montserrat-bold";
+  font-weight: 500 !important;
+}

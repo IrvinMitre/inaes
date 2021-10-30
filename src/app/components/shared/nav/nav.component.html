@@ -1,0 +1,181 @@
+<div class="row firstRowMenu">
+	<div class="col-md-12 d-flex flex-row-reverse ml-3">
+		<img src="../../../../assets/menu/nuestra_economia_manita.png" alt="¿Por qué impulsar nuestra Economía Social?" />
+		<a href="#">
+			¿Por qué impulsar nuestra Economía Social?
+		</a>
+	</div>
+</div>
+
+<nav class="navbar navbar-expand-lg menuPrincipal navbar-light mb-5">
+	<div class="row w-100 mr-3em">
+		<div class="col-md-12">
+			<div class="row">
+				<div class="col-md-3 col-ms d-inline-block align-top">
+					<a href="/">
+					<img src="../../../../assets/logo_desarrolla.svg" alt="Logo Menu" />
+					</a>
+					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menuPrincipal"
+					aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+					</button>
+				</div>
+				<div class="col-md-9 d-inline-block text-center">
+					<div class="row secondRowMenu">
+
+						<div class="col-md-6 d-flex">
+							<!--	Search	 -->
+							<div class="input-group mb-3">
+								<input 
+									type="text" 
+									matInput
+									class="form-control text-left"
+									placeholder="Busca productos, servicios y más..." 
+									aria-label="Busca productos, servicios y más..."
+									(keyup)="autoSearch($event)" [matAutocomplete]="auto"/>
+
+								<mat-autocomplete #auto="matAutocomplete">
+									
+									<mat-option *ngFor="let item of products">
+										<a href=" {{ item.uri }}">
+											{{ item.productName }}
+										</a>
+									</mat-option>
+									
+									<mat-option *ngFor="let item of services">
+										<a href=" {{ item.uri }}">
+											{{ item.serviceName }}
+										</a>
+									</mat-option>
+									
+									<mat-option *ngFor="let item of enterprise">
+										<a href="{{ item.uri }}">
+											{{ item.nameEnterprise }}
+										</a>
+									</mat-option>
+
+									
+								</mat-autocomplete>
+
+								<div class="input-group-append">
+									<span class="input-group-text">
+										<img src="../../../../assets/menu/search_lupa.png" alt="Lupa" />
+									</span>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-md-5 align-self-center productoServicio">
+							<a routerLink="/registro/">
+								Quiero exponer mi producto o servicio
+							</a>
+						</div>
+
+						<div class="col-md-1 align-self-center empresa">
+							<div class="dropdown">
+								<a class="dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+									EMPRESA <i class="fa fa-angle-down fa-lg"></i>
+								</a>
+								<div class="dropdown-menu containerHalfMenu1" aria-labelledby="dropdownMenuButton">
+									<a class="dropdown-item" (click)="openDialog3()">
+										INICIAR SESIÓN
+									</a>
+
+									<a class="dropdown-item" routerLink="/registro/">
+										CREAR CUENTA
+									</a>
+								</div>
+							</div>
+						</div>
+
+					</div>
+					<div class="row thirdhRowMenu">
+						<div class="col-md-12">
+							<div class="collapse navbar-collapse" id="menuPrincipal">
+								<ul id="menu-main-nav" class="navbar-nav nav-fill w-100">
+									<li class="menuLvl1">
+										<a class="nav-link text-left" href="">
+											¿POR QUÉ COMPRAR A NUESTROS EMPRESARIOS?
+										</a>
+									</li>
+									<li class="nav-item dropdown menuLvl1">
+										<a class="nav-link dropdown-toggle" href="#" id="dropDownProductos" data-toggle="dropdown"
+											aria-haspopup="true" aria-expanded="false">
+											PRODUCTOS <i class="fa fa-angle-down fa-lg"></i>
+										</a>
+										<ul class="dropdown-menu containerHalfMenu" aria-labelledby="dropDownProductos" *ngIf="catalogos">
+											<li class="dropdown-submenu halfMenu" *ngFor="let product of catalogos[0].products">
+												<a class="dropdown-item dropdown-toggle" routerLink="/producto-categoria/{{ product.product }}">
+													{{ product.product }}
+													<i class="fa fa-angle-down fa-lg"></i>
+												</a>
+												<ul class="dropdown-menu containerHalfMenu">
+													<li class="dropdown-submenu halfMenu" *ngFor="let subproduct of product.subproducts">
+														<a  class="dropdown-item dropdown-toggle" 
+															routerLink="/producto-categoria/{{ subproduct.subproduct }}"
+															[queryParams]="{ parent: product.product }">
+															
+															{{ subproduct.subproduct }}
+															<i class="fa fa-angle-down fa-lg"></i>
+														</a>
+														<ul class="dropdown-menu">
+															<li *ngFor="let subsubproduct of subproduct.subsubproducts">
+																<a routerLink="/producto-categoria/{{ subsubproduct.subsubproduct }}">
+																	{{ subsubproduct.subsubproduct }}
+																	<i class="fa fa-angle-down fa-lg"></i>
+																</a>
+															</li>
+														</ul>
+													</li>
+												</ul>
+											</li>
+										</ul>
+									</li>
+									<li class="nav-item dropdown menuLvl1">
+										<a class="nav-link dropdown-toggle" href="#" id="dropDownTurismoEnLaNaturaleza"
+											data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+											TURISMO EN NATURALEZA
+											<i class="fa fa-angle-down fa-lg"></i>
+										</a>
+										<ul class="dropdown-menu" aria-labelledby="dropDownTurismoEnLaNaturaleza" *ngIf="catalogos">
+											<li class="dropdown-submenu" *ngFor="let service of catalogos[1].services">
+												<a routerLink="/turismo/categoria/{{ service.service }}" class="dropdown-item dropdown-toggle">
+													{{ service.service }}
+													<i class="fa fa-angle-down fa-lg"></i>
+												</a>
+												<ul class="dropdown-menu">
+													<li class="dropdown-submenu" *ngFor="let subservice of service.subservices">
+													<a class="dropdown-item dropdown-toggle">
+														{{ subservice.subservice }}
+														<i class="fa fa-angle-down fa-lg"></i>
+													</a>
+													</li>
+												</ul>
+											</li>
+										</ul>
+									</li>
+									<li class="menuLvl1">
+										<a class="nav-link" href="#">BLOG</a>
+									</li>
+								</ul>
+								<div class="singUpSingIn">
+									<a class="nav-link mainMenuUnete" (click)="openDialog()">ÚNETE</a>
+									<a class="nav-link mainMenuIngresa" (click)="openDialog2()">INGRESA</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="row firstRowMenuCopy">
+		<div class="col-md-12 d-flex flex-row-reverse">
+			<img src="../../../../assets/menu/nuestra_economia_manita.png" alt="¿Por qué impulsar nuestra Economía Social?" />
+			<a href="#">
+				¿Por qué impulsar nuestra Economía Social?
+			</a>
+		</div>
+	</div>
+</nav>

@@ -1,0 +1,47 @@
+img{
+    vertical-align: top;
+    width: 100%;
+}
+.ess-img-first{
+    width: 100%;
+    max-height: 295px;
+    margin-bottom: 20px;
+    img{
+        border-radius: 10px;
+    }
+}
+
+.ess-img-second, .ess-img-third{
+    display: inline-block;
+    width: calc(50% - 10px);
+    img{
+        border-radius: 10px;
+    }
+}
+
+.ess-img-second{
+    margin-right: 10px;
+    max-height: 294px;
+}
+.ess-img-third{
+    margin-left: 10px;
+    max-height: 209px;
+}
+
+//Css para tablets y celulares
+@media (max-width: 768px) {
+    .ess-img-first, .ess-img-second, .ess-img-third{
+        display: block;
+        width: 100%;
+        max-height: unset;
+        height: 200px;
+        margin-bottom: 20px;
+        margin-left: 0px;
+        margin-right: 0px;
+        img{
+            max-height: unset;
+            height: 200px;
+            background-size: contain;
+        }
+    }
+}

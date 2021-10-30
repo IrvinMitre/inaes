@@ -1,0 +1,79 @@
+
+<div class="container mt-2">
+  <div class="row text-left  pb-5">
+    <div class="col">
+      <img src="../../../assets/logo_desarrolla.svg" width="130vw" height="100vh" alt="" srcset="" />
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md">
+      <div class="progress">
+        <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row justify-content-center pt-4">
+    <div class="col-md text-center">
+      <p class=" mt-4 text-center mb-4 ess-text-title">
+        Agrega tu servicio
+      </p>
+      <p class="ess-text-Subtitle mt-4 text-center  pt-4 pb-4">
+        ¿Tu servicio pertenece a algún sector económico?
+      </p>
+      <form class="text-center" [formGroup]="postForm">
+        <div class="row justify-content-center">
+          <div class="col-md-8">
+            <div class="row">
+              <div class="col-md">
+                <mat-form-field class="ess-input-full">
+                  <mat-label >Turismo en Naturaleza</mat-label>
+                  <input
+                  id="natu"
+                    matInput
+                    placeholder="¿Qué es?"
+                  [disabled]="true"
+                  style="font-family: Montserrat-Light;
+                      font-size: 16px;"
+                  />
+                </mat-form-field>
+              </div>
+              <div class="col-md">
+                <mat-form-field class="ess-input-full">
+                  <mat-label>Categoria</mat-label>
+                  <mat-select formControlName="ecoturismo" (selectionChange)="check($event.value)" style="font-family: Montserrat-Light;
+                  font-size: 16px;">
+                    <mat-option
+                    [value]="item"
+                    *ngFor="let item of categories"
+                    ><i class="fa fa-check-circle-o mr-1" id="icon" *ngIf="item === tem" aria-hidden="true" ></i>{{ item }}</mat-option>
+
+                  </mat-select>
+                  <small class="form-text text-muted" *ngIf="
+            postForm.get('ecoturismo').touched &&
+            postForm.get('ecoturismo').hasError('required')
+          ">Ingresa el campo requerido.</small>
+                </mat-form-field>
+              </div>
+            </div>
+
+
+          </div>
+        </div>
+        <div class="row mb-4 text-center mt-4">
+          <div class="col-md">
+            <button
+            (click)="submit()"
+              class="button_direccion"
+              mat-stroked-button
+              color="primary"
+              [disabled]="!postForm.valid"
+            >
+              SIGUIENTE
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

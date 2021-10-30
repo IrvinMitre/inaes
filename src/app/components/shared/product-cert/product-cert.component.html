@@ -1,0 +1,237 @@
+<div class="container mt-2">
+  <div class="row text-left">
+    <div class="col">
+      <img
+        src="../../../assets/logo_desarrolla.svg"
+        width="130vw"
+        height="100vh"
+        alt=""
+        srcset=""
+      />
+    </div>
+  </div>
+  <div class="row p-5">
+    <div class="col-md">
+      <div class="progress">
+        <div
+          class="progress-bar"
+          role="progressbar"
+          aria-valuenow="75"
+          aria-valuemin="0"
+          aria-valuemax="100"
+        ></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row justify-content-center">
+    <div class="col-md">
+      <div class="text-center">
+        <p class="ess-text-hightlight">{{ title }}</p>
+        <p class="ess-text-subtitle">
+          Indica si tu producto cuenta con alguna de las siguientes
+          caracteristicas
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <form class="text-center">
+        <div class="row mt-3 justify-content-center">
+          <div
+            [className]="
+              flowType === 'producto'
+                ? 'col-lg-3 text-center'
+                : 'col-lg-3 text-center'
+            "
+          >
+            <div class="row">
+              <div class="col">
+                <div class="ess-redes">
+                  <mat-checkbox
+                    class="example-margin"
+                    (change)="trueUpload = !trueUpload"
+                    labelPosition="before"
+                    >Marca Registrada
+                  </mat-checkbox>
+                </div>
+                <div class="image-upload">
+                  <label for="file-input">
+                    <img src="{{ url }}" />
+                    <div>
+                      <p>+</p>
+                    </div>
+                  </label>
+                  <input
+                    id="file-input"
+                    type="file"
+                    (change)="onSelectFile($event)"
+                  />
+                </div>
+                <p class="ess-text-imgCertif">
+                  + Adjunta la imagen de tu certicación en caso de contar con
+                  ella
+                </p>
+              </div>
+            </div>
+            <div class="row" *ngIf="textImage1">
+              <div class="col" style="color: red; font-size: 10px;">
+                * La imagen rebasa el peso limite de 200 KB, intenta nuevamente
+              </div>
+            </div>
+          </div>
+          <div
+            [className]="
+              flowType === 'producto'
+                ? 'col-lg-3 text-center'
+                : 'col-lg-3 text-center'
+            "
+          >
+            <div class="row">
+              <div class="col">
+                <div class="ess-redes">
+                  <mat-checkbox
+                    class="example-margin"
+                    (change)="trueUpload2 = !trueUpload2"
+                    labelPosition="before"
+                    >Denominación de origen
+                  </mat-checkbox>
+                </div>
+                <div class="image-upload">
+                  <label for="file-input2">
+                    <img [src]="url2" />
+                    <div>
+                      <p>+</p>
+                    </div>
+                  </label>
+                  <input
+                    id="file-input2"
+                    type="file"
+                    (change)="onSelectFile2($event)"
+                  />
+                </div>
+                <p class="ess-text-imgCertif">
+                  + Adjunta la imagen de tu certicación en caso de contar con
+                  ella
+                </p>
+              </div>
+            </div>
+            <div class="row" *ngIf="textImage2">
+              <div class="col" style="color: red; font-size: 10px;">
+                * La imagen rebasa el peso limite de 200 KB, intenta nuevamente
+              </div>
+            </div>
+          </div>
+          <div *ngIf="flowType === 'producto'" class="col-lg-3 text-center">
+            <div class="row">
+              <div class="col">
+                <div class="ess-redes">
+                  <mat-checkbox
+                    class="example-margin"
+                    (change)="trueUpload3 = !trueUpload3"
+                    labelPosition="before"
+                    >Sello de Comercio Justo
+                  </mat-checkbox>
+                </div>
+                <div class="image-upload">
+                  <label for="file-input3">
+                    <img [src]="url3" />
+                    <div>
+                      <p>+</p>
+                    </div>
+                  </label>
+                  <input
+                    id="file-input3"
+                    type="file"
+                    (change)="onSelectFile3($event)"
+                  />
+                </div>
+                <p class="ess-text-imgCertif">
+                  + Adjunta la imagen de tu certicación en caso de contar con
+                  ella
+                </p>
+              </div>
+            </div>
+            <div class="row" *ngIf="textImage3">
+              <div class="col" style="color: red; font-size: 10px;">
+                * La imagen rebasa el peso limite de 200 KB, intenta nuevamente
+              </div>
+            </div>
+          </div>
+          <div *ngIf="flowType === 'producto'" class="col-lg-3 text-center">
+            <div class="row">
+              <div class="col">
+                <div class="ess-redes">
+
+                  <mat-checkbox
+                    class="example-margin"
+                    (change)="trueUpload4 = !trueUpload4"
+                    labelPosition="before"
+                    >Producto orgánico</mat-checkbox
+                  >
+                </div>
+                <div class="image-upload">
+                  <label for="file-input4">
+                    <img [src]="url4" />
+                    <div>
+                      <p>+</p>
+                    </div>
+                  </label>
+                  <input
+                    id="file-input4"
+                    type="file"
+                    (change)="onSelectFile4($event)"
+                  />
+                </div>
+                <p class="ess-text-imgCertif">
+                  + Adjunta la imagen de tu certicación en caso de contar con ella
+                </p>
+              </div>
+            </div>
+            <div class="row" *ngIf="textImage4">
+              <div class="col" style="color: red; font-size: 10px;">
+                * La imagen rebasa el peso limite de 200 KB, intenta nuevamente
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="row container-nota-btn" *ngIf="flowType === 'producto'">
+          <div class="col-md-1">
+            <p class="ess-text-nota">
+              * Para acreditar lo anterior deberas anexar las constancias
+              emitidas por las autoridades competentes .
+            </p>
+          </div>
+          <div class="col-md-2"></div>
+          <div class="col-md-6 text-center">
+            <button (click)="submit()">SIGUIENTE</button>
+          </div>
+        </div>
+
+        <div
+          class="row justify-content-center pt-4 justify-content-center"
+          *ngIf="flowType !== 'producto'"
+        >
+          <div class="col-md-6 text-center">
+            <p class="ess-text-nota">
+              * Para acreditar lo anterior deberas anexar las constancias
+              emitidas por las autoridades competentes .
+            </p>
+          </div>
+        </div>
+        <div
+          class="row justify-content-center pb-4 pt-4"
+          *ngIf="flowType != 'producto'"
+        >
+          <div class="col-md-6 text-center">
+            <button (click)="submit()">SIGUIENTE</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

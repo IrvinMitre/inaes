@@ -1,0 +1,65 @@
+::placeholder {
+    font-family: Montserrat-Regular;
+    font-size: small;
+}
+
+button {
+    //Tamaño del btn
+    min-width: 184px;
+    min-height: 38px;
+    width: auto;
+    height: auto;
+    border-radius: 5px;
+    //Aspecto visual del btn
+    border: 1px solid black;
+    color: black;
+    background-color: white;
+    //Texto en el btn
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #000000;
+    //Espacio del btn
+    margin: 10px 15px;
+    margin-bottom: 10vh;
+    //Btn Deshabilitado
+    &:disabled {
+        background-color: #E5E5E5;
+        border: 1px solid #98989A;
+        color: #98989A;
+        cursor: not-allowed;
+    }
+    &:hover:enabled {
+        background-color: #98989A;
+        border: 1px solid #98989A;
+        color: white;
+    }
+}
+
+.ess-text-hightlight {
+    font-family: 'Montserrat-Bold';
+    color: #10312B;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 29px;
+    text-align: center;
+    margin-bottom: 3vh;
+}
+
+.ess-text-subtitle {
+    font-style: normal;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+    color: #000000;
+}
+
+mat-form-field {
+    font-family: Montserrat-Light;
+    font-size: 16px;
+}

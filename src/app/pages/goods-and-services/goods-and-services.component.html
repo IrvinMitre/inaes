@@ -1,0 +1,160 @@
+<div class="container mt-2">
+  <div class="row text-left">
+    <div class="col">
+      <img
+        src="../../../assets/logo_desarrolla.svg"
+        width="130vw"
+        height="100vh"
+        alt=""
+        srcset=""
+      />
+    </div>
+  </div>
+
+  <div class="row justify-content-center">
+    <div class="col col-md-7 text-center">
+      <p class="ess-text-hightlight">
+        Aumenta tus posibilidades de conectar con potenciales consumidores
+      </p>
+    </div>
+  </div>
+
+  <div class="row justify-content-center">
+    <div class="col col-md-6 text-center">
+      <p class="ess-text-subtitle">
+        Completa la información de tu Empresa y los
+        <strong>BIENES Y SERVICIOS</strong> que actualmente puede ofrecer.
+      </p>
+    </div>
+  </div>
+
+  <div class="row justify-content-center mt-3">
+    <div class="col col-md-7 text-center">
+      <form class="text-center" [formGroup]="postForm" (submit)="submit()">
+        <div class="mb-3">
+          <div>
+            <mat-form-field class="ess-input-full">
+              <textarea
+                matInput
+                placeholder="Nombre"
+                formControlName="nombre"
+                cdkTextareaAutosize
+                #autosize="cdkTextareaAutosize"
+                cdkAutosizeMinRows="1"
+              >
+              </textarea>
+              <small
+                class="form-text text-muted"
+                style="color: red;"
+                *ngIf="
+                  postForm.get('nombre').touched &&
+                  postForm.get('nombre').hasError('required')
+                "
+                >Ingresa el campo requerido.</small
+              >
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="mb-3">
+          <div>
+            <mat-form-field class="ess-input-full">
+              <textarea
+                matInput
+                placeholder="Agrega una descripción corta de tu Empresa Social"
+                formControlName="descripcion"
+                cdkTextareaAutosize
+                #autosize="cdkTextareaAutosize"
+                cdkAutosizeMinRows="1"
+              >
+              </textarea>
+              <small
+                class="form-text text-muted"
+                style="color: red !important; font-size: 9px;"
+                *ngIf="
+                  postForm.get('descripcion').touched &&
+                  postForm.get('descripcion').hasError('required')
+                "
+                >Ingresa el campo requerido.</small
+              >
+              <small
+              class="form-text text-muted"
+              style="color: red !important; font-size: 9px;"
+              *ngIf="postForm.get('descripcion').errors && postForm.get('descripcion').errors.maxlength
+              "
+              >Tu descripción rebasa los 300 caracteres, procura ingresar un texto más corto.</small
+            >
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row txt-center mt-5">
+          <div class="col-xs-12 col-md-4 ess-text-infoLogo">
+
+            <p>
+              Si cuentas con la imagen o logotipo de tu Empresa/Marca anexalo
+              aquí
+              <br /><br />
+              *Opcional
+            </p>
+          </div>
+          <div class="col-md-4">
+            <div class="row">
+              <div class="col">
+                <div class="image-upload">
+                  <label for="file-input">
+                    <img [src]="url" />
+                    <div>
+                      <p>+</p>
+                    </div>
+                  </label>
+                  <input
+                    id="file-input"
+                    type="file"
+                    (change)="onSelectFile($event)"
+                  />
+                </div>
+                <small class="text-left">Logotipo</small>
+
+              </div>
+            </div>
+            <div class="row" *ngIf="textImage1">
+              <div class="col" style="color: red; font-size: 10px;">
+                * La imagen rebasa el peso limite de 200 KB, intenta nuevamente
+              </div>
+            </div>
+
+          </div>
+          <div class="col-md-4">
+            <div class="row">
+              <div class="col">
+                <div class="image-upload">
+                  <label for="file-input2">
+                    <img [src]="url2" />
+                    <div>
+                      <p>+</p>
+                    </div>
+                  </label>
+                  <input
+                    id="file-input2"
+                    type="file"
+                    (change)="onSelectFile2($event)"
+                  />
+                </div>
+                <small class="text-left">Imagen de portada</small>
+              </div>
+            </div>
+            <div class="row" *ngIf="textImage2">
+              <div class="col" style="color: red; font-size: 10px;">
+                * La imagen rebasa el peso limite de 200 KB, intenta nuevamente
+              </div>
+            </div>
+         </div>
+        </div>
+        <div>
+          <button class="button-form" [disabled]="!postForm.valid"  color="primary" type="submit">
+            SIGUIENTE
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

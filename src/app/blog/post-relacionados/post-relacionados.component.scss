@@ -1,0 +1,65 @@
+.ess-container-related {
+  margin: 0 0 10vh 0;
+}
+
+.ess-divisor {
+  margin: 50px 0;
+  height: 1px;
+  background-color: #6F7271;
+}
+
+div {
+  max-width: 90vw;
+}
+
+img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.ess-text-title-post {
+  margin: 40px 0 25px 0;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 29px;
+  color: #000000;
+}
+
+.ess-text-extract {
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 20px;
+  color: #000000;
+  width: 70%;
+}
+
+button {
+  background-color: white;
+  color: #000;
+  padding: 4px 15px;
+  border: none;
+  border-radius: 30px;
+  margin: 0 15px;
+  img{
+      width: 10px;
+      height: 10px;
+      margin: -1px 5px 0 5px;
+  }
+
+  &:hover {
+    border: 1px solid #000000;
+  }
+}
+
+.ess-container-small {
+  margin: 1vh 10px 0 0 !important;
+}
+
+//Css para tablets y celulares
+@media (max-width: 768px) {
+    .ess-container-tag {
+        margin: 1vh 10px 0 0 !important;
+    }
+}

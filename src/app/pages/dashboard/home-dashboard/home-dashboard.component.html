@@ -1,0 +1,232 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-1"></div>
+    <div class="col-10 text-left">
+      <img
+        src="../../../assets/logo_desarrolla.svg"
+        width="130vw"
+        height="100vh"
+        alt=""
+        srcset=""
+      />
+    </div>
+  </div>
+</div>
+
+<div class="contaier-fluid">
+  <div
+    class="row ess-imageFon img-fluid"
+    style="background: url({{ urlCover }})"
+  >
+    <div class="col-md-12 text-right">
+      <div class="image-upload1">
+        <label for="file-input1">
+          <img
+            style="cursor: pointer"
+            class="ess-pointer"
+            src="../../../../assets/cambiarImage.png"
+          />
+        </label>
+        <input id="file-input1" type="file" (change)="onSelectFile($event)" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="movile-ess">
+  <div class="row justify-content-center">
+    <div class="col-2"></div>
+    <div class="col-1 text-right">
+      <img src="{{ urlLogo }}" class="logo" />
+    </div>
+    <div class="col-1 text-left">
+      <div class="image-upload1">
+        <label for="file-input">
+          <img
+            style="cursor: pointer"
+            class=""
+            src="../../../../assets//inputlogo.png"
+          />
+        </label>
+        <input id="file-input" type="file" (change)="onSelectFile2($event)" />
+      </div>
+    </div>
+    <div class="col-8 mt-2">
+      <p class="ess-cafe">-{{ name }}-</p>
+    </div>
+  </div>
+
+  <div class="row justify-content-center">
+    <div class="col-4 text-center"></div>
+    <div class="col-8 text-left">
+      <p [hidden]="isShow" class="ess-description">
+        {{ enterpriseData.shortDescription }}
+        <img
+          class="ess-pointer"
+          style="cursor: pointer"
+          (click)="toggleDisplay1()"
+          src="../../../../assets/edit.png"
+          alt=""
+        />
+      </p>
+    </div>
+  </div>
+
+  <div class="row justify-content-center">
+    <div class="col-1 text-center mr-5"></div>
+    <div class="col-7 text-left ml-5">
+      <form
+        [hidden]="isShow1"
+        class=""
+        [formGroup]="postForm1"
+        (submit)="submit1()"
+      >
+        <div class="row justify-content-left ml-4 mt-3">
+          <div class="col-6 mr-5">
+            <mat-form-field class="ess-campos edit-des" appearance="outline">
+              <mat-label></mat-label>
+              <textarea
+                matInput
+                value="{{ enterpriseData.shortDescription }}"
+                class="edit-des"
+                style="font-family: Montserrat-Light; font-size: 14px"
+                formControlName="descrip"
+                placeholder="{{ enterpriseData.shortDescription }}"
+              >
+              {{ enterpriseData.shortDescription }}</textarea
+              >
+            </mat-form-field>
+          </div>
+
+          <div class="col-sm-2 mt-2 ml-5">
+            <button
+              class="button_direccion"
+              mat-stroked-button
+              color="primary"
+              [disabled]="!postForm1.valid"
+              style="font-family: Montserrat-Regular; font-size: 14px"
+            >
+              Actualizar
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="movile-ess1">
+  <div class="row justify-content-center">
+    <div class="col-12 text-center">
+      <img src="{{ urlLogo }}" class="logoMovile" />
+    </div>
+  </div>
+  <div class="row justify-content-center">
+    <div class="col-12 text-center">
+      <div class="image-upload1">
+        <label for="file-input">
+          <img
+            style="cursor: pointer"
+            class=""
+            src="../../../../assets//inputlogo.png"
+          />
+        </label>
+        <input id="file-input" type="file" (change)="onSelectFile2($event)" />
+      </div>
+    </div>
+  </div>
+
+  <div class="row justify-content-center">
+    <div class="col-12 text-center">
+      <p class="ess-cafe1">-{{ name }}-</p>
+    </div>
+  </div>
+
+  <div class="row justify-content-center">
+    <div class="col-12 text-center">
+      <p [hidden]="isShow" class="ess-description">
+        {{ enterpriseData.shortDescription }}
+        <img
+          class="ess-pointer"
+          style="cursor: pointer"
+          (click)="toggleDisplay1()"
+          src="../../../../assets/edit.png"
+          alt=""
+        />
+      </p>
+    </div>
+  </div>
+
+  <div class="row justify-content-center">
+    <div class="col-12 text-center">
+      <form
+        [hidden]="isShow1"
+        class=""
+        [formGroup]="postForm1"
+        (submit)="submit1()"
+      >
+        <div class="row justify-content-lcenter">
+          <div class="col-8 ">
+            <mat-form-field class="ess-campos edit-des" appearance="outline">
+              <mat-label></mat-label>
+              <textarea
+                matInput
+                value="{{ enterpriseData.shortDescription }}"
+                class="edit-des"
+                style="font-family: Montserrat-Light; font-size: 14px"
+                formControlName="descrip"
+                placeholder="{{ enterpriseData.shortDescription }}"
+              >
+                {{ enterpriseData.shortDescription }}</textarea
+              >
+            </mat-form-field>
+          </div>
+
+          <div class="col-4 mt-2 ml-5">
+            <button
+              class="button_direccion"
+              mat-stroked-button
+              color="primary"
+              [disabled]="!postForm1.valid"
+              style="font-family: Montserrat-Regular; font-size: 14px"
+            >
+              Actualizar
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<div class="container-fixed">
+  <div class="row justify-content-center">
+    <div class="col-11">
+      <hr class="ess-lineaCentral" />
+    </div>
+  </div>
+</div>
+
+<div class="row justify-content-right">
+  <div class="col-md-1"></div>
+  <div class="col-md-2 text-left mt-5">
+    <ul class="ess-left-nav">
+      <li class="mb-4 p-2">
+        <a [routerLink]="['perfil']" routerLinkActive="router-link-active"
+          >PERFIL</a
+        >
+      </li>
+      <li class="mb-4 p-2"><a [routerLink]="['productos']">PRODUCTOS</a></li>
+      <li class="mb-4 p-2"><a [routerLink]="['servicios']">SERVICIOS</a></li>
+      <li class="mb-4 p-2"><a [routerLink]="['contacto']">CONTACTO</a></li>
+      <!--<li class="mb-4 p-2"><a [routerLink]="['direccion']">Dirección</a></li>
+        <li class="mb-4 p-2">
+          <a [routerLink]="['punto-de-venta']">Punto de Venta</a>
+        </li>-->
+    </ul>
+  </div>
+  <mat-divider class="ess-lineaCentral" [vertical]="true"></mat-divider>
+  <div class="col-md">
+    <router-outlet></router-outlet>
+  </div>
+</div>
